@@ -1,0 +1,18 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 16, 2015, 12:05:52 PM
+    Author     : penguin
+*/
+
+
+.navbar .brand {
+max-height: 50px;
+overflow: visible;
+padding-top: 0;
+padding-bottom: 0;
+}
+.navbar a.navbar-brand {padding: 0px 15px 0px;}
