@@ -11,6 +11,7 @@ and open the template in the editor.
         <?php include 'inc/head.php'; ?>
     </head>
     <body>
+
         <div class="cookie-message-wrapper" id="cookie-message" style="display: block;">
             <div class="container">
                 <div class="row">
@@ -22,13 +23,68 @@ and open the template in the editor.
                     </div>
                 </div>
             </div>
-        </div>
+        </div> 
+
         <header>
             <?php include 'inc/header.php'; ?>
         </header>
-        <div class="container">
-            
-        </div>
+        <section class="section-main-content">
+            <div class="container">
+                <div id="page-title-container">
+                    <h1>The Leading Properties of the Pakistan</h1>
+                </div>
+                <div class="search-panel-wrapper">
+                    <div id="search_panel" class="search_panel form_hidden">
+                        <nav class="navbar navbar-default" >
+                            <div class="">
+                                <!-- Brand and toggle get grouped for better mobile display -->
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#search-navbar-collapse-1" aria-expanded="false">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                </div>
+
+                                <!-- Collect the nav links, forms, and other content for toggling -->
+                                <div class="collapse navbar-collapse" id="search-navbar-collapse-1">
+                                    <ul class="nav navbar-nav">
+                                        <li><a href="#">Appartment</a></li>
+                                        <li><a href="#">House</a></li>
+                                        <li><a href="#">Commercial</a></li>
+                                        <li class="dropdown sorting-ico"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><span class="glyphicon glyphicon-usd"></span> <span class="caret"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href=""><span class="glyphicon glyphicon-sort-by-attributes"></span><span> Cheapest first </span></a></li>
+                                                <li><a href=""><span class="glyphicon glyphicon-sort-by-attributes-alt"></span><span> Most expensive first </span></a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <form class="navbar-form nav navbar-nav navbar-right " role="search" id="hsearch" action="record.php" method="POST">
+                                        <div class="form-group">
+
+                                            <div id="custom-search-input">
+                                                <div class="input-group col-md-12">
+                                                    <input class="  search-query form-control" placeholder="Search" type="text">
+                                                    <span class="input-group-btn">
+                                                        <button class="btn btn-danger" type="button">
+                                                            <span class=" glyphicon glyphicon-search"></span>
+                                                        </button>
+                                                    </span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div><!-- /.navbar-collapse -->
+                            </div><!-- /.container-fluid -->
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <footer>
             <?php include 'inc/footer.php'; ?>
         </footer>
