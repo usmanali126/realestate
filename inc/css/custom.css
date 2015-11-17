@@ -8,11 +8,99 @@ and open the template in the editor.
     Author     : penguin
 */
 
-
+#page-title-container h1{
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+}
+.section-main-content{
+    background: #eee;
+    margin-top: -20px;
+}
 .navbar .brand {
 max-height: 50px;
 overflow: visible;
 padding-top: 0;
 padding-bottom: 0;
 }
-.navbar a.navbar-brand {padding: 0px 15px 0px;}
+.navbar a.navbar-brand {
+    padding: 0px 15px 0px;
+}
+
+.navbar-right .dropdown-menu li a{
+    position: relative;
+}
+.navbar-right .dropdown-menu li a img{
+    height: 15px;
+    position: absolute;
+    right: 10px;
+    top: 4px;
+    width: 25px;
+}
+.sorting-ico  span.glyphicon{
+    font-size: 20px;
+}
+
+.navbar-nav > li {
+    height: 50px;
+}
+
+#search-navbar-collapse-1 ul{
+    background: #F8F8F8;
+}
+.navbar-nav li.sorting-ico{
+    z-index: 100;
+}
+.search-panel-wrapper li:hover{
+    background: #eee;
+}
+/* search form css */
+
+
+#custom-search-input {
+        margin:0;
+        margin-top: 0px;
+        padding: 0;
+       // width: 200%;
+    }
+ 
+    #custom-search-input .search-query {
+        margin-left: 10px;
+        margin-right: 190px;
+        padding-right: 3px;
+        padding-right: 4px \9;
+        padding-left: 3px;
+        padding-left: 4px \9;
+        /* IE7-8 doesn't have border-radius, so don't indent the padding */
+ 
+        margin-bottom: 0;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+    }
+ 
+    #custom-search-input button {
+        border: 0;
+        background: none;
+        /** belows styles are working good */
+        padding: 2px 5px;
+        //margin-top: 2px;
+        position: relative;
+        left: -30px;
+        font-size: 20px;
+        /* IE7-8 doesn't have border-radius, so don't indent the padding */
+        margin-bottom: 0;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        //color:#D9230F;
+        color: #525252;
+    }
+ 
+    .search-query:focus + button {
+        z-index: 3;   
+    }
+    #custom-search-input button:hover{
+        background: #eee;
+    }
+  

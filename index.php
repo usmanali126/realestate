@@ -82,6 +82,9 @@ and open the template in the editor.
                         </nav>
                     </div>
                 </div>
+                <div class="content">
+                    
+                </div>
             </div>
         </section>
 
