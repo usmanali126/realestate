@@ -18,10 +18,10 @@ and open the template in the editor.
     margin-top: -20px;
 }
 .navbar .brand {
-max-height: 50px;
-overflow: visible;
-padding-top: 0;
-padding-bottom: 0;
+    max-height: 50px;
+    overflow: visible;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 .navbar a.navbar-brand {
     padding: 0px 15px 0px;
@@ -56,51 +56,129 @@ padding-bottom: 0;
 }
 /* search form css */
 
-
 #custom-search-input {
-        margin:0;
-        margin-top: 0px;
-        padding: 0;
-       // width: 200%;
+    margin:0;
+    margin-top: 0px;
+    padding: 0;
+    // width: 200%;
+}
+
+#custom-search-input .search-query {
+    margin-left: 10px;
+    margin-right: 140px;
+    padding-right: 3px;
+    padding-right: 4px \9;
+    padding-left: 3px;
+    padding-left: 4px \9;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#custom-search-input button {
+    border: 0;
+    background: none;
+    /** belows styles are working good */
+    padding: 2px 5px;
+    //margin-top: 2px;
+    position: relative;
+    left: -20px;
+    font-size: 20px;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    //color:#D9230F;
+    color: #525252;
+}
+
+.search-query:focus + button {
+    z-index: 3;   
+}
+#custom-search-input button:hover{
+    background: #eee;
+}
+/* search form css end */
+.object-inner-wrapper{
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.object-item{
+    color: #7b838c;
+}
+.object-thumbnail{
+    position: relative;
+}
+.object-info-holder{
+    background: #fff;
+    border-radius: 0 0 3px 3px;
+    overflow: hidden;
+    text-align: center;
+    padding: 15px 37px 19px 37px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+.info-address{
+    margin-bottom: 15px;  
+}
+.info-address a{
+        float: left;
+    padding: 2px 9px;
+    border-right: 1px solid #d3d6d9;
+    line-height: 1;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #7b838c;
+    text-decoration: none;
     }
- 
-    #custom-search-input .search-query {
-        margin-left: 10px;
-        margin-right: 190px;
-        padding-right: 3px;
-        padding-right: 4px \9;
-        padding-left: 3px;
-        padding-left: 4px \9;
-        /* IE7-8 doesn't have border-radius, so don't indent the padding */
- 
+.info-title{
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    margin: 0 0 15px 0;
+    color: #233140;
+}
+.info-title a{
+        color: #233140;
+        text-decoration: none;
+    }
+.info-details{
+    margin: 0;
+}
+@media (min-width: 768px){
+    .object-info-holder{
+        padding: 16px 20px 16px 20px;
+        font-size: 14px;
+        line-height: 30px;
+        text-align: left;
+    }
+    .info-address{
+        padding-top: 6px;
+        padding-bottom: 6px;
+        margin-bottom: 7px;
+    }
+    .info-address a:first-child, .init-objects-holder .object-item .info-address a:first-child {
+    padding-left: 0;
+}
+    .info-title{
+        font-size: 18px;
+        line-height: 30px;
         margin-bottom: 0;
-        -webkit-border-radius: 3px;
-        -moz-border-radius: 3px;
-        border-radius: 3px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
- 
-    #custom-search-input button {
-        border: 0;
-        background: none;
-        /** belows styles are working good */
-        padding: 2px 5px;
-        //margin-top: 2px;
-        position: relative;
-        left: -30px;
-        font-size: 20px;
-        /* IE7-8 doesn't have border-radius, so don't indent the padding */
-        margin-bottom: 0;
-        -webkit-border-radius: 3px;
-        -moz-border-radius: 3px;
-        border-radius: 3px;
-        //color:#D9230F;
-        color: #525252;
+    
+    .info-details{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
- 
-    .search-query:focus + button {
-        z-index: 3;   
-    }
-    #custom-search-input button:hover{
-        background: #eee;
-    }
-  
+    
+}
