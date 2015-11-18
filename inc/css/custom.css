@@ -7,7 +7,33 @@ and open the template in the editor.
     Created on : Nov 16, 2015, 12:05:52 PM
     Author     : penguin
 */
-
+a{
+    text-decoration:none;
+}
+.cookie-message-wrapper {
+    padding-bottom: 22px;
+    padding-top: 20px;
+}
+.cookie-message-wrapper .button-close-cookie {
+    background: #a8adb3 none repeat scroll 0 0;
+    border: 1px solid #9ca0a6;
+    border-radius: 3px;
+    color: #ffffff;
+    cursor: pointer;
+    display: block;
+    font-size: 20px;
+    line-height: 2;
+    text-align: center;
+    text-shadow: 0 1px 0 #7b838c;
+    width: 100%;
+}
+ .hidden-xs.button-close-cookie-text {
+    position: relative;
+    margin-left: -10px;
+}
+.glyphicon.glyphicon-remove {
+    position: absolute;
+}
 #page-title-container h1{
     text-align: center;
     line-height: 50px;
@@ -109,9 +135,35 @@ and open the template in the editor.
 }
 .object-item{
     color: #7b838c;
+    margin-bottom: 30px;
 }
 .object-thumbnail{
     position: relative;
+}
+.add-favorite-button {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    margin-top: -2px;
+}
+.add-favorite-button .glyphicon-bookmark {
+    color: #666666;
+    font-size: 40px;
+    position: relative;
+    cursor: pointer;
+    text-shadow: -2px 0 #eeeeee, 0 2px #eeeeee, 2px 0 #eeeeee, 0 -2px #eeeeee;
+}
+.add-favorite-button .glyphicon-bookmark:hover {
+    color: #FC6666;
+}
+.glyphicon.glyphicon-star {
+    color: #fff;
+    font-size: 15px;
+    left: 15px;
+    position: absolute;
+    top: 6px;
+    z-index: 10;
+    text-shadow: 0px 0 #ffffff, 0 0px #ffffff, 0px 0 #ffffff, 0 0px #ffffff;
 }
 .object-info-holder{
     background: #fff;
@@ -150,6 +202,121 @@ and open the template in the editor.
     }
 .info-details{
     margin: 0;
+}
+#scroll_up {
+    width: 30px;
+    margin: 0 auto;
+    font-size: 14px;
+    cursor: pointer;
+    display: none;
+}
+#scroll_up.to_top_visible {
+    bottom: 10px;
+    display: none;
+    padding-bottom: 0;
+    position: fixed;
+    right: 80px;
+    z-index: 1000;
+}
+
+#scroll_up span {
+    background: #d3d6d9 none repeat scroll 0 0;
+    border-radius: 3px;
+    color: #ffffff;
+    display: block;
+    font-size: 25px;
+    height: 45px;
+    line-height: 1;
+    margin: 0 auto;
+    opacity: 0.85;
+    padding-bottom: 6px;
+    padding-top: 10px;
+    text-align: center;
+    width: 45px;
+}
+/*addproperty css*/
+.add-object-section-top.add-object-sub-section {
+    background: #eeeeee none repeat scroll 0 0;
+    padding: 65px;
+}
+.add-object-section-photo.add-object-sub-section {
+    background: #fff none repeat scroll 0 0;
+    padding: 70px;
+}
+.add-object-section-description.add-object-sub-section {
+    background: #fff none repeat scroll 0 0;
+    padding: 70px;
+}
+.add-object-section-mandate.add-object-sub-section {
+    padding-bottom: 42px;
+    padding-top: 52px;
+}
+.add-object-section-mail.add-object-sub-section {
+    background: #4f5a66 none repeat scroll 0 0;
+    color: #fff;
+    padding: 80px 0;
+    text-align: center;
+}
+.add-object-section-mail .image_holder {
+    margin-bottom: 50px;
+}
+.add-object-section-mail .text > p {
+    font-size: 30px;
+    line-height: 40px;
+}
+.add-object-section-mail .text > p > a{
+    font-size: 30px;
+    line-height: 40px;
+    color: #fff;
+    text-decoration:none;
+}
+
+.add-object-section-results {
+    padding-bottom: 35px;
+    padding-top: 50px;
+    background: #fff none repeat scroll 0 0;
+}
+.heading {
+    position: relative;
+}
+.text_holder .free {
+    background: #219320 none repeat scroll 0 0;
+    border-radius: 3px;
+    color: #fff;
+    display: block;
+    font-size: 10px;
+    font-weight: bold;
+    left: 242px;
+    opacity: 0.5;
+    padding: 4px;
+    position: absolute;
+    top: -3px;
+}
+
+/*footer css*/
+.contact-info > span {
+    display: block;
+}
+.social-icon > a {
+    color: #9d9d9d;
+    text-decoration: none;
+    margin: 5px;
+}
+.social-icon > a:hover {
+    color: #666666;
+}
+.social-icon span {
+    font-size: 20px;
+}
+footer{
+    background: #e6e6e6 none repeat scroll 0 0;
+    border-top: 1px solid #cccccc;
+    color: #4f5a66;
+    padding-bottom: 57px;
+    font-size: 13px;
+    line-height: 20px;
+    padding-top: 45px;
+    text-align: left;
 }
 @media (min-width: 768px){
     .object-info-holder{

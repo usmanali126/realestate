@@ -83,68 +83,346 @@ and open the template in the editor.
                     </div>
                 </div>
                 <div class="content">
-                    <article class="object-item object-item-regular object-wide">
-                        <div class="object-inner-wrapper">
-                            <div class="object-thumbnail">
-                                <a href="#">
-                                    <img class="img-responsive" src="images/1172.jpg">
-                                </a>
-                                <div class="add-favorite-button" data-obj_id="56198">
-                                    <span class="glyphicon glyphicon-bookmark"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star-empty"></span>
+                    <div class="row">
+                        <article class="object-item object-item-regular object-wide col-sm-12">
+                            <div class="object-inner-wrapper">
+                                <div class="object-thumbnail">
+                                    <a href="#">
+                                        <img class="img-responsive" src="images/1172.jpg">
+                                    </a>
+                                    <div class="add-favorite-button" data-obj_id="56198">
+                                        <span class="glyphicon glyphicon-bookmark"><span class="glyphicon glyphicon-star"></span></span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="object-info-holder">
-                                <div class="info-address">
-                                    <a href="">Bulgaria</a>
-                                    <a href="">Burgas Province</a>
-                                    <a href="">Kosharitsa</a>
+                                <div class="object-info-holder">
+                                    <div class="info-address col-sm-12">
+                                        <a href="">Bulgaria</a>
+                                        <a href="">Burgas Province</a>
+                                        <a href="">Kosharitsa</a>
+                                    </div>
+                                    <h2 class="info-title col-sm-12" itemprop="name">
+                                        <a href="" title="undefined" target="_blank">Apartments for sale in residence Sunset Deluxe Romana in Kosharitsa</a>
+                                    </h2>
+                                    <p class="info-details col-sm-12">
+                                        <span itemprop="offers" itemscope="" itemtype="http://schema.org/AggregateOffer">
+                                            <span itemprop="price" class="price-wrapper"><span itemprop="lowPrice">17 024</span>&nbsp;–&nbsp;
+                                                <span itemprop="highPrice">79 000</span>&nbsp;
+                                                <span itemprop="priceCurrency" content="EUR">EUR</span>
+                                            </span>
+                                        </span>, 
+                                        <span>1</span>&nbsp;–&nbsp;
+                                        <span>3</span>&nbsp;rooms, 
+                                        <span>33</span>&nbsp;–&nbsp;
+                                        <span>136</span>&nbsp;m
+                                        <sup>2</sup>
+                                    </p>
                                 </div>
-                                <h2 class="info-title" itemprop="name">
-                                    <a href="" title="undefined" target="_blank">Apartments for sale in residence Sunset Deluxe Romana in Kosharitsa</a>
-                                </h2>
-                                <p class="info-details">
-                                    <span itemprop="offers" itemscope="" itemtype="http://schema.org/AggregateOffer">
-                                        <span itemprop="price" class="price-wrapper"><span itemprop="lowPrice">17 024</span>&nbsp;–&nbsp;
-                                            <span itemprop="highPrice">79 000</span>&nbsp;
-                                            <span itemprop="priceCurrency" content="EUR">EUR</span></span></span>, 
-                                            <span>1</span>&nbsp;–&nbsp;
-                                            <span>3</span>&nbsp;rooms, 
-                                            <span>33</span>&nbsp;–&nbsp;
-                                            <span>136</span>&nbsp;m
-                                            <sup>2</sup>
-                                </p>
-                            </div>
-                            <div>
+                                <div>
 
+                                </div>
                             </div>
-                        </div>
-                    </article>
+                        </article> 
+                    </div>
+                    <div class="row">
+                        <article class="object-item object-item-regular object-wide col-sm-6">
+                            <div class="object-inner-wrapper">
+                                <div class="object-thumbnail">
+                                    <a href="#">
+                                        <img class="img-responsive" src="images/1172.jpg">
+                                    </a>
+                                    <div class="add-favorite-button" data-obj_id="56198">
+                                        <span class="glyphicon glyphicon-bookmark"><span class="glyphicon glyphicon-star"></span></span>
+                                    </div>
+                                </div>
+                                <div class="object-info-holder">
+                                    <div class="info-address col-sm-12">
+                                        <a href="">Bulgaria</a>
+                                        <a href="">Burgas Province</a>
+                                        <a href="">Kosharitsa</a>
+                                    </div>
+                                    <h2 class="info-title col-sm-12" itemprop="name">
+                                        <a href="" title="undefined" target="_blank">Apartments for sale in residence Sunset Deluxe Romana in Kosharitsa</a>
+                                    </h2>
+                                    <p class="info-details col-sm-12">
+                                        <span itemprop="offers" itemscope="" itemtype="http://schema.org/AggregateOffer">
+                                            <span itemprop="price" class="price-wrapper"><span itemprop="lowPrice">17 024</span>&nbsp;–&nbsp;
+                                                <span itemprop="highPrice">79 000</span>&nbsp;
+                                                <span itemprop="priceCurrency" content="EUR">EUR</span>
+                                            </span>
+                                        </span>, 
+                                        <span>1</span>&nbsp;–&nbsp;
+                                        <span>3</span>&nbsp;rooms, 
+                                        <span>33</span>&nbsp;–&nbsp;
+                                        <span>136</span>&nbsp;m
+                                        <sup>2</sup>
+                                    </p>
+                                </div>
+                                <div>
+
+                                </div>
+                            </div>
+                        </article>
+                        <article class="object-item object-item-regular object-wide col-sm-6">
+                            <div class="object-inner-wrapper">
+                                <div class="object-thumbnail">
+                                    <a href="#">
+                                        <img class="img-responsive" src="images/1172.jpg">
+                                    </a>
+                                    <div class="add-favorite-button" data-obj_id="56198">
+                                        <span class="glyphicon glyphicon-bookmark"><span class="glyphicon glyphicon-star"></span></span>
+                                    </div>
+                                </div>
+                                <div class="object-info-holder">
+                                    <div class="info-address col-sm-12">
+                                        <a href="">Bulgaria</a>
+                                        <a href="">Burgas Province</a>
+                                        <a href="">Kosharitsa</a>
+                                    </div>
+                                    <h2 class="info-title col-sm-12" itemprop="name">
+                                        <a href="" title="undefined" target="_blank">Apartments for sale in residence Sunset Deluxe Romana in Kosharitsa</a>
+                                    </h2>
+                                    <p class="info-details col-sm-12">
+                                        <span itemprop="offers" itemscope="" itemtype="http://schema.org/AggregateOffer">
+                                            <span itemprop="price" class="price-wrapper"><span itemprop="lowPrice">17 024</span>&nbsp;–&nbsp;
+                                                <span itemprop="highPrice">79 000</span>&nbsp;
+                                                <span itemprop="priceCurrency" content="EUR">EUR</span>
+                                            </span>
+                                        </span>, 
+                                        <span>1</span>&nbsp;–&nbsp;
+                                        <span>3</span>&nbsp;rooms, 
+                                        <span>33</span>&nbsp;–&nbsp;
+                                        <span>136</span>&nbsp;m
+                                        <sup>2</sup>
+                                    </p>
+                                </div>
+                                <div>
+
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="row">
+                        <article class="object-item object-item-regular object-wide col-sm-12">
+                            <div class="object-inner-wrapper">
+                                <div class="object-thumbnail">
+                                    <a href="#">
+                                        <img class="img-responsive" src="images/1172.jpg">
+                                    </a>
+                                    <div class="add-favorite-button" data-obj_id="56198">
+                                        <span class="glyphicon glyphicon-bookmark"><span class="glyphicon glyphicon-star"></span></span>
+                                    </div>
+                                </div>
+                                <div class="object-info-holder">
+                                    <div class="info-address col-sm-12">
+                                        <a href="">Bulgaria</a>
+                                        <a href="">Burgas Province</a>
+                                        <a href="">Kosharitsa</a>
+                                    </div>
+                                    <h2 class="info-title col-sm-12" itemprop="name">
+                                        <a href="" title="undefined" target="_blank">Apartments for sale in residence Sunset Deluxe Romana in Kosharitsa</a>
+                                    </h2>
+                                    <p class="info-details col-sm-12">
+                                        <span itemprop="offers" itemscope="" itemtype="http://schema.org/AggregateOffer">
+                                            <span itemprop="price" class="price-wrapper"><span itemprop="lowPrice">17 024</span>&nbsp;–&nbsp;
+                                                <span itemprop="highPrice">79 000</span>&nbsp;
+                                                <span itemprop="priceCurrency" content="EUR">EUR</span>
+                                            </span>
+                                        </span>, 
+                                        <span>1</span>&nbsp;–&nbsp;
+                                        <span>3</span>&nbsp;rooms, 
+                                        <span>33</span>&nbsp;–&nbsp;
+                                        <span>136</span>&nbsp;m
+                                        <sup>2</sup>
+                                    </p>
+                                </div>
+                                <div>
+
+                                </div>
+                            </div>
+                        </article> 
+                    </div>
+                    <div class="row">
+                        <article class="object-item object-item-regular object-wide col-sm-6">
+                            <div class="object-inner-wrapper">
+                                <div class="object-thumbnail">
+                                    <a href="#">
+                                        <img class="img-responsive" src="images/1172.jpg">
+                                    </a>
+                                    <div class="add-favorite-button" data-obj_id="56198">
+                                        <span class="glyphicon glyphicon-bookmark"><span class="glyphicon glyphicon-star"></span></span>
+                                    </div>
+                                </div>
+                                <div class="object-info-holder">
+                                    <div class="info-address col-sm-12">
+                                        <a href="">Bulgaria</a>
+                                        <a href="">Burgas Province</a>
+                                        <a href="">Kosharitsa</a>
+                                    </div>
+                                    <h2 class="info-title col-sm-12" itemprop="name">
+                                        <a href="" title="undefined" target="_blank">Apartments for sale in residence Sunset Deluxe Romana in Kosharitsa</a>
+                                    </h2>
+                                    <p class="info-details col-sm-12">
+                                        <span itemprop="offers" itemscope="" itemtype="http://schema.org/AggregateOffer">
+                                            <span itemprop="price" class="price-wrapper"><span itemprop="lowPrice">17 024</span>&nbsp;–&nbsp;
+                                                <span itemprop="highPrice">79 000</span>&nbsp;
+                                                <span itemprop="priceCurrency" content="EUR">EUR</span>
+                                            </span>
+                                        </span>, 
+                                        <span>1</span>&nbsp;–&nbsp;
+                                        <span>3</span>&nbsp;rooms, 
+                                        <span>33</span>&nbsp;–&nbsp;
+                                        <span>136</span>&nbsp;m
+                                        <sup>2</sup>
+                                    </p>
+                                </div>
+                                <div>
+
+                                </div>
+                            </div>
+                        </article>
+                        <article class="object-item object-item-regular object-wide col-sm-6">
+                            <div class="object-inner-wrapper">
+                                <div class="object-thumbnail">
+                                    <a href="#">
+                                        <img class="img-responsive" src="images/1172.jpg">
+                                    </a>
+                                    <div class="add-favorite-button" data-obj_id="56198">
+                                        <span class="glyphicon glyphicon-bookmark"><span class="glyphicon glyphicon-star"></span></span>
+                                    </div>
+                                </div>
+                                <div class="object-info-holder">
+                                    <div class="info-address col-sm-12">
+                                        <a href="">Bulgaria</a>
+                                        <a href="">Burgas Province</a>
+                                        <a href="">Kosharitsa</a>
+                                    </div>
+                                    <h2 class="info-title col-sm-12" itemprop="name">
+                                        <a href="" title="undefined" target="_blank">Apartments for sale in residence Sunset Deluxe Romana in Kosharitsa</a>
+                                    </h2>
+                                    <p class="info-details col-sm-12">
+                                        <span itemprop="offers" itemscope="" itemtype="http://schema.org/AggregateOffer">
+                                            <span itemprop="price" class="price-wrapper"><span itemprop="lowPrice">17 024</span>&nbsp;–&nbsp;
+                                                <span itemprop="highPrice">79 000</span>&nbsp;
+                                                <span itemprop="priceCurrency" content="EUR">EUR</span>
+                                            </span>
+                                        </span>, 
+                                        <span>1</span>&nbsp;–&nbsp;
+                                        <span>3</span>&nbsp;rooms, 
+                                        <span>33</span>&nbsp;–&nbsp;
+                                        <span>136</span>&nbsp;m
+                                        <sup>2</sup>
+                                    </p>
+                                </div>
+                                <div>
+
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="row">
+                        <article class="object-item object-item-regular object-wide col-sm-6">
+                            <div class="object-inner-wrapper">
+                                <div class="object-thumbnail">
+                                    <a href="#">
+                                        <img class="img-responsive" src="images/1172.jpg">
+                                    </a>
+                                    <div class="add-favorite-button" data-obj_id="56198">
+                                        <span class="glyphicon glyphicon-bookmark"><span class="glyphicon glyphicon-star"></span></span>
+                                    </div>
+                                </div>
+                                <div class="object-info-holder">
+                                    <div class="info-address col-sm-12">
+                                        <a href="">Bulgaria</a>
+                                        <a href="">Burgas Province</a>
+                                        <a href="">Kosharitsa</a>
+                                    </div>
+                                    <h2 class="info-title col-sm-12" itemprop="name">
+                                        <a href="" title="undefined" target="_blank">Apartments for sale in residence Sunset Deluxe Romana in Kosharitsa</a>
+                                    </h2>
+                                    <p class="info-details col-sm-12">
+                                        <span itemprop="offers" itemscope="" itemtype="http://schema.org/AggregateOffer">
+                                            <span itemprop="price" class="price-wrapper"><span itemprop="lowPrice">17 024</span>&nbsp;–&nbsp;
+                                                <span itemprop="highPrice">79 000</span>&nbsp;
+                                                <span itemprop="priceCurrency" content="EUR">EUR</span>
+                                            </span>
+                                        </span>, 
+                                        <span>1</span>&nbsp;–&nbsp;
+                                        <span>3</span>&nbsp;rooms, 
+                                        <span>33</span>&nbsp;–&nbsp;
+                                        <span>136</span>&nbsp;m
+                                        <sup>2</sup>
+                                    </p>
+                                </div>
+                                <div>
+
+                                </div>
+                            </div>
+                        </article>
+                        <article class="object-item object-item-regular object-wide col-sm-6">
+                            <div class="object-inner-wrapper">
+                                <div class="object-thumbnail">
+                                    <a href="#">
+                                        <img class="img-responsive" src="images/1172.jpg">
+                                    </a>
+                                    <div class="add-favorite-button" data-obj_id="56198">
+                                        <span class="glyphicon glyphicon-bookmark"><span class="glyphicon glyphicon-star"></span></span>
+                                    </div>
+                                </div>
+                                <div class="object-info-holder">
+                                    <div class="info-address col-sm-12">
+                                        <a href="">Bulgaria</a>
+                                        <a href="">Burgas Province</a>
+                                        <a href="">Kosharitsa</a>
+                                    </div>
+                                    <h2 class="info-title col-sm-12" itemprop="name">
+                                        <a href="" title="undefined" target="_blank">Apartments for sale in residence Sunset Deluxe Romana in Kosharitsa</a>
+                                    </h2>
+                                    <p class="info-details col-sm-12">
+                                        <span itemprop="offers" itemscope="" itemtype="http://schema.org/AggregateOffer">
+                                            <span itemprop="price" class="price-wrapper"><span itemprop="lowPrice">17 024</span>&nbsp;–&nbsp;
+                                                <span itemprop="highPrice">79 000</span>&nbsp;
+                                                <span itemprop="priceCurrency" content="EUR">EUR</span>
+                                            </span>
+                                        </span>, 
+                                        <span>1</span>&nbsp;–&nbsp;
+                                        <span>3</span>&nbsp;rooms, 
+                                        <span>33</span>&nbsp;–&nbsp;
+                                        <span>136</span>&nbsp;m
+                                        <sup>2</sup>
+                                    </p>
+                                </div>
+                                <div>
+
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div id="scroll_up" class="to_top_visible hidden-xs"><span class="glyphicon glyphicon-arrow-up"></span></div>
                     <?php
-                    $i = 0;
-                    while ($i <= 10) {
-                        //echo $i%4;
-                        $result = $i % 4;
-                        switch ($result) {
-                            case 0:
-                                echo "singal image <br>";
-                                break;
-                            case 1:
-                                echo "two image<br>";
-                                break;
-                            case 2:
-                                echo "singal image<br>";
-                                break;
-                            case 3:
-                                echo "foure image<br>";
-                                break;
+                    /*
+                      $i = 0;
+                      while ($i <= 10) {
+                      //echo $i%4;
+                      $result = $i % 4;
+                      switch ($result) {
+                      case 0:
+                      echo "singal image <br>";
+                      break;
+                      case 1:
+                      echo "two image<br>";
+                      break;
+                      case 2:
+                      echo "singal image<br>";
+                      break;
+                      case 3:
+                      echo "foure image<br>";
+                      break;
 
-                            default:
-                                break;
-                        }
-                        $i++;
-                    }
+                      default:
+                      break;
+                      }
+                      $i++;
+                      } */
                     ?>
 
                 </div>

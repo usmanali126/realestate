@@ -8,13 +8,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"><img src="images/bismillah_Real_estate.jpg" style="width:100px;height:50px;"></a>
+      <a class="navbar-brand" href="index.php"><img src="images/bismillah_Real_estate.jpg" style="width:100px;height:50px;"></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="#">Add property</a></li>
+        <li><a href="add-property.php">Add property </a></li>
         <li><a href="#">Favorites</a></li>
         <li><a href="#">Contact information</a></li>
         <li><a href="#">About the company</a></li>

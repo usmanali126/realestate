@@ -5,3 +5,23 @@
  */
 
 
+$(document).ready(function () {
+//$('#scroll_up').css('display','none');
+    $(window).scroll(function () {
+        
+        if ($(this).scrollTop() > 700) {
+            $('#scroll_up').fadeIn();
+        } else {
+            $('#scroll_up').fadeOut();
+            
+        }
+    });
+
+    $('#scroll_up').click(function () {
+        $("html, body").animate({
+            scrollTop: 0
+        }, 600);
+        return false;
+    });
+
+});
