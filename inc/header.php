@@ -16,7 +16,7 @@
       <ul class="nav navbar-nav">
         <li><a href="add-property.php">Add property </a></li>
         <li><a href="#">Favorites</a></li>
-        <li><a href="#">Contact information</a></li>
+        <li><a href="contact.php">Contact information</a></li>
         <li><a href="#">About the company</a></li>
       </ul>
      

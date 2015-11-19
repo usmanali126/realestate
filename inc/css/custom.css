@@ -9,6 +9,7 @@ and open the template in the editor.
 */
 a{
     text-decoration:none;
+    //color: #337ab7;
 }
 .cookie-message-wrapper {
     padding-bottom: 22px;
@@ -308,6 +309,211 @@ a{
 .social-icon span {
     font-size: 20px;
 }
+.section-contact-page{
+    margin-top: -20px;
+}
+.section-contact-page .contact_top {
+    background: #eeeeee none repeat scroll 0 0;
+    color: #233140;
+    font-size: 16px;
+    line-height: 25px;
+    padding-bottom: 80px;
+    padding-top: 48px;
+    text-align: left;
+}
+.section-contact-page .contact_top .contact_image_holder {
+    margin-bottom: 0;
+    text-align: center;
+}
+.section-contact-page .contact_top h1 {
+    font-size: 30px;
+    margin-bottom: 19px;
+    padding-top: 70px;
+}
+.section-contact-page ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.contacts_holder a {
+    color: #233140;
+    text-decoration: none;
+}
+.contact_main .contact-section {
+    padding-top: 47px;
+}
+.above-form-section {
+    font-size: 16px;
+    line-height: 25px;
+    margin-bottom: 30px;
+    color: #4f5a66;
+    text-align: center;
+}
+.above-form-section .contact-section-title {
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-weight: 400;
+    color: #233140;
+    line-height: 40px;
+}
+.sup-free {
+    background: rgba(1, 119, 0, 0.54) none repeat scroll 0 0;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 9px;
+    left: 2px;
+    padding: 3px;
+    top: -8px;
+}
+.above-form-section .contact-section-text {
+    width: 515px;
+    margin: 0 auto;
+}
+.contact-form .form-message {
+    border-radius: 3px;
+    color: #ffffff;
+    display: none;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 20px;
+    padding: 11px 15px;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15);
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    padding-top: 22px;
+}
+.contact-form .form-message.error-form-message {
+    background: #eb5b3e none repeat scroll 0 0;
+    border: 1px solid #cc4e35;
+}
+.contact-form .form-message.success-form-message {
+    background: #92c361 none repeat scroll 0 0;
+    border: 1px solid #7ca653;
+}
+.contact-form .form-row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.contact-form .form-group {
+    float: left;
+    margin-bottom: 20px;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    width: 100%;
+}
+.contact-form .form-group {
+    margin-bottom: 30px;
+}
+.contact-form .form-group.form-group-name, .contact-form .form-group.form-group-email, .contact-form .form-group.form-group-phone {
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+}
+.contact-form .form-group.form-group-name, .contact-form .form-group.form-group-email, .contact-form .form-group.form-group-phone {
+    float: left;
+    width: 33.3333%;
+}
+.contact-form .form-inner-row {
+    margin-left: 0;
+    margin-right: 0;
+}
+.contact-form .form-group.form-group-button {
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    float: left;
+    width: 50%;
+    left: 50%;
+}
+.contact-form .submit {
+    background: #92c361 none repeat scroll 0 0;
+    border: 1px solid #a8adb3;
+    border-radius: 3px;
+    color: #fff;
+    display: block;
+    line-height: 1;
+    outline: medium none;
+    padding: 15px;
+    text-shadow: 0 -1px 0 #7ca653;
+    width: 100%;
+    font-size: 16px;
+    margin: 0 auto;
+    padding: 19px;
+}
+.contact-form .submit:hover {
+    background: #ACCC8A  none repeat scroll 0 0;
+}
+.contact-form .form-group-disclaimer {
+    font-size: 14px;
+    line-height: 18px;
+    text-align: left;
+    color: #7b838c;
+    margin-bottom: 0;
+}
+.contact-form .form-group.form-group-disclaimer {
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    float: left;
+    width: 50%;
+    right: 50%;
+}
+.glyphicon-lock::before {
+    content: "";
+    font-size: 20px;
+    left: 0;
+    position: absolute;
+    top: 10px;
+}
+.note-text {
+    margin-left: 25px;
+}
+.section-contact-page .contact_page_offices {
+    background: #eeeeee none repeat scroll 0 0;
+    font-size: 12px;
+    line-height: 18px;
+    padding-bottom: 30px;
+    padding-top: 55px;
+}
+.section-contact-page .contact_page_offices h2 {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 40px;
+    margin-bottom: 35px;
+    margin-top: 0;
+    text-align: center;
+}
+.objects-list-wrapper .object-item, .init-objects-holder .object-item {
+    color: #7b838c;
+    float: left;
+    margin-bottom: 20px;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    width: 50%;
+}
+.objects-list-wrapper .object-item .object-inner-wrapper, .init-objects-holder .object-item .object-inner-wrapper {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.objects-list-wrapper .object-item .object-thumbnail, .init-objects-holder .object-item .object-thumbnail {
+    position: relative;
+}
+.objects-list-wrapper .object-item .object-thumbnail .object-thumbnail-holder, .init-objects-holder .object-item .object-thumbnail .object-thumbnail-holder {
+    display: block;
+    height: 266px;
+    min-height: 266px;
+    overflow: hidden;
+}
+    
 footer{
     background: #e6e6e6 none repeat scroll 0 0;
     border-top: 1px solid #cccccc;
