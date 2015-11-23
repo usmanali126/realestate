@@ -513,7 +513,168 @@ a{
     min-height: 266px;
     overflow: hidden;
 }
-    
+    /*about page css*/
+    .about-section .about_section {
+    background: #ffffff none repeat scroll 0 0;
+    color: #233140;
+    font-size: 12px;
+    line-height: 18px;
+    padding-bottom: 40px;
+    padding-top: 40px;
+    text-align: center;
+}
+
+.about-section .about_section_top {
+    padding-bottom: 46px;
+    padding-top: 55px;
+}
+
+.about-section .about_section.about_section_grey {
+    background: #eee none repeat scroll 0 0;
+    color: #233140;
+    font-size: 16px;
+    line-height: 25px;
+    padding-bottom: 46px;
+   // padding-top: 55px;
+}
+ 
+.about-section .about_section_top .about-top-col {
+    padding-left: 147px;
+    padding-right: 147px;
+}
+.about-section .about_section_sell {
+    padding-bottom: 57px;
+    padding-top: 55px;
+    text-align: left;
+    font-size: 16px;
+    line-height: 25px;
+}    
+ .about-section .about_section_sell .about-image-col {
+    padding-top: 5px;
+}
+.about-section .about_section_sell .about_text {
+    margin-bottom: 30px;
+}
+.about-section .about_section h2 {
+    font-size: 30px;
+    line-height: 40px;
+    margin-bottom: 18px;
+    font-weight: 400px;
+    margin-top: 0px;
+}
+.about-section .about_section_sell .about_section_sell_link {
+    color: #7b838c;
+    text-decoration: underline;
+}
+
+.about-section .about_section_search {
+    background: #eee none repeat scroll 0 0;
+    font-size: 16px;
+    line-height: 25px;
+    padding-bottom: 80px;
+    padding-top: 80px;
+    text-align: left;
+     color: #233140;
+}
+.about-section .about_section_search .about-image-col {
+    text-align: right;
+}
+.about-section .about_section .about_text {
+    margin-bottom: 0;
+}
+.about-section .about_section_search h2 {
+    padding-top: 45px;
+}
+
+.about-section .about_section_investments {
+    padding-bottom: 60px;
+    text-align: left;
+    font-size: 16px;
+    line-height: 25px;
+}
+.figure-stripe-down {
+    background: #92c361 none repeat scroll 0 0;
+    height: 1px;
+    margin-bottom: 55px;
+}
+.figure-stripe-down span {
+    background: #92c361 none repeat scroll 0 0;
+    display: block;
+    height: 1px;
+    margin: 0 auto;
+    position: relative;
+    width: 128px;
+}
+.figure-stripe-down span::after {
+    border-color: #92c361 transparent transparent;
+    border-style: solid;
+    border-width: 12px 12px 0;
+    content: "";
+    display: block;
+    height: 0;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0;
+    z-index: 4;
+}
+.figure-stripe-down span::before {
+    border-color: #ffffff transparent transparent;
+    border-style: solid;
+    border-width: 11px 11px 0;
+    content: "";
+    display: block;
+    height: 0;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0;
+    z-index: 5;
+}
+
+.above-form-section {
+    color: #4f5a66;
+    font-size: 16px;
+    line-height: 25px;
+    margin-bottom: 27px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+/*single post page css*/
+
+.single-object_post_type #single-page-object-item {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    color: #233140;
+    font-size: 14px;
+    line-height: 30px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    padding-bottom: 80px;
+}
+.single-object_post_type .images-slider-holder {
+    background: #eee none repeat scroll 0 0;
+    margin-bottom: 20px;
+}
+.bx-wrapper {
+    margin-bottom: 0;
+    padding: 0;
+    position: relative;
+}
+.bx-wrapper .bx-viewport {
+    background: #fff none repeat scroll 0 0;
+    transform: translateZ(0px);
+    border: medium none;
+    border-radius: 2px 2px 0 0;
+    box-shadow: none;
+    left: 0;
+}
+    /*footer css*/
 footer{
     background: #e6e6e6 none repeat scroll 0 0;
     border-top: 1px solid #cccccc;
