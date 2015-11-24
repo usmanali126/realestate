@@ -71,7 +71,7 @@ and open the template in the editor.
                             <div>
                                 <a itemprop="url" itemref="bbc" href="/"><span itemprop="title">Real Estate Catalogue</span></a>
                             </div>
-                            <div itemref="cbc" itemprop="child" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" id="bbc"><a itemprop="url" href="https://www.leadingproperties.com/properties-sale-spain" class="prevent"><span itemprop="title">Spain</span></a></div><div itemref="dbc" itemprop="child" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" id="cbc"><a itemprop="url" href="https://www.leadingproperties.com/property-for-sale-in-costa-blanca" class="prevent"><span itemprop="title">Costa Blanca</span></a></div><div itemprop="child" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" id="dbc"><a itemprop="url" href="#" class="prevent"><span itemprop="title">Guardamar del Segura</span></a></div><div class="object_sku">ES-82517</div>
+                            <div itemref="cbc" itemprop="child" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" id="bbc"><a itemprop="url" href="" class="prevent"><span itemprop="title">Spain</span></a></div><div itemref="dbc" itemprop="child" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" id="cbc"><a itemprop="url" href="" class="prevent"><span itemprop="title">Costa Blanca</span></a></div><div itemprop="child" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" id="dbc"><a itemprop="url" href="#" class="prevent"><span itemprop="title">Guardamar del Segura</span></a></div><div class="object_sku">ES-82517</div>
                         </div>
 
 
@@ -169,7 +169,7 @@ and open the template in the editor.
                                                 <i class="glyphicon "></i>
                                                 <p class="note-text">
                                                     Your contact details will be used only to provide you with more information about the property.
-                                                    <a href="https://www.leadingproperties.com/protection-policy-personal-information/">Read more</a> about our Privacy policy
+                                                    <a href="">Read more</a> about our Privacy policy
                                                 </p>
                                             </div>
                                         </div>
@@ -185,15 +185,15 @@ and open the template in the editor.
 
                 <div class="clearfix" id="object_navigation">
 
-                    <a href="https://www.leadingproperties.com/es-4041-3-story-villa-for-sale-javea" class="col-xs-4 prev-btn text-center">
+                    <a href="" class="col-xs-4 prev-btn text-center">
                         <i class="glyphicon glyphicon-arrow-left"></i> <span class="hidden-xs">previous property</span>
                     </a>
 
-                    <a href="https://www.leadingproperties.com" class="col-xs-4 back-btn text-center">
+                    <a href="" class="col-xs-4 back-btn text-center">
                         <i class="glyphicon glyphicon-share-alt icon-flipped"></i> <span class="hidden-xs">back to the list</span>
                     </a>
 
-                    <a href="https://www.leadingproperties.com/" class="col-xs-4 next-btn text-center disabled">
+                    <a href="" class="col-xs-4 next-btn text-center disabled">
                         <span class="hidden-xs">next property</span> <i class="glyphicon glyphicon-arrow-right"></i>
                     </a>
 
@@ -202,21 +202,21 @@ and open the template in the editor.
 
                 <div id="similar-objects"><h2 class="similar-objects-title">Similar properties for sale:</h2>
                     <div class="init-content-holder objects-list-wrapper" id="init-objects-holder">
-                        <article itemtype="http://schema.org/Product" itemscope="" class="object-item object-item-regular">
+                        <article itemtype="" itemscope="" class="object-item object-item-regular">
                             <div class="object-inner-wrapper">
 
                                 <div class="object-thumbnail">
-                                    <a href="https://www.leadingproperties.com/es-82481-bungalow-for-sale-in-guardamar-del-segura-costa-blanca" target="_self" itemprop="url" title="Bungalow for sale in Guardamar del Segura, Costa Blanca" class="object-thumbnail-holder"><img src="https://d18mncbmmvtpqd.cloudfront.net/2015/11/136.jpg" itemprop="image" alt="Bungalow for sale in Guardamar del Segura, Costa Blanca" class="img-responsive"></a>      <div data-obj_id="82481" class="add-favorite-button">
+                                    <a href="" target="_self" itemprop="url" title="Bungalow for sale in Guardamar del Segura, Costa Blanca" class="object-thumbnail-holder"><img src="https://d18mncbmmvtpqd.cloudfront.net/2015/11/136.jpg" itemprop="image" alt="Bungalow for sale in Guardamar del Segura, Costa Blanca" class="img-responsive"></a>      <div data-obj_id="82481" class="add-favorite-button">
                                         <span class="glyphicon glyphicon-bookmark"><span class="glyphicon glyphicon-star"></span></span>
                                     </div>
                                 </div>
 
                                 <div class="object-info-holder">
                                     <div class="info-address">
-                                        <a href="https://www.leadingproperties.com/properties-sale-spain" title="Spain" class="">Spain</a><a href="https://www.leadingproperties.com/property-for-sale-in-costa-blanca" title="Costa Blanca" class="">Costa Blanca</a><a href="https://www.leadingproperties.com/" title="Guardamar del Segura" class="empty">Guardamar del Segura</a>
+                                        <a href="" title="Spain" class="">Spain</a><a href="" title="Costa Blanca" class="">Costa Blanca</a><a href="" title="Guardamar del Segura" class="empty">Guardamar del Segura</a>
                                     </div>
                                     <h2 itemprop="name" class="info-title">
-                                        <a href="https://www.leadingproperties.com/es-82481-bungalow-for-sale-in-guardamar-del-segura-costa-blanca" target="_self" title="Bungalow for sale in Guardamar del Segura, Costa Blanca">Bungalow for sale in Guardamar del Segura, Costa Blanca</a>
+                                        <a href="" target="_self" title="Bungalow for sale in Guardamar del Segura, Costa Blanca">Bungalow for sale in Guardamar del Segura, Costa Blanca</a>
                                     </h2>
                                     <p class="info-details">
                                         <span itemtype="http://schema.org/AggregateOffer" itemscope="" itemprop="offers"><span itemprop="lowPrice">149 000</span>&nbsp;<span content="EUR" itemprop="priceCurrency">EUR</span></span>, <span>4&nbsp;rooms</span>, <span>98&nbsp;m<sup>2</sup></span>
@@ -229,17 +229,17 @@ and open the template in the editor.
                             <div class="object-inner-wrapper">
 
                                 <div class="object-thumbnail">
-                                    <a href="https://www.leadingproperties.com/es-82184-apartment-for-sale-in-guardamar-del-segura-costa-blanca" target="_self" itemprop="url" title="Apartment for sale in Guardamar del Segura, Costa Blanca" class="object-thumbnail-holder"><img src="https://d18mncbmmvtpqd.cloudfront.net/2015/11/05.jpg" itemprop="image" alt="Apartment for sale in Guardamar del Segura, Costa Blanca" class="img-responsive"></a>      <div data-obj_id="82184" class="add-favorite-button">
+                                    <a href="" target="_self" itemprop="url" title="Apartment for sale in Guardamar del Segura, Costa Blanca" class="object-thumbnail-holder"><img src="https://d18mncbmmvtpqd.cloudfront.net/2015/11/05.jpg" itemprop="image" alt="Apartment for sale in Guardamar del Segura, Costa Blanca" class="img-responsive"></a>      <div data-obj_id="82184" class="add-favorite-button">
                                         <span class="glyphicon glyphicon-bookmark"><span class="glyphicon glyphicon-star"></span></span>
                                     </div>
                                 </div>
 
                                 <div class="object-info-holder">
                                     <div class="info-address">
-                                        <a href="https://www.leadingproperties.com/properties-sale-spain" title="Spain" class="">Spain</a><a href="https://www.leadingproperties.com/property-for-sale-in-costa-blanca" title="Costa Blanca" class="">Costa Blanca</a><a href="https://www.leadingproperties.com/" title="Guardamar del Segura" class="empty">Guardamar del Segura</a>
+                                        <a href="" title="Spain" class="">Spain</a><a href="" title="Costa Blanca" class="">Costa Blanca</a><a href="" title="Guardamar del Segura" class="empty">Guardamar del Segura</a>
                                     </div>
                                     <h2 itemprop="name" class="info-title">
-                                        <a href="https://www.leadingproperties.com/es-82184-apartment-for-sale-in-guardamar-del-segura-costa-blanca" target="_self" title="Apartment for sale in Guardamar del Segura, Costa Blanca">Apartment for sale in Guardamar del Segura, Costa Blanca</a>
+                                        <a href="" target="_self" title="Apartment for sale in Guardamar del Segura, Costa Blanca">Apartment for sale in Guardamar del Segura, Costa Blanca</a>
                                     </h2>
                                     <p class="info-details">
                                         <span itemtype="http://schema.org/AggregateOffer" itemscope="" itemprop="offers"><span itemprop="lowPrice">245 000</span>&nbsp;<span content="EUR" itemprop="priceCurrency">EUR</span></span>, <span>3&nbsp;rooms</span>, <span>118&nbsp;m<sup>2</sup></span>
@@ -299,7 +299,7 @@ and open the template in the editor.
                                 <div class="security-warning col-md-6 col-sm-12 col-md-pull-6"><i class="icon icon-15 icon-lock"></i>
 
                                     <p class="warning-text">Your contact details will be used only to provide you with more information about the property.
-                                        <a href="/en/protection-policy-personal-information/">Read more</a> about our Privacy policy
+                                        <a href="">Read more</a> about our Privacy policy
                                     </p>
                                 </div>
                             </form>
