@@ -34,15 +34,33 @@ and open the template in the editor.
                     <div class="images-slider-holder ">
                         <div class="bx-wrapper">
                             <div class="bx-viewport">
-                                <div class="bx-wrapper" style="max-width: 100%;"><div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 551px;"><ul class="bxslider" style="width: 915%; position: relative; transition-duration: 0s; transform: translate3d(-978px, 0px, 0px); opacity: 1;"><li style="float: left; list-style: outside none none; position: relative; width: 938px;" class="bx-clone"><img itemprop="image" src="https://d18mncbmmvtpqd.cloudfront.net/2015/11/719.jpg"></li>
-                                            <li style="float: left; list-style: outside none none; position: relative; width: 938px;"><img itemprop="image" src="https://d18mncbmmvtpqd.cloudfront.net/2015/11/137.jpg"></li>
-                                            <li style="float: left; list-style: outside none none; position: relative; width: 938px;"><img itemprop="image" src="https://d18mncbmmvtpqd.cloudfront.net/2015/11/229.jpg"></li>
-                                            <li style="float: left; list-style: outside none none; position: relative; width: 938px;"><img itemprop="image" src="https://d18mncbmmvtpqd.cloudfront.net/2015/11/327.jpg"></li>
-                                            <li style="float: left; list-style: outside none none; position: relative; width: 938px;"><img itemprop="image" src="https://d18mncbmmvtpqd.cloudfront.net/2015/11/427.jpg"></li>
-                                            <li style="float: left; list-style: outside none none; position: relative; width: 938px;"><img itemprop="image" src="https://d18mncbmmvtpqd.cloudfront.net/2015/11/523.jpg"></li>
-                                            <li style="float: left; list-style: outside none none; position: relative; width: 938px;"><img itemprop="image" src="https://d18mncbmmvtpqd.cloudfront.net/2015/11/622.jpg"></li>
-                                            <li style="float: left; list-style: outside none none; position: relative; width: 938px;"><img itemprop="image" src="https://d18mncbmmvtpqd.cloudfront.net/2015/11/719.jpg"></li>
-                                            <li style="float: left; list-style: outside none none; position: relative; width: 938px;" class="bx-clone"><img itemprop="image" src="https://d18mncbmmvtpqd.cloudfront.net/2015/11/137.jpg"></li></ul></div><div class="bx-controls bx-has-pager bx-has-controls-direction"><div class="bx-pager bx-default-pager"><div class="bx-pager-item"><a class="bx-pager-link active" data-slide-index="0" href="">1</a></div><div class="bx-pager-item"><a class="bx-pager-link" data-slide-index="1" href="">2</a></div><div class="bx-pager-item"><a class="bx-pager-link" data-slide-index="2" href="">3</a></div><div class="bx-pager-item"><a class="bx-pager-link" data-slide-index="3" href="">4</a></div><div class="bx-pager-item"><a class="bx-pager-link" data-slide-index="4" href="">5</a></div><div class="bx-pager-item"><a class="bx-pager-link" data-slide-index="5" href="">6</a></div><div class="bx-pager-item"><a class="bx-pager-link" data-slide-index="6" href="">7</a></div></div><div class="bx-controls-direction"><a href="" class="bx-prev"></a><a href="" class="bx-next"></a></div></div></div>
+                                <div data-ride="carousel" class="carousel slide" id="myCarousel">
+                                    <!-- Indicators -->
+                                    <ol class="carousel-indicators">
+                                        <li data-slide-to="0" data-target="#myCarousel" class="active" ></li>
+                                        <li data-slide-to="1" data-target="#myCarousel" class=""></li>
+                                        <li data-slide-to="2" data-target="#myCarousel" class=""></li>
+                                    </ol>
+                                    <div role="listbox" class="carousel-inner">
+                                        <div class="item active">
+                                            <img alt="First slide" src="images/img1.jpg" class="first-slide">
+                                        </div>
+                                        <div class="item ">
+                                            <img alt="Second slide" src="images/img2.jpg" class="second-slide">
+                                        </div>
+                                        <div class="item">
+                                            <img alt="Third slide" src="images/img3.jpg" class="third-slide">
+                                        </div>
+                                    </div>
+                                    <a data-slide="prev" role="button" href="#myCarousel" class="left carousel-control">
+                                        <span aria-hidden="true" class="glyphicon glyphicon-chevron-left"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a data-slide="next" role="button" href="#myCarousel" class="right carousel-control">
+                                        <span aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -65,7 +83,7 @@ and open the template in the editor.
                                 <div class="row">
                                     <div class="object_info_left col-sm-12">
                                         <div itemtype="http://schema.org/AggregateOffer" itemscope="" itemprop="offers" class="row price-row">
-                                            <p itemprop="price" class="object_price"><span itemprop="lowPrice">132 000</span>&nbsp;<span content="EUR" itemprop="priceCurrency">EUR</span></p><span data-obj_id="82517" class="icon-favorites_1 add-favorite-button"></span></div>
+                                            <p itemprop="price" class="object_price"><span itemprop="lowPrice">132 000</span>&nbsp;<span content="EUR" itemprop="priceCurrency">EUR</span></p><span data-obj_id="82517" class="glyphicon glyphicon-bookmark"><span class="glyphicon glyphicon-star"></span></span></div>
 
                                         <div itemprop="description" class="description">
                                             <p>This new modern apartment is&nbsp;located in&nbsp;Villamartin on&nbsp;the Southern Costa Blanca and overlooks the sea. Layout: 2&nbsp;bedrooms, 2&nbsp;bathrooms, a&nbsp;living room, a&nbsp;terrace. Close to&nbsp;a&nbsp;golf club, shopping centers and beaches. The residence features several swimming pools, a&nbsp;spa, a&nbsp;hot tub, a&nbsp;gym, saunas.</p>
@@ -87,7 +105,7 @@ and open the template in the editor.
 
                                         <noindex>
                                             <a rel="nofollow" target="_blank" class="icon_link" href="https://www.google.com/maps/place//@38.0851461,-0.651282300000048,14z">
-                                                <span class="icon icon-13">&nbsp;</span> <span class="map_location_text">show on the map</span>
+                                                <span class="glyphicon glyphicon-globe"></span> <span class="map_location_text">show on the map</span>
                                             </a>
                                         </noindex>
 
@@ -123,7 +141,7 @@ and open the template in the editor.
                                         <div class="object_download">
                                             <div class="od_carrot">
                                                 <div class="get_info_text">
-                                                    <p>Get detailed information about the property: additional photos plans and prices<sup class="icon-free icon-21 icon"></sup></p>
+                                                    <p>Get detailed information about the property: additional photos plans and prices<sup class="sup-free">FREE</sup></p>
                                                 </div>
                                                 <div class="object_download_carrot"></div>
                                             </div>
@@ -148,7 +166,7 @@ and open the template in the editor.
                                         </div>
                                         <div class="disclaimer-note">
                                             <div class="note-holder">
-                                                <i class="icon-lock-new"></i>
+                                                <i class="glyphicon "></i>
                                                 <p class="note-text">
                                                     Your contact details will be used only to provide you with more information about the property.
                                                     <a href="https://www.leadingproperties.com/protection-policy-personal-information/">Read more</a> about our Privacy policy
@@ -168,15 +186,15 @@ and open the template in the editor.
                 <div class="clearfix" id="object_navigation">
 
                     <a href="https://www.leadingproperties.com/es-4041-3-story-villa-for-sale-javea" class="col-xs-4 prev-btn text-center">
-                        <i class="icon-07"></i> <span class="hidden-xs">previous property</span>
+                        <i class="glyphicon glyphicon-arrow-left"></i> <span class="hidden-xs">previous property</span>
                     </a>
 
                     <a href="https://www.leadingproperties.com" class="col-xs-4 back-btn text-center">
-                        <i class="icon-34"></i> <span class="hidden-xs">back to the list</span>
+                        <i class="glyphicon glyphicon-share-alt icon-flipped"></i> <span class="hidden-xs">back to the list</span>
                     </a>
 
                     <a href="https://www.leadingproperties.com/" class="col-xs-4 next-btn text-center disabled">
-                        <span class="hidden-xs">next property</span> <i class="icon-11"></i>
+                        <span class="hidden-xs">next property</span> <i class="glyphicon glyphicon-arrow-right"></i>
                     </a>
 
                 </div>
@@ -189,7 +207,7 @@ and open the template in the editor.
 
                                 <div class="object-thumbnail">
                                     <a href="https://www.leadingproperties.com/es-82481-bungalow-for-sale-in-guardamar-del-segura-costa-blanca" target="_self" itemprop="url" title="Bungalow for sale in Guardamar del Segura, Costa Blanca" class="object-thumbnail-holder"><img src="https://d18mncbmmvtpqd.cloudfront.net/2015/11/136.jpg" itemprop="image" alt="Bungalow for sale in Guardamar del Segura, Costa Blanca" class="img-responsive"></a>      <div data-obj_id="82481" class="add-favorite-button">
-                                        <span class="icon icon-favorites_2"></span><span class="icon icon-favorites_white_bg"></span>
+                                        <span class="glyphicon glyphicon-bookmark"><span class="glyphicon glyphicon-star"></span></span>
                                     </div>
                                 </div>
 
@@ -212,7 +230,7 @@ and open the template in the editor.
 
                                 <div class="object-thumbnail">
                                     <a href="https://www.leadingproperties.com/es-82184-apartment-for-sale-in-guardamar-del-segura-costa-blanca" target="_self" itemprop="url" title="Apartment for sale in Guardamar del Segura, Costa Blanca" class="object-thumbnail-holder"><img src="https://d18mncbmmvtpqd.cloudfront.net/2015/11/05.jpg" itemprop="image" alt="Apartment for sale in Guardamar del Segura, Costa Blanca" class="img-responsive"></a>      <div data-obj_id="82184" class="add-favorite-button">
-                                        <span class="icon icon-favorites_2"></span><span class="icon icon-favorites_white_bg"></span>
+                                        <span class="glyphicon glyphicon-bookmark"><span class="glyphicon glyphicon-star"></span></span>
                                     </div>
                                 </div>
 
@@ -295,8 +313,7 @@ and open the template in the editor.
         </div>
 
         <footer>
-            <?php
-                     include 'inc/footer.php'; ?>
+            <?php include 'inc/footer.php'; ?>
         </footer>
     </body>
 </html>

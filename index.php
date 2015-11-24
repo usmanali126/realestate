@@ -87,7 +87,7 @@ and open the template in the editor.
                         <article class="object-item object-item-regular object-wide col-sm-12">
                             <div class="object-inner-wrapper">
                                 <div class="object-thumbnail">
-                                    <a href="#">
+                                    <a href="single.php">
                                         <img class="img-responsive" src="images/1172.jpg">
                                     </a>
                                     <div class="add-favorite-button" data-obj_id="56198">
@@ -127,7 +127,7 @@ and open the template in the editor.
                         <article class="object-item object-item-regular object-wide col-sm-6">
                             <div class="object-inner-wrapper">
                                 <div class="object-thumbnail">
-                                    <a href="#">
+                                    <a href="single.php">
                                         <img class="img-responsive" src="images/1172.jpg">
                                     </a>
                                     <div class="add-favorite-button" data-obj_id="56198">
@@ -165,7 +165,7 @@ and open the template in the editor.
                         <article class="object-item object-item-regular object-wide col-sm-6">
                             <div class="object-inner-wrapper">
                                 <div class="object-thumbnail">
-                                    <a href="#">
+                                    <a href="single.php">
                                         <img class="img-responsive" src="images/1172.jpg">
                                     </a>
                                     <div class="add-favorite-button" data-obj_id="56198">
@@ -205,7 +205,7 @@ and open the template in the editor.
                         <article class="object-item object-item-regular object-wide col-sm-12">
                             <div class="object-inner-wrapper">
                                 <div class="object-thumbnail">
-                                    <a href="#">
+                                    <a href="single.php">
                                         <img class="img-responsive" src="images/1172.jpg">
                                     </a>
                                     <div class="add-favorite-button" data-obj_id="56198">
@@ -245,7 +245,7 @@ and open the template in the editor.
                         <article class="object-item object-item-regular object-wide col-sm-6">
                             <div class="object-inner-wrapper">
                                 <div class="object-thumbnail">
-                                    <a href="#">
+                                    <a href="single.php">
                                         <img class="img-responsive" src="images/1172.jpg">
                                     </a>
                                     <div class="add-favorite-button" data-obj_id="56198">
@@ -283,7 +283,7 @@ and open the template in the editor.
                         <article class="object-item object-item-regular object-wide col-sm-6">
                             <div class="object-inner-wrapper">
                                 <div class="object-thumbnail">
-                                    <a href="#">
+                                    <a href="single.php">
                                         <img class="img-responsive" src="images/1172.jpg">
                                     </a>
                                     <div class="add-favorite-button" data-obj_id="56198">
@@ -323,7 +323,7 @@ and open the template in the editor.
                         <article class="object-item object-item-regular object-wide col-sm-6">
                             <div class="object-inner-wrapper">
                                 <div class="object-thumbnail">
-                                    <a href="#">
+                                    <a href="single.php">
                                         <img class="img-responsive" src="images/1172.jpg">
                                     </a>
                                     <div class="add-favorite-button" data-obj_id="56198">
@@ -361,7 +361,7 @@ and open the template in the editor.
                         <article class="object-item object-item-regular object-wide col-sm-6">
                             <div class="object-inner-wrapper">
                                 <div class="object-thumbnail">
-                                    <a href="#">
+                                    <a href="single.php">
                                         <img class="img-responsive" src="images/1172.jpg">
                                     </a>
                                     <div class="add-favorite-button" data-obj_id="56198">

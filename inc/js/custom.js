@@ -23,5 +23,11 @@ $(document).ready(function () {
         }, 600);
         return false;
     });
+    
+    $('.carousel').each(function(){
+        $(this).carousel({
+            interval: false
+        });
+    });
 
 });
