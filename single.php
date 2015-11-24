@@ -79,7 +79,7 @@ and open the template in the editor.
                         <h1 itemprop="name" class="info-title">Apartment for sale in Villamartin, Costa Blanca</h1>
 
                         <div class="row single-object-row">
-                            <div class="single-object-main-col">
+                            <div class="single-object-main-col col-sm-12 col-md-8">
                                 <div class="row">
                                     <div class="object_info_left col-sm-12">
                                         <div itemtype="http://schema.org/AggregateOffer" itemscope="" itemprop="offers" class="row price-row">
@@ -120,7 +120,7 @@ and open the template in the editor.
                                     </div>
                                 </div>
                             </div>
-                            <div class="single-object-form-col">
+                            <div class="single-object-form-col col-sm-12 col-md-4">
                                 <div class="object_download_wrap clearfix">
                                     <div class="icon-info"></div>
                                     <form method="post" data-remote="true" accept-charset="UTF-8" action="/request" class="new_request" id="object_download_form"><input type="hidden" value="✓" name="utf8">
@@ -189,7 +189,7 @@ and open the template in the editor.
                         <i class="glyphicon glyphicon-arrow-left"></i> <span class="hidden-xs">previous property</span>
                     </a>
 
-                    <a href="" class="col-xs-4 back-btn text-center">
+                    <a href="index.php" class="col-xs-4 back-btn text-center">
                         <i class="glyphicon glyphicon-share-alt icon-flipped"></i> <span class="hidden-xs">back to the list</span>
                     </a>
 
@@ -202,7 +202,7 @@ and open the template in the editor.
 
                 <div id="similar-objects"><h2 class="similar-objects-title">Similar properties for sale:</h2>
                     <div class="init-content-holder objects-list-wrapper" id="init-objects-holder">
-                        <article itemtype="" itemscope="" class="object-item object-item-regular">
+                        <article itemtype="" itemscope="" class="object-item object-item-regular col-xs-12 col-sm-12 col-md-6">
                             <div class="object-inner-wrapper">
 
                                 <div class="object-thumbnail">
@@ -225,7 +225,7 @@ and open the template in the editor.
 
                             </div>
                         </article>
-                        <article itemtype="http://schema.org/Product" itemscope="" class="object-item object-item-regular">
+                        <article itemtype="http://schema.org/Product" itemscope="" class="object-item object-item-regular col-xs-12 col-sm-12 col-md-6">
                             <div class="object-inner-wrapper">
 
                                 <div class="object-thumbnail">

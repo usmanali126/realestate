@@ -515,7 +515,7 @@ a{
     padding-left: 15px;
     padding-right: 15px;
     position: relative;
-    width: 50%;
+    //width: 50%;
 }
 .objects-list-wrapper .object-item .object-inner-wrapper, .init-objects-holder .object-item .object-inner-wrapper {
     border: 1px solid #ccc;
@@ -706,7 +706,7 @@ article.object-item {
 }
 #single-page-object-item .single-object-main-col {
     float: left;
-    width: 60%;
+    //width: 60%;
     min-height: 1px;
     padding-left: 0;
     padding-right: 15px;
@@ -795,7 +795,7 @@ article.object-item {
     padding-right: 0;
     position: relative;
     float: left;
-    width: 40%;
+    //width: 40%;
 }
 .single-object-form-col .object_download_wrap {
     color: #4f5a66;
@@ -1011,4 +1011,16 @@ footer{
         white-space: nowrap;
     }
     
+}
+@media (min-width: 360px){
+#single-page-object-item .object-info-holder {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+}
+@media (min-width: 320px){
+#single-page-object-item .object-info-holder {
+    padding-left: 0px;
+    padding-right: 0px;
+}
 }
