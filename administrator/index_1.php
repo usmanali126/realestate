@@ -50,7 +50,7 @@ and open the template in the editor.
                                 <!-- Collect the nav links, forms, and other content for toggling -->
                                 <div class="collapse navbar-collapse" id="search-navbar-collapse-1">
                                     <ul class="nav navbar-nav">
-                                        <li><a href="#">Apartment</a></li>
+                                        <li><a href="#">Appartment</a></li>
                                         <li><a href="#">House</a></li>
                                         <li><a href="#">Commercial</a></li>
                                         <li class="dropdown sorting-ico"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><span class="glyphicon glyphicon-usd"></span> <span class="caret"></span></a>
