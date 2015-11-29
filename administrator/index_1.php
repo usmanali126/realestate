@@ -1,3 +1,6 @@
+<?php
+//print_r($_POST);
+?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -8,429 +11,138 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title></title>
-        <?php include 'inc/head.php'; ?>
+        <?php include 'head.php'; ?>
     </head>
     <body>
-
-        <div class="cookie-message-wrapper" id="cookie-message" style="display: block;">
-            <div class="container">
-                <div class="row">
-                    <div class="message-col col-xs-10 col-sm-9 col-md-10">
-                        <p>We use cookies to ensure that we give you the best experience on our website. If you continue without changing your settings, we'll assume that you are happy to receive all cookies from this website. If you would like to change your preferences you may do so by <a href="#">following the instructions</a>.</p>
-                    </div>
-                    <div class="button-col col-xs-2 col-sm-3 col-md-2">
-                        <span class="button-close-cookie" id="cookie-message-button"> <span class="hidden-xs button-close-cookie-text">Close</span><span class="icon icon-26"></span> </span>
-                    </div>
-                </div>
-            </div>
-        </div> 
-
         <header>
-            <?php include 'inc/header.php'; ?>
+            <?php include 'header.php'; ?>
         </header>
         <section class="section-main-content">
             <div class="container">
-                <div id="page-title-container">
-                    <h1>The Leading Properties of the Pakistan</h1>
-                </div>
-                <div class="search-panel-wrapper">
-                    <div id="search_panel" class="search_panel form_hidden">
-                        <nav class="navbar navbar-default" >
-                            <div class="">
-                                <!-- Brand and toggle get grouped for better mobile display -->
-                                <div class="navbar-header">
-                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#search-navbar-collapse-1" aria-expanded="false">
-                                        <span class="sr-only">Toggle navigation</span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                    </button>
-                                </div>
-
-                                <!-- Collect the nav links, forms, and other content for toggling -->
-                                <div class="collapse navbar-collapse" id="search-navbar-collapse-1">
-                                    <ul class="nav navbar-nav">
-                                        <li><a href="#">Appartment</a></li>
-                                        <li><a href="#">House</a></li>
-                                        <li><a href="#">Commercial</a></li>
-                                        <li class="dropdown sorting-ico"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><span class="glyphicon glyphicon-usd"></span> <span class="caret"></span></a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href=""><span class="glyphicon glyphicon-sort-by-attributes"></span><span> Cheapest first </span></a></li>
-                                                <li><a href=""><span class="glyphicon glyphicon-sort-by-attributes-alt"></span><span> Most expensive first </span></a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                    <form class="navbar-form nav navbar-nav navbar-right " role="search" id="hsearch" action="record.php" method="POST">
-                                        <div class="form-group">
-
-                                            <div id="custom-search-input">
-                                                <div class="input-group col-md-12">
-                                                    <input class="  search-query form-control" placeholder="Search" type="text">
-                                                    <span class="input-group-btn">
-                                                        <button class="btn btn-danger" type="button">
-                                                            <span class=" glyphicon glyphicon-search"></span>
-                                                        </button>
-                                                    </span>
-                                                </div>
-
+                <div class="row">
+                    <div class="col-sm-12 col-md-7">
+                        <div class="form">
+                            <form class="form-horizontal" id="newform" method="POST" action="">
+                                <fieldset><legend>Post Information</legend>
+                                    <div class="form-group">
+                                        <label for="name" class="col-sm-3 control-label">Name</label>
+                                        <div class="col-sm-9">
+                                            <input form="newform" type="text" class="form-control" id="name" name="name" placeholder="Post name">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="about" class="col-sm-3 control-label">About Property</label>
+                                        <div class="col-sm-9">
+                                            <textarea class="form-control" name="about" id="about" placeholder="Writy about property"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="category" class="col-sm-3 control-label">Post Category</label>
+                                        <div class="col-sm-9">
+                                            <select class="form-control" id="category" name="category">
+                                                <option value="apartments">Apartments</option>
+                                                <option value="house">House</option>
+                                                <option value="commercial">Commercial</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="city" class="col-sm-3 control-label">City Name</label>
+                                        <div class="col-sm-9">
+                                            <input form="newform" type="text" class="form-control" id="city" name="city" placeholder="Wirt property city">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="rooms" class="col-sm-3 control-label">No. of rooms</label>
+                                        <div class="col-sm-9">
+                                            <input form="newform" type="number" class="form-control" id="rooms" name="rooms" placeholder="Write Number of Rooms">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="area" class="col-sm-3 control-label">Total area in meter</label>
+                                        <div class="col-sm-9">
+                                            <input form="newform" type="number" class="form-control" id="area" name="area" placeholder="Write Property area in meters">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="price" class="col-sm-3 control-label">Property Price</label>
+                                        <div class="col-sm-9">
+                                            <input form="newform" type="number" class="form-control" id="price" name="price" placeholder="Write Property price">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="location" class="col-sm-3 control-label">Google Location link</label>
+                                        <div class="col-sm-9">
+                                            <input form="newform" type="text" class="form-control" id="location" name="location" placeholder="Add Property Google Loation link">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-3 col-sm-10">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input form="newform" type="checkbox" value="yes" name="parking"> Parking
+                                                </label>
                                             </div>
                                         </div>
-
-                                    </form>
-                                </div><!-- /.navbar-collapse -->
-                            </div><!-- /.container-fluid -->
-                        </nav>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="fimage" class="col-sm-3 control-label">Add Featured image</label>
+                                        <div class="col-sm-9">
+                                            <input form="newform" type="file"  id="fimage" name="fimage" >
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <fieldset><legend>Meta Data</legend>
+                                    <div class="form-group">
+                                        <label for="title" class="col-sm-3 control-label">Meta Title</label>
+                                        <div class="col-sm-9">
+                                            <input form="newform" type="text" class="form-control" id="title" name="title" placeholder="Write Property area in meters">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="keywords" class="col-sm-3 control-label">Meta Keywords</label>
+                                        <div class="col-sm-9">
+                                            <input form="newform" type="text" class="form-control" id="keywords" name="keywords" placeholder="Write Property area in meters">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="description" class="col-sm-3 control-label">Meta Description</label>
+                                        <div class="col-sm-9">
+                                            <input form="newform" type="text" class="form-control" id="description" name="description" placeholder="Write Property area in meters">
+                                        </div>
+                                    </div>
+                                </fieldset>
+            <!--<input type="text" name="name" form="newform">-->
+                                <!--<button value="submit" name="submit" form="newform"> submit</button>-->
+                            </form> 
+                        </div>
                     </div>
-                </div>
-                <div class="content">
-                    <div class="row">
-                        <article class="object-item object-item-regular object-wide col-sm-12">
-                            <div class="object-inner-wrapper">
-                                <div class="object-thumbnail">
-                                    <a href="single.php">
-                                        <img class="img-responsive" src="images/1172.jpg">
-                                    </a>
-                                    <div class="add-favorite-button" data-obj_id="56198">
-                                        <span class="glyphicon glyphicon-bookmark"><span class="glyphicon glyphicon-star"></span></span>
+                    <div class="col-sm-12 col-md-5">
+                        <div class="post-images row">
+                            <fieldset>
+                                <legend>Post Images</legend>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <input form="newform" type="file" name="image[]" multiple="" />
                                     </div>
                                 </div>
-                                <div class="object-info-holder">
-                                    <div class="info-address col-sm-12">
-                                        <a href="">Bulgaria</a>
-                                        <a href="">Burgas Province</a>
-                                        <a href="">Kosharitsa</a>
-                                    </div>
-                                    <h2 class="info-title col-sm-12" itemprop="name">
-                                        <a href="" title="undefined" target="_blank">Apartments for sale in residence Sunset Deluxe Romana in Kosharitsa</a>
-                                    </h2>
-                                    <p class="info-details col-sm-12">
-                                        <span itemprop="offers" itemscope="" itemtype="http://schema.org/AggregateOffer">
-                                            <span itemprop="price" class="price-wrapper"><span itemprop="lowPrice">17 024</span>&nbsp;–&nbsp;
-                                                <span itemprop="highPrice">79 000</span>&nbsp;
-                                                <span itemprop="priceCurrency" content="EUR">EUR</span>
-                                            </span>
-                                        </span>, 
-                                        <span>1</span>&nbsp;–&nbsp;
-                                        <span>3</span>&nbsp;rooms, 
-                                        <span>33</span>&nbsp;–&nbsp;
-                                        <span>136</span>&nbsp;m
-                                        <sup>2</sup>
-                                    </p>
+                                <div class="col-sm-12 images">
+                                    <img class="img-responsive" src="../images/1172.jpg" alt="" />
+                                    <img class="img-responsive" src="../images/1172.jpg" alt="" />
+                                    <img class="img-responsive" src="../images/1172.jpg" alt="" />
                                 </div>
-                                <div>
-
-                                </div>
-                            </div>
-                        </article> 
+                            </fieldset>
+                        </div>
+                        <!--<input form="newform" name="submit" type="button" value="submit" class="btn btn-default">-->
+                        <button value="submit" class="btn btn-primary" name="submit" form="newform"> submit</button>
                     </div>
-                    <div class="row">
-                        <article class="object-item object-item-regular object-wide col-sm-6">
-                            <div class="object-inner-wrapper">
-                                <div class="object-thumbnail">
-                                    <a href="single.php">
-                                        <img class="img-responsive" src="images/1172.jpg">
-                                    </a>
-                                    <div class="add-favorite-button" data-obj_id="56198">
-                                        <span class="glyphicon glyphicon-bookmark"><span class="glyphicon glyphicon-star"></span></span>
-                                    </div>
-                                </div>
-                                <div class="object-info-holder">
-                                    <div class="info-address col-sm-12">
-                                        <a href="">Bulgaria</a>
-                                        <a href="">Burgas Province</a>
-                                        <a href="">Kosharitsa</a>
-                                    </div>
-                                    <h2 class="info-title col-sm-12" itemprop="name">
-                                        <a href="" title="undefined" target="_blank">Apartments for sale in residence Sunset Deluxe Romana in Kosharitsa</a>
-                                    </h2>
-                                    <p class="info-details col-sm-12">
-                                        <span itemprop="offers" itemscope="" itemtype="http://schema.org/AggregateOffer">
-                                            <span itemprop="price" class="price-wrapper"><span itemprop="lowPrice">17 024</span>&nbsp;–&nbsp;
-                                                <span itemprop="highPrice">79 000</span>&nbsp;
-                                                <span itemprop="priceCurrency" content="EUR">EUR</span>
-                                            </span>
-                                        </span>, 
-                                        <span>1</span>&nbsp;–&nbsp;
-                                        <span>3</span>&nbsp;rooms, 
-                                        <span>33</span>&nbsp;–&nbsp;
-                                        <span>136</span>&nbsp;m
-                                        <sup>2</sup>
-                                    </p>
-                                </div>
-                                <div>
-
-                                </div>
-                            </div>
-                        </article>
-                        <article class="object-item object-item-regular object-wide col-sm-6">
-                            <div class="object-inner-wrapper">
-                                <div class="object-thumbnail">
-                                    <a href="single.php">
-                                        <img class="img-responsive" src="images/1172.jpg">
-                                    </a>
-                                    <div class="add-favorite-button" data-obj_id="56198">
-                                        <span class="glyphicon glyphicon-bookmark"><span class="glyphicon glyphicon-star"></span></span>
-                                    </div>
-                                </div>
-                                <div class="object-info-holder">
-                                    <div class="info-address col-sm-12">
-                                        <a href="">Bulgaria</a>
-                                        <a href="">Burgas Province</a>
-                                        <a href="">Kosharitsa</a>
-                                    </div>
-                                    <h2 class="info-title col-sm-12" itemprop="name">
-                                        <a href="" title="undefined" target="_blank">Apartments for sale in residence Sunset Deluxe Romana in Kosharitsa</a>
-                                    </h2>
-                                    <p class="info-details col-sm-12">
-                                        <span itemprop="offers" itemscope="" itemtype="http://schema.org/AggregateOffer">
-                                            <span itemprop="price" class="price-wrapper"><span itemprop="lowPrice">17 024</span>&nbsp;–&nbsp;
-                                                <span itemprop="highPrice">79 000</span>&nbsp;
-                                                <span itemprop="priceCurrency" content="EUR">EUR</span>
-                                            </span>
-                                        </span>, 
-                                        <span>1</span>&nbsp;–&nbsp;
-                                        <span>3</span>&nbsp;rooms, 
-                                        <span>33</span>&nbsp;–&nbsp;
-                                        <span>136</span>&nbsp;m
-                                        <sup>2</sup>
-                                    </p>
-                                </div>
-                                <div>
-
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="row">
-                        <article class="object-item object-item-regular object-wide col-sm-12">
-                            <div class="object-inner-wrapper">
-                                <div class="object-thumbnail">
-                                    <a href="single.php">
-                                        <img class="img-responsive" src="images/1172.jpg">
-                                    </a>
-                                    <div class="add-favorite-button" data-obj_id="56198">
-                                        <span class="glyphicon glyphicon-bookmark"><span class="glyphicon glyphicon-star"></span></span>
-                                    </div>
-                                </div>
-                                <div class="object-info-holder">
-                                    <div class="info-address col-sm-12">
-                                        <a href="">Bulgaria</a>
-                                        <a href="">Burgas Province</a>
-                                        <a href="">Kosharitsa</a>
-                                    </div>
-                                    <h2 class="info-title col-sm-12" itemprop="name">
-                                        <a href="" title="undefined" target="_blank">Apartments for sale in residence Sunset Deluxe Romana in Kosharitsa</a>
-                                    </h2>
-                                    <p class="info-details col-sm-12">
-                                        <span itemprop="offers" itemscope="" itemtype="http://schema.org/AggregateOffer">
-                                            <span itemprop="price" class="price-wrapper"><span itemprop="lowPrice">17 024</span>&nbsp;–&nbsp;
-                                                <span itemprop="highPrice">79 000</span>&nbsp;
-                                                <span itemprop="priceCurrency" content="EUR">EUR</span>
-                                            </span>
-                                        </span>, 
-                                        <span>1</span>&nbsp;–&nbsp;
-                                        <span>3</span>&nbsp;rooms, 
-                                        <span>33</span>&nbsp;–&nbsp;
-                                        <span>136</span>&nbsp;m
-                                        <sup>2</sup>
-                                    </p>
-                                </div>
-                                <div>
-
-                                </div>
-                            </div>
-                        </article> 
-                    </div>
-                    <div class="row">
-                        <article class="object-item object-item-regular object-wide col-sm-6">
-                            <div class="object-inner-wrapper">
-                                <div class="object-thumbnail">
-                                    <a href="single.php">
-                                        <img class="img-responsive" src="images/1172.jpg">
-                                    </a>
-                                    <div class="add-favorite-button" data-obj_id="56198">
-                                        <span class="glyphicon glyphicon-bookmark"><span class="glyphicon glyphicon-star"></span></span>
-                                    </div>
-                                </div>
-                                <div class="object-info-holder">
-                                    <div class="info-address col-sm-12">
-                                        <a href="">Bulgaria</a>
-                                        <a href="">Burgas Province</a>
-                                        <a href="">Kosharitsa</a>
-                                    </div>
-                                    <h2 class="info-title col-sm-12" itemprop="name">
-                                        <a href="" title="undefined" target="_blank">Apartments for sale in residence Sunset Deluxe Romana in Kosharitsa</a>
-                                    </h2>
-                                    <p class="info-details col-sm-12">
-                                        <span itemprop="offers" itemscope="" itemtype="http://schema.org/AggregateOffer">
-                                            <span itemprop="price" class="price-wrapper"><span itemprop="lowPrice">17 024</span>&nbsp;–&nbsp;
-                                                <span itemprop="highPrice">79 000</span>&nbsp;
-                                                <span itemprop="priceCurrency" content="EUR">EUR</span>
-                                            </span>
-                                        </span>, 
-                                        <span>1</span>&nbsp;–&nbsp;
-                                        <span>3</span>&nbsp;rooms, 
-                                        <span>33</span>&nbsp;–&nbsp;
-                                        <span>136</span>&nbsp;m
-                                        <sup>2</sup>
-                                    </p>
-                                </div>
-                                <div>
-
-                                </div>
-                            </div>
-                        </article>
-                        <article class="object-item object-item-regular object-wide col-sm-6">
-                            <div class="object-inner-wrapper">
-                                <div class="object-thumbnail">
-                                    <a href="single.php">
-                                        <img class="img-responsive" src="images/1172.jpg">
-                                    </a>
-                                    <div class="add-favorite-button" data-obj_id="56198">
-                                        <span class="glyphicon glyphicon-bookmark"><span class="glyphicon glyphicon-star"></span></span>
-                                    </div>
-                                </div>
-                                <div class="object-info-holder">
-                                    <div class="info-address col-sm-12">
-                                        <a href="">Bulgaria</a>
-                                        <a href="">Burgas Province</a>
-                                        <a href="">Kosharitsa</a>
-                                    </div>
-                                    <h2 class="info-title col-sm-12" itemprop="name">
-                                        <a href="" title="undefined" target="_blank">Apartments for sale in residence Sunset Deluxe Romana in Kosharitsa</a>
-                                    </h2>
-                                    <p class="info-details col-sm-12">
-                                        <span itemprop="offers" itemscope="" itemtype="http://schema.org/AggregateOffer">
-                                            <span itemprop="price" class="price-wrapper"><span itemprop="lowPrice">17 024</span>&nbsp;–&nbsp;
-                                                <span itemprop="highPrice">79 000</span>&nbsp;
-                                                <span itemprop="priceCurrency" content="EUR">EUR</span>
-                                            </span>
-                                        </span>, 
-                                        <span>1</span>&nbsp;–&nbsp;
-                                        <span>3</span>&nbsp;rooms, 
-                                        <span>33</span>&nbsp;–&nbsp;
-                                        <span>136</span>&nbsp;m
-                                        <sup>2</sup>
-                                    </p>
-                                </div>
-                                <div>
-
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="row">
-                        <article class="object-item object-item-regular object-wide col-sm-6">
-                            <div class="object-inner-wrapper">
-                                <div class="object-thumbnail">
-                                    <a href="single.php">
-                                        <img class="img-responsive" src="images/1172.jpg">
-                                    </a>
-                                    <div class="add-favorite-button" data-obj_id="56198">
-                                        <span class="glyphicon glyphicon-bookmark"><span class="glyphicon glyphicon-star"></span></span>
-                                    </div>
-                                </div>
-                                <div class="object-info-holder">
-                                    <div class="info-address col-sm-12">
-                                        <a href="">Bulgaria</a>
-                                        <a href="">Burgas Province</a>
-                                        <a href="">Kosharitsa</a>
-                                    </div>
-                                    <h2 class="info-title col-sm-12" itemprop="name">
-                                        <a href="" title="undefined" target="_blank">Apartments for sale in residence Sunset Deluxe Romana in Kosharitsa</a>
-                                    </h2>
-                                    <p class="info-details col-sm-12">
-                                        <span itemprop="offers" itemscope="" itemtype="http://schema.org/AggregateOffer">
-                                            <span itemprop="price" class="price-wrapper"><span itemprop="lowPrice">17 024</span>&nbsp;–&nbsp;
-                                                <span itemprop="highPrice">79 000</span>&nbsp;
-                                                <span itemprop="priceCurrency" content="EUR">EUR</span>
-                                            </span>
-                                        </span>, 
-                                        <span>1</span>&nbsp;–&nbsp;
-                                        <span>3</span>&nbsp;rooms, 
-                                        <span>33</span>&nbsp;–&nbsp;
-                                        <span>136</span>&nbsp;m
-                                        <sup>2</sup>
-                                    </p>
-                                </div>
-                                <div>
-
-                                </div>
-                            </div>
-                        </article>
-                        <article class="object-item object-item-regular object-wide col-sm-6">
-                            <div class="object-inner-wrapper">
-                                <div class="object-thumbnail">
-                                    <a href="single.php">
-                                        <img class="img-responsive" src="images/1172.jpg">
-                                    </a>
-                                    <div class="add-favorite-button" data-obj_id="56198">
-                                        <span class="glyphicon glyphicon-bookmark"><span class="glyphicon glyphicon-star"></span></span>
-                                    </div>
-                                </div>
-                                <div class="object-info-holder">
-                                    <div class="info-address col-sm-12">
-                                        <a href="">Bulgaria</a>
-                                        <a href="">Burgas Province</a>
-                                        <a href="">Kosharitsa</a>
-                                    </div>
-                                    <h2 class="info-title col-sm-12" itemprop="name">
-                                        <a href="" title="undefined" target="_blank">Apartments for sale in residence Sunset Deluxe Romana in Kosharitsa</a>
-                                    </h2>
-                                    <p class="info-details col-sm-12">
-                                        <span itemprop="offers" itemscope="" itemtype="http://schema.org/AggregateOffer">
-                                            <span itemprop="price" class="price-wrapper"><span itemprop="lowPrice">17 024</span>&nbsp;–&nbsp;
-                                                <span itemprop="highPrice">79 000</span>&nbsp;
-                                                <span itemprop="priceCurrency" content="EUR">EUR</span>
-                                            </span>
-                                        </span>, 
-                                        <span>1</span>&nbsp;–&nbsp;
-                                        <span>3</span>&nbsp;rooms, 
-                                        <span>33</span>&nbsp;–&nbsp;
-                                        <span>136</span>&nbsp;m
-                                        <sup>2</sup>
-                                    </p>
-                                </div>
-                                <div>
-
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div id="scroll_up" class="to_top_visible hidden-xs"><span class="glyphicon glyphicon-arrow-up"></span></div>
-                    <?php
-                    /*
-                      $i = 0;
-                      while ($i <= 10) {
-                      //echo $i%4;
-                      $result = $i % 4;
-                      switch ($result) {
-                      case 0:
-                      echo "singal image <br>";
-                      break;
-                      case 1:
-                      echo "two image<br>";
-                      break;
-                      case 2:
-                      echo "singal image<br>";
-                      break;
-                      case 3:
-                      echo "foure image<br>";
-                      break;
-
-                      default:
-                      break;
-                      }
-                      $i++;
-                      } */
-                    ?>
-
                 </div>
             </div>
         </section>
 
+
         <footer>
-            <?php include 'inc/footer.php'; ?>
+            <?php include 'footer.php'; ?>
         </footer>
     </body>
 </html>

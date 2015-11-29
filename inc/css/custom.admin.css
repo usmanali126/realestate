@@ -42,3 +42,6 @@ border-bottom: 0px;
     padding: 0;
     width: 30%;
 }
+.post-images.row .form-group.pull-right {
+    padding-right: 5px;
+}
