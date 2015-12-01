@@ -1,4 +1,5 @@
 <?php
+include_once '../classes/realestate.php';
 if (isset($_POST['submit'])) {
 //print_r($_POST);
     foreach ($_POST as $key => $value) {
@@ -11,14 +12,25 @@ if (isset($_POST['submit'])) {
     }
     //print_r($_DATA);
     if (isset($error)) {
-        echo 'error is set';
-        print_r($_Error);
+        //echo 'error is set';
+        //print_r($_Error);
+    }else{
+        $obj= new realestate();
+        //$result= $obj->store_data($_DATA);
     }
-    print_r($_DATA);
+    
+    //print_r($_DATA);
+    //echo implode(',' ,$_DATA['image']);
 }
 
 /* defult variable to set in input*/
 
+if ((!empty($_DATA['post_id'])) || isset($_DATA['post_id'])) {
+    $postid = 'value="' . $_DATA['post_id'] . '"';
+} else {
+    
+    $postid = 'value="' . time() . '"';
+}
 if ((!empty($_DATA['name'])) || isset($_DATA['name'])) {
     $name = 'value="' . $_DATA['name'] . '"';
 } else {
@@ -104,9 +116,15 @@ and open the template in the editor.
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12 col-md-7">
+                        <?php
+                        if(isset($error)){
+                            echo '<h3 class="text-danger">Fill the empty fileds first.</h3>';
+                        }
+                        ?>
                         <div class="form">
                             <form class="form-horizontal" id="form" action="" method="POST">
                                 <fieldset><legend>Post Information</legend>
+                                    <input type="hidden" class="form-control" id="postid" name="post_id" <?php echo $postid; ?>>
                                     <div class="form-group">
                                         <label for="name" class="col-sm-3 control-label">Name</label>
                                         <div class="col-sm-9">
@@ -208,7 +226,7 @@ and open the template in the editor.
                                 <legend>Post Images</legend>
                                 <div class="form-group">
                                     <div class="col-sm-12">
-                                        <input form="form" type="file" name="image[]" multiple="" />
+                                        <input form="form" type="file" name="images[]" multiple="" />
                                     </div>
                                 </div>
                                 <div class="col-sm-12 images">
