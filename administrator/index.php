@@ -2,6 +2,12 @@
 include_once '../classes/realestate.php';
 if (isset($_POST['submit'])) {
 //print_r($_POST);
+    
+//    if(empty($_FILES['fimage']['name'])){
+//        echo 'this is empty';
+//    }
+//    print_r($_FILES);
+//    exit();
     foreach ($_POST as $key => $value) {
         if (empty($_POST[$key])) {
             $_Error[$key] = $value;
@@ -10,13 +16,23 @@ if (isset($_POST['submit'])) {
             $_DATA[$key] = $value;
         }
     }
+    if(empty($_FILES['fimage']['name'])){
+       $fimage=TRUE;
+       $error = TRUE;
+    }
+    if(isset($_FILES["fimage"])){
+        $_DATA['basename']=$basename=basename($_FILES["fimage"]["name"]);
+        $_DATA['tmpname']=$tempname=$_FILES["fimage"]["tmp_name"];
+    }
+    if(isset($_FILES["images"])){
+        $_DATA['images']=$_FILES["images"];
+    }
+    
     //print_r($_DATA);
-    if (isset($error)) {
-        //echo 'error is set';
-        //print_r($_Error);
-    }else{
+    //exit();
+    if (!isset($error)) {
         $obj= new realestate();
-        $result= $obj->store_data($_DATA);
+        //$result= $obj->store_data($_DATA);
     }
     
     //print_r($_DATA);
@@ -117,12 +133,18 @@ and open the template in the editor.
                 <div class="row">
                     <div class="col-sm-12 col-md-7">
                         <?php
+                        if((isset ($fimage) && $fimage==TRUE)){
+                            echo '<h5 class="text-danger">Featured Image must be selected</h5>';
+                        }
                         if(isset($error)){
-                            echo '<h3 class="text-danger">Fill the empty fileds first.</h3>';
+                            echo '<h5 class="text-danger">Fill the empty fileds first.</h5>';
                         }elseif(isset ($result) && $result==TRUE){
-                            echo '<h3 class="text-danger">Record Added</h3>';
+                            echo '<h5 class="text-danger">Record Added</h5>';
                         }
                         ?>
+                    </div>
+                    <div class="col-sm-12 col-md-7">
+                        
                         <div class="form">
                             <form class="form-horizontal" id="form" action="" method="POST" enctype="multipart/form-data">
                                 <fieldset><legend>Post Information</legend>
