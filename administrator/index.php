@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
         //print_r($_Error);
     }else{
         $obj= new realestate();
-        //$result= $obj->store_data($_DATA);
+        $result= $obj->store_data($_DATA);
     }
     
     //print_r($_DATA);
@@ -60,7 +60,7 @@ if ((!empty($_DATA['city'])) || isset($_DATA['city'])) {
 if ((!empty($_DATA['rooms'])) || isset($_DATA['rooms'])) {
     $rooms = 'value="' . $_DATA['rooms'] . '"';
 } else {
-    $rooms = 'Write Number of Rooms';
+    $rooms = 'placeholder="Write Number of Rooms"';
 }
 if ((!empty($_DATA['area'])) || isset($_DATA['area'])) {
     $area = 'value="' . $_DATA['area'] . '"';
@@ -119,10 +119,12 @@ and open the template in the editor.
                         <?php
                         if(isset($error)){
                             echo '<h3 class="text-danger">Fill the empty fileds first.</h3>';
+                        }elseif(isset ($result) && $result==TRUE){
+                            echo '<h3 class="text-danger">Record Added</h3>';
                         }
                         ?>
                         <div class="form">
-                            <form class="form-horizontal" id="form" action="" method="POST">
+                            <form class="form-horizontal" id="form" action="" method="POST" enctype="multipart/form-data">
                                 <fieldset><legend>Post Information</legend>
                                     <input type="hidden" class="form-control" id="postid" name="post_id" <?php echo $postid; ?>>
                                     <div class="form-group">
@@ -145,9 +147,9 @@ and open the template in the editor.
                                         <label for="category" class="col-sm-3 control-label">Post Category</label>
                                         <div class="col-sm-9">
                                             <select class="form-control" id="category" name="category">
-                                                <option value="apartments" <?php if(isset($apartments)){echo $apartments;} ?>>Apartments</option>
-                                                <option value="house" <?php if(isset($house)){echo $house; } ?>>House</option>
-                                                <option value="commercial" <?php if(isset($commercial)){echo $commercial;} ?>>Commercial</option>
+                                                <option value="1" <?php if(isset($apartments)){echo $apartments;} ?>>Apartments</option>
+                                                <option value="2" <?php if(isset($house)){echo $house; } ?>>House</option>
+                                                <option value="3" <?php if(isset($commercial)){echo $commercial;} ?>>Commercial</option>
                                             </select>
                                         </div>
                                     </div>

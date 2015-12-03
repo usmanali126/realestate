@@ -1,3 +1,29 @@
+<?php
+if(isset($_POST['submit'])){
+//  print_r($_POST);
+//$param=$_POST['image'];
+print_r($_FILES);
+//echo $size = $_FILES["image"]["size"];
+//$param=$_FILES["img"]["tmp_name"];
+exit();
+$target_dir = "upload/";
+        //$size = $_FILES["img"]["size"];
+        $formate = 'dmYHis';
+        date_default_timezone_set('Asia/Karachi');
+        $timestemp = date($formate, time());
+        //$randstr = new realestate();
+        $ImgName = $timestemp . basename($_FILES["image"]["name"]);
+        $target_file = $target_dir . $ImgName;
+        //printf(move_uploaded_file($_POST['image'], $target_file));
+        if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                        echo 'uploaded';
+                        } else {
+                            echo "Sorry, there was an error uploading your file.";
+                        }
+        exit();  
+}
+
+    ?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -78,6 +104,10 @@ and open the template in the editor.
       </a>
     </div>
 </div>
+        <form action="" method="POST" enctype="multipart/form-data">
+            <input type="file" name="images[]" multiple="">
+            <input type="submit" name="submit">
+        </form>
         <footer>
             <?php
                      include 'inc/footer.php'; ?>
