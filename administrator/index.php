@@ -1,5 +1,29 @@
 <?php
 include_once '../classes/realestate.php';
+//echo session_status();
+$obj=new realestate();
+if($_SESSION['post_id'] && $_GET['token'] == TRUE){
+    $param= $_SESSION['post_id'][$_GET['edit']];
+    $result = $obj->get_post($param);
+    $edit=TRUE;
+}elseif(isset ($_SESSION['post_id']) && !isset ($_GET['token'])){
+    $param= $_SESSION['post_id'];
+    $result = $obj->get_post($param);
+    $edit=TRUE;
+}else{
+    echo 'session not set';
+}
+
+
+if(isset($edit) && $edit==TRUE){
+    while ($row = mysqli_fetch_array($result)) {
+        foreach ($row as $key => $value) {
+            $_DATA[$key]=$value;
+        }
+    }
+}
+
+print_r($_DATA);
 if (isset($_POST['submit'])) {
 //print_r($_POST);
     

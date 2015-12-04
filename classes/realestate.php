@@ -11,6 +11,7 @@
  *
  * @author Usman
  */
+session_start();
 class realestate {
 
     function connection() {
@@ -50,7 +51,9 @@ class realestate {
                     }
                 }
             }
-            return $result;
+            $_SESSION['post_id']=$param['post_id'];
+            header("Location:index.php?edit=true");
+            //return $result;
         }
 //        exit();
     }
@@ -59,6 +62,13 @@ class realestate {
         $link = $this->connection();
         $query = "SELECT * FROM post WHERE `post_id`='" . $param['post_id'] . "'";
         $result = mysqli_query($link, $query) or die(mysqli_error($link));
+        return $result;
+    }
+    
+    function get_data() {
+        $link=$this->connection();
+        $query="SELECT * FROM post";
+        $result=  mysqli_query($link, $query);
         return $result;
     }
 
