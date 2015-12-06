@@ -14,7 +14,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="icon-lock"><a href="add-property.php">New Post </a></li>
+          <li class="icon-lock"><a href="index.php">New Post </a></li>
         <li><a href="posts.php">Posts</a></li>
       </ul>
     <form class="navbar-form nav navbar-nav navbar-right " role="search" id="hsearch" action="record.php" method="POST">

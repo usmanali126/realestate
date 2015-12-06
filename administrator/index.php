@@ -2,30 +2,46 @@
 include_once '../classes/realestate.php';
 //echo session_status();
 $obj=new realestate();
-if($_SESSION['post_id'] && $_GET['token'] == TRUE){
-    $param= $_SESSION['post_id'][$_GET['edit']];
-    $result = $obj->get_post($param);
+//echo $_SESSION['post_id'];
+if(isset($_SESSION['post_id']) && isset($_GET['token']) && $_GET['token'] == TRUE){
+    $param ['post_id']= $_SESSION['post_id'][$_GET['edit']];
+    $result_edit = $obj->get_post($param);
     $edit=TRUE;
-}elseif(isset ($_SESSION['post_id']) && !isset ($_GET['token'])){
-    $param= $_SESSION['post_id'];
-    $result = $obj->get_post($param);
+    $_SESSION['post_id']=NULL;
+//    exit();
+}elseif(isset ($_SESSION['post_id']) && !isset ($_GET['token']) && isset ($_GET['edit'])){
+    $param['post_id']= $_SESSION['post_id'];
+//    exit();
+    $result_edit = $obj->get_post($param);
     $edit=TRUE;
 }else{
     echo 'session not set';
 }
 
+//while ($row1 = mysqli_fetch_row($result_edit)) {
+//    print_r($row1);
+//}
 
 if(isset($edit) && $edit==TRUE){
-    while ($row = mysqli_fetch_array($result)) {
+//    exit();
+    while ($row = mysqli_fetch_array($result_edit)) {
+//        print_r($row);
+//        exit();
         foreach ($row as $key => $value) {
             $_DATA[$key]=$value;
         }
     }
+    //$result=NULL;
+}else{
+    echo 'data variable not created';
 }
+//exit();
 
-print_r($_DATA);
+//print_r($result_edit);
+
 if (isset($_POST['submit'])) {
 //print_r($_POST);
+//exit();
     
 //    if(empty($_FILES['fimage']['name'])){
 //        echo 'this is empty';
@@ -40,23 +56,34 @@ if (isset($_POST['submit'])) {
             $_DATA[$key] = $value;
         }
     }
-    if(empty($_FILES['fimage']['name'])){
+    
+    if(empty($_FILES['fimage']['name']) && !isset($_GET['edit'])){
        $fimage=TRUE;
        $error = TRUE;
-    }
-    if(isset($_FILES["fimage"])){
+    }elseif(!empty ($_FILES['fimage']['name'])){
         $_DATA['basename']=$basename=basename($_FILES["fimage"]["name"]);
         $_DATA['tmpname']=$tempname=$_FILES["fimage"]["tmp_name"];
+    }else{
+        $_DATA['edit']=1;
+        $_DATA['basename']=$_DATA['fimage'];
     }
+    
+//    if(isset($_FILES["fimage"])){
+//        $_DATA['basename']=$basename=basename($_FILES["fimage"]["name"]);
+//        $_DATA['tmpname']=$tempname=$_FILES["fimage"]["tmp_name"];
+//    }
+    
+    
+    
     if(isset($_FILES["images"])){
         $_DATA['images']=$_FILES["images"];
     }
     
-    //print_r($_DATA);
-    //exit();
+//    print_r($_DATA);
+//    exit();
     if (!isset($error)) {
         $obj= new realestate();
-        //$result= $obj->store_data($_DATA);
+        $result= $obj->store_data($_DATA);
     }
     
     //print_r($_DATA);
@@ -81,13 +108,13 @@ if ((!empty($_DATA['about'])) || isset($_DATA['about'])) {
 }
 if ((!empty($_DATA['category'])) || isset($_DATA['category'])) {
     switch ($_DATA['category']) {
-        case 'apartments':
+        case '1':
             $apartments = 'selected=""';
             break;
-        case 'house':
+        case '2':
             $house = 'selected=""';
             break;
-        case 'commercial':
+        case '3':
             $commercial = 'selected=""';
             break;
     }  
@@ -244,6 +271,16 @@ and open the template in the editor.
                                             <input type="file"  id="fimage" name="fimage" >
                                         </div>
                                     </div>
+                                    <?php if(isset($_GET['edit']) && !empty($_DATA['fimage'])){?>
+                                    <div class="form-group">
+                                        <label for="fimage" class="col-sm-3 control-label">Featured image</label>
+                                        <div class="col-sm-9">
+                                            <img class="img-responsive fimage" src="../upload/<?php echo $_DATA['fimage']; ?>">
+                                            <input type="hidden"  form="form" name="fimage" value="<?php echo $_DATA['fimage']; ?>">
+                                            <button value="<?php echo $_DATA['fimage']; ?>" class="btn btn-danger delete" name="delete" type="button"> Delete</button>
+                                        </div>
+                                    </div>
+                                    <?php }?>
                                 </fieldset>
                                 <fieldset><legend>Meta Data</legend>
                                     <div class="form-group">
@@ -295,5 +332,6 @@ and open the template in the editor.
         <footer>
             <?php include 'footer.php'; ?>
         </footer>
+        <script></script>
     </body>
 </html>

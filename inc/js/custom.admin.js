@@ -29,5 +29,39 @@ $(document).ready(function () {
             interval: false
         });
     });
+    
+    $('.delete').on('click', function(){
+        var value=$(this).val();
+                confirm();
+        $.ajax({
+            url: './../classes/realestate.php',
+            type: 'POST',
+            data: {image_d: value},
+            success: function (result) {
+                alert(result);
+                console.log(result);
+                $(this).parent().parent('.form-group').remove()
+                //window.location.replace("record.php");
+//                }
+            },
+             error: function(jqxhr,textStatus,errorThrown)
+                    {
+                        console.log(jqxhr);
+                            console.log(textStatus);
+                            console.log(errorThrown);                               
+
+//                            for (key in jqxhr)
+//                                alert(key + ":" + jqxhr[key])                                                                 
+//                            for (key2 in textStatus)
+//                                alert(key + ":" + textStatus[key])
+//                            for (key3 in errorThrown)
+//                                alert(key + ":" + errorThrown[key])
+
+                   //<--- All those logs/alerts, don't say anything helpful, how can I understand what error is going on? ---->
+
+                }
+        });
+//        alert(value);
+    });
 
 });

@@ -25,13 +25,13 @@ and open the template in the editor.
                     <div class="col-sm-12">
                         <table class="table table-responsive table-hover">
                             <thead>
-                                <tr><td>Sr.</td><td>Post Name</td><td>Category</td><td>City</td><td>Featured Image</td></tr>
+                                <tr><th>Sr.</th><th>Post Name</th><th>Category</th><th>City</th><th>Featured Image</th></tr>
                             </thead>
                             <tbody>
                                 <?php 
                                 $i=1;
                                 while ($row = mysqli_fetch_array($result)) {?>
-                                <tr><td><?php echo $i ?></td><td><a href="index.php?edit=<?php echo $i ?>&token=TRUE"><?php echo $row['name'] ?></a></td><td><?php echo $row['category'] ?></td><td><?php echo $row['city'] ?></td><td><img src="../upload/<?php echo $row['fimage'] ?>"></td></tr>
+                                <tr><td><?php echo $i ?></td><td><a href="index.php?edit=<?php echo $i ?>&token=TRUE"><?php echo $row['name'] ?></a></td><td><?php echo $row['category'] ?></td><td><?php echo $row['city'] ?></td><td><img class="img-responsive" src="../upload/<?php echo $row['fimage'] ?>"></td></tr>
                                 <?php 
                                 $_SESSION['post_id'][$i]=$row['post_id'];
                                 $i++;

@@ -12,6 +12,18 @@
  * @author Usman
  */
 session_start();
+
+if (isset($_POST['image_d'])) {
+    $result=unlink('../upload/'.$_POST['image_d']);
+//    $obj = new realestate();
+//    $result = $obj->delete_fimage($_POST['image_d']);
+//    if ($result==TRUE) {
+        echo $result;
+//    } 
+//    exit;
+}
+
+
 class realestate {
 
     function connection() {
@@ -28,8 +40,13 @@ class realestate {
     }
 
     function store_data($param) {
-
-        $param['fimage'] = $this->image_name($param['basename']);
+        if(isset($param['edit'])){
+            $param['fimage']=$param['basename'];
+//            exit($param['fimage']);
+        }else{
+         $param['fimage'] = $this->image_name($param['basename']);   
+        }
+        
         //$param['images']=$_FILES["images"];
        // print_r($param['images']);
         //exit();
@@ -89,6 +106,14 @@ class realestate {
         $target_dir = "../upload/";
         $target_file = $target_dir . $ImgName;
         move_uploaded_file($tmpname, $target_file);
+    }
+    
+    function delete_fimage($param) {
+        $link=  $this->connection();
+        $query="DELETE FROM `post` WHERE `fimage`='".$param."'";
+        $result=  mysqli_query($link, $query) or die(mysqli_error($link));
+        return $result;
+        
     }
 
 }
