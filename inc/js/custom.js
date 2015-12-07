@@ -29,5 +29,9 @@ $(document).ready(function () {
             interval: false
         });
     });
+    
+    $('#cookie-message-button').on('click', function(){
+     $(this).parents('#cookie-message').remove();
+    });
 
 });

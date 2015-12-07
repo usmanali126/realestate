@@ -11,6 +11,9 @@ a{
     text-decoration:none;
     //color: #337ab7;
 }
+.navbar-inverse {
+    border-radius: 0px;
+}
 .cookie-message-wrapper {
     padding-bottom: 22px;
     padding-top: 20px;
