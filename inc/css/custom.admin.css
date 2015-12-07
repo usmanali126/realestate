@@ -36,11 +36,16 @@ font-weight: bold;
 width: auto;
 border-bottom: 0px;
 }
-.col-sm-12.images img {
+.images{
+    position: relative;
+    width: 30%;
+    margin-bottom: 10px;
+}
+.images img {
     display: inline;
     margin: 5px;
     padding: 0;
-    width: 30%;
+   // width: 30%;
 }
 .post-images.row .form-group.pull-right {
     padding-right: 5px;
@@ -55,7 +60,16 @@ border-bottom: 0px;
 .fimage{
     width: 50%;
 }
+.img-row{
+    margin-top: 10px;
+}
 .delete{
     margin-top: 10px;
-    
+}
+.remove{
+    cursor: pointer;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 16px;
 }

@@ -6,6 +6,7 @@ $obj=new realestate();
 if(isset($_SESSION['post_id']) && isset($_GET['token']) && $_GET['token'] == TRUE){
     $param ['post_id']= $_SESSION['post_id'][$_GET['edit']];
     $result_edit = $obj->get_post($param);
+    $post_images=$obj->get_images($param);
     $edit=TRUE;
     $_SESSION['post_id']=NULL;
 //    exit();
@@ -13,9 +14,10 @@ if(isset($_SESSION['post_id']) && isset($_GET['token']) && $_GET['token'] == TRU
     $param['post_id']= $_SESSION['post_id'];
 //    exit();
     $result_edit = $obj->get_post($param);
+    $post_images=$obj->get_images($param);
     $edit=TRUE;
 }else{
-    echo 'session not set';
+//    echo 'session not set';
 }
 
 //while ($row1 = mysqli_fetch_row($result_edit)) {
@@ -32,8 +34,9 @@ if(isset($edit) && $edit==TRUE){
         }
     }
     //$result=NULL;
+//    print_r($_DATA);
 }else{
-    echo 'data variable not created';
+//    echo 'data variable not created';
 }
 //exit();
 
@@ -73,10 +76,19 @@ if (isset($_POST['submit'])) {
 //        $_DATA['tmpname']=$tempname=$_FILES["fimage"]["tmp_name"];
 //    }
     
-    
-    
-    if(isset($_FILES["images"])){
+    if(!isset($_POST['parking'])){
+        $_DATA['parking']='no';
+    }else{
+        $_DATA['parking']='yes';
+    }
+//    print_r($_FILES["images"]);
+//    exit();
+    if(isset($_FILES["images"]) && !empty($_FILES["images"]["name"][0])){
         $_DATA['images']=$_FILES["images"];
+        $_DATA['images_empty']='no';
+    }else{
+        $_DATA['images']=$_FILES["images"];
+        $_DATA['images_empty']='yes';
     }
     
 //    print_r($_DATA);
@@ -144,8 +156,10 @@ if ((!empty($_DATA['location'])) || isset($_DATA['location'])) {
 } else {
     $location = 'placeholder="Add Property Google Loation link"';
 }
-if ((!empty($_DATA['parking'])) || isset($_DATA['parking'])) {
+if (((!empty($_DATA['parking'])) || isset($_DATA['parking'])) && $_DATA['parking']=='yes') {
     $parking = 'checked=""';
+}else{
+    $parking = '';
 }
 if ((!empty($_DATA['title'])) || isset($_DATA['title'])) {
     $title = 'value="' . $_DATA['title'] . '"';
@@ -260,7 +274,7 @@ and open the template in the editor.
                                         <div class="col-sm-offset-3 col-sm-10">
                                             <div class="checkbox">
                                                 <label>
-                                                    <input type="checkbox" value="yes"  name="parking" <?php if(isset($parking)){echo $parking ;}?>> Parking
+                                                    <input type="checkbox" name="parking" <?php if(isset($parking)){echo $parking ;}?>> Parking
                                                 </label>
                                             </div>
                                         </div>
@@ -314,10 +328,21 @@ and open the template in the editor.
                                         <input form="form" type="file" name="images[]" multiple="" />
                                     </div>
                                 </div>
-                                <div class="col-sm-12 images">
+                                <div class="col-sm-12 ">
+                                    <div class="row img-row">
+                                    <?php 
+                                    if(isset($post_images)){
+                                        while ($row1 = mysqli_fetch_array($post_images)) {
+                                    ?>
+                                    <div class="images col-sm-4">
+                                    <img class="img-responsive" src="../upload/<?php echo $row1['name']; ?>" alt="<?php echo $row1['name']; ?>" />
+                                    <sup class="glyphicon glyphicon-remove-circle remove"></sup>
+                                    </div>
+                                        <?php }} ?>
+                                        </div>
+<!--                                    <img class="img-responsive" src="../images/1172.jpg" alt="" />
                                     <img class="img-responsive" src="../images/1172.jpg" alt="" />
-                                    <img class="img-responsive" src="../images/1172.jpg" alt="" />
-                                    <img class="img-responsive" src="../images/1172.jpg" alt="" />
+                                    <img class="img-responsive" src="../images/1172.jpg" alt="" />-->
                                 </div>
                             </fieldset>
                             <div class="form-group pull-right">
