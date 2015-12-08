@@ -93,6 +93,20 @@ class realestate {
         return $result;
     }
     
+    function first_load(){
+        $link=  $this->connection();
+        $query="SELECT * FROM post ORDER BY post_id DESC LIMIT 3";
+        $result=  mysqli_query($link, $query);
+        return $result;
+    }
+    
+    function second_load($param){
+        $link=  $this->connection();
+        $query="SELECT * FROM post WHERE post_id < '$param' ORDER BY post_id DESC LIMIT 5";
+        $result=  mysqli_query($link, $query);
+        return $result;
+    }
+    
     function get_data() {
         $link=$this->connection();
         $query="SELECT * FROM post";
