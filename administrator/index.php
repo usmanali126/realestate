@@ -1,22 +1,22 @@
 <?php
 include_once '../classes/realestate.php';
 //echo session_status();
-$obj=new realestate();
+$obj = new realestate();
 //echo $_SESSION['post_id'];
-if(isset($_SESSION['post_id']) && isset($_GET['token']) && $_GET['token'] == TRUE){
-    $param ['post_id']= $_SESSION['post_id'][$_GET['edit']];
+if (isset($_SESSION['post_id']) && isset($_GET['token']) && $_GET['token'] == TRUE) {
+    $param ['post_id'] = $_SESSION['post_id'][$_GET['edit']];
     $result_edit = $obj->get_post($param);
-    $post_images=$obj->get_images($param);
-    $edit=TRUE;
-    $_SESSION['post_id']=NULL;
+    $post_images = $obj->get_images($param);
+    $edit = TRUE;
+    $_SESSION['post_id'] = NULL;
 //    exit();
-}elseif(isset ($_SESSION['post_id']) && !isset ($_GET['token']) && isset ($_GET['edit'])){
-    $param['post_id']= $_SESSION['post_id'];
+} elseif (isset($_SESSION['post_id']) && !isset($_GET['token']) && isset($_GET['edit'])) {
+    $param['post_id'] = $_SESSION['post_id'];
 //    exit();
     $result_edit = $obj->get_post($param);
-    $post_images=$obj->get_images($param);
-    $edit=TRUE;
-}else{
+    $post_images = $obj->get_images($param);
+    $edit = TRUE;
+} else {
 //    echo 'session not set';
 }
 
@@ -24,28 +24,26 @@ if(isset($_SESSION['post_id']) && isset($_GET['token']) && $_GET['token'] == TRU
 //    print_r($row1);
 //}
 
-if(isset($edit) && $edit==TRUE){
+if (isset($edit) && $edit == TRUE) {
 //    exit();
     while ($row = mysqli_fetch_array($result_edit)) {
 //        print_r($row);
 //        exit();
         foreach ($row as $key => $value) {
-            $_DATA[$key]=$value;
+            $_DATA[$key] = $value;
         }
     }
     //$result=NULL;
 //    print_r($_DATA);
-}else{
+} else {
 //    echo 'data variable not created';
 }
 //exit();
-
 //print_r($result_edit);
 
 if (isset($_POST['submit'])) {
 //print_r($_POST);
 //exit();
-    
 //    if(empty($_FILES['fimage']['name'])){
 //        echo 'this is empty';
 //    }
@@ -59,55 +57,55 @@ if (isset($_POST['submit'])) {
             $_DATA[$key] = $value;
         }
     }
-    
-    if(empty($_FILES['fimage']['name']) && !isset($_GET['edit'])){
-       $fimage=TRUE;
-       $error = TRUE;
-    }elseif(!empty ($_FILES['fimage']['name'])){
-        $_DATA['basename']=$basename=basename($_FILES["fimage"]["name"]);
-        $_DATA['tmpname']=$tempname=$_FILES["fimage"]["tmp_name"];
-    }else{
-        $_DATA['edit']=1;
-        $_DATA['basename']=$_DATA['fimage'];
+
+    if (empty($_FILES['fimage']['name']) && !isset($_GET['edit'])) {
+        $fimage = TRUE;
+        $error = TRUE;
+    } elseif (!empty($_FILES['fimage']['name'])) {
+        $_DATA['basename'] = $basename = basename($_FILES["fimage"]["name"]);
+        $_DATA['tmpname'] = $tempname = $_FILES["fimage"]["tmp_name"];
+    } else {
+        $_DATA['edit'] = 1;
+        $_DATA['basename'] = $_DATA['fimage'];
     }
-    
+
 //    if(isset($_FILES["fimage"])){
 //        $_DATA['basename']=$basename=basename($_FILES["fimage"]["name"]);
 //        $_DATA['tmpname']=$tempname=$_FILES["fimage"]["tmp_name"];
 //    }
-    
-    if(!isset($_POST['parking'])){
-        $_DATA['parking']='no';
-    }else{
-        $_DATA['parking']='yes';
+
+    if (!isset($_POST['parking'])) {
+        $_DATA['parking'] = 'no';
+    } else {
+        $_DATA['parking'] = 'yes';
     }
 //    print_r($_FILES["images"]);
 //    exit();
-    if(isset($_FILES["images"]) && !empty($_FILES["images"]["name"][0])){
-        $_DATA['images']=$_FILES["images"];
-        $_DATA['images_empty']='no';
-    }else{
-        $_DATA['images']=$_FILES["images"];
-        $_DATA['images_empty']='yes';
+    if (isset($_FILES["images"]) && !empty($_FILES["images"]["name"][0])) {
+        $_DATA['images'] = $_FILES["images"];
+        $_DATA['images_empty'] = 'no';
+    } else {
+        $_DATA['images'] = $_FILES["images"];
+        $_DATA['images_empty'] = 'yes';
     }
-    
+
 //    print_r($_DATA);
 //    exit();
     if (!isset($error)) {
-        $obj= new realestate();
-        $result= $obj->store_data($_DATA);
+        $obj = new realestate();
+        $result = $obj->store_data($_DATA);
     }
-    
+
     //print_r($_DATA);
     //echo implode(',' ,$_DATA['image']);
 }
 
-/* defult variable to set in input*/
+/* defult variable to set in input */
 
 if ((!empty($_DATA['post_id'])) || isset($_DATA['post_id'])) {
     $postid = 'value="' . $_DATA['post_id'] . '"';
 } else {
-    
+
     $postid = 'value="' . time() . '"';
 }
 if ((!empty($_DATA['name'])) || isset($_DATA['name'])) {
@@ -129,7 +127,7 @@ if ((!empty($_DATA['category'])) || isset($_DATA['category'])) {
         case '3':
             $commercial = 'selected=""';
             break;
-    }  
+    }
 }
 if ((!empty($_DATA['city'])) || isset($_DATA['city'])) {
     $city = 'value="' . $_DATA['city'] . '"';
@@ -156,9 +154,9 @@ if ((!empty($_DATA['location'])) || isset($_DATA['location'])) {
 } else {
     $location = 'placeholder="Add Property Google Loation link"';
 }
-if (((!empty($_DATA['parking'])) || isset($_DATA['parking'])) && $_DATA['parking']=='yes') {
+if (((!empty($_DATA['parking'])) || isset($_DATA['parking'])) && $_DATA['parking'] == 'yes') {
     $parking = 'checked=""';
-}else{
+} else {
     $parking = '';
 }
 if ((!empty($_DATA['title'])) || isset($_DATA['title'])) {
@@ -198,18 +196,18 @@ and open the template in the editor.
                 <div class="row">
                     <div class="col-sm-12 col-md-7">
                         <?php
-                        if((isset ($fimage) && $fimage==TRUE)){
+                        if ((isset($fimage) && $fimage == TRUE)) {
                             echo '<h5 class="text-danger">Featured Image must be selected</h5>';
                         }
-                        if(isset($error)){
+                        if (isset($error)) {
                             echo '<h5 class="text-danger">Fill the empty fileds first.</h5>';
-                        }elseif(isset ($result) && $result==TRUE){
+                        } elseif (isset($result) && $result == TRUE) {
                             echo '<h5 class="text-danger">Record Added</h5>';
                         }
                         ?>
                     </div>
                     <div class="col-sm-12 col-md-7">
-                        
+
                         <div class="form">
                             <form class="form-horizontal" id="form" action="" method="POST" enctype="multipart/form-data">
                                 <fieldset><legend>Post Information</legend>
@@ -234,47 +232,83 @@ and open the template in the editor.
                                         <label for="category" class="col-sm-3 control-label">Post Category</label>
                                         <div class="col-sm-9">
                                             <select class="form-control" id="category" name="category">
-                                                <option value="1" <?php if(isset($apartments)){echo $apartments;} ?>>Apartments</option>
-                                                <option value="2" <?php if(isset($house)){echo $house; } ?>>House</option>
-                                                <option value="3" <?php if(isset($commercial)){echo $commercial;} ?>>Commercial</option>
+                                                <option value="1" <?php
+                                                if (isset($apartments)) {
+                                                    echo $apartments;
+                                                }
+                                                ?>>Apartments</option>
+                                                <option value="2" <?php
+                                                if (isset($house)) {
+                                                    echo $house;
+                                                }
+                                                ?>>House</option>
+                                                <option value="3" <?php
+                                                if (isset($commercial)) {
+                                                    echo $commercial;
+                                                }
+                                                ?>>Commercial</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="city" class="col-sm-3 control-label">City Name</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="city" name="city" <?php if(isset($city)){echo $city;}?>>
+                                            <input type="text" class="form-control" id="city" name="city" <?php
+                                            if (isset($city)) {
+                                                echo $city;
+                                            }
+                                            ?>>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="rooms" class="col-sm-3 control-label">No. of rooms</label>
                                         <div class="col-sm-9">
-                                            <input type="number" class="form-control" id="rooms" name="rooms" <?php if(isset($rooms)){echo $rooms;}?>>
+                                            <input type="number" class="form-control" id="rooms" name="rooms" <?php
+                                            if (isset($rooms)) {
+                                                echo $rooms;
+                                            }
+                                            ?>>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="area" class="col-sm-3 control-label">Total area in meter</label>
                                         <div class="col-sm-9">
-                                            <input type="number" class="form-control" id="area" name="area" <?php if(isset($area)){echo $area ;}?>>
+                                            <input type="number" class="form-control" id="area" name="area" <?php
+                                            if (isset($area)) {
+                                                echo $area;
+                                            }
+                                            ?>>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="price" class="col-sm-3 control-label">Property Price</label>
                                         <div class="col-sm-9">
-                                            <input type="number" class="form-control" id="price" name="price" <?php if(isset($price)){echo $price ;}?>>
+                                            <input type="number" class="form-control" id="price" name="price" <?php
+                                            if (isset($price)) {
+                                                echo $price;
+                                            }
+                                            ?>>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="location" class="col-sm-3 control-label">Google Location link</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="location" name="location" <?php if(isset($location)){echo $location ;}?>>
+                                            <input type="text" class="form-control" id="location" name="location" <?php
+                                            if (isset($location)) {
+                                                echo $location;
+                                            }
+                                            ?>>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="col-sm-offset-3 col-sm-10">
                                             <div class="checkbox">
                                                 <label>
-                                                    <input type="checkbox" name="parking" <?php if(isset($parking)){echo $parking ;}?>> Parking
+                                                    <input type="checkbox" name="parking" <?php
+                                                    if (isset($parking)) {
+                                                        echo $parking;
+                                                    }
+                                                    ?>> Parking
                                                 </label>
                                             </div>
                                         </div>
@@ -285,34 +319,46 @@ and open the template in the editor.
                                             <input type="file"  id="fimage" name="fimage" >
                                         </div>
                                     </div>
-                                    <?php if(isset($_GET['edit']) && !empty($_DATA['fimage'])){?>
-                                    <div class="form-group">
-                                        <label for="fimage" class="col-sm-3 control-label">Featured image</label>
-                                        <div class="col-sm-9">
-                                            <img class="img-responsive fimage" src="../upload/<?php echo $_DATA['fimage']; ?>">
-                                            <input type="hidden"  form="form" name="fimage" value="<?php echo $_DATA['fimage']; ?>">
-                                            <button value="<?php echo $_DATA['fimage']; ?>" class="btn btn-danger delete" name="delete" type="button"> Delete</button>
+                                    <?php if (isset($_GET['edit']) && !empty($_DATA['fimage'])) { ?>
+                                        <div class="form-group">
+                                            <label for="fimage" class="col-sm-3 control-label">Featured image</label>
+                                            <div class="col-sm-9">
+                                                <img class="img-responsive fimage" src="../upload/<?php echo $_DATA['fimage']; ?>">
+                                                <input type="hidden"  form="form" name="fimage" value="<?php echo $_DATA['fimage']; ?>">
+                                                <button value="<?php echo $_DATA['fimage']; ?>" class="btn btn-danger delete" name="delete" type="button"> Delete</button>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <?php }?>
+                                    <?php } ?>
                                 </fieldset>
                                 <fieldset><legend>Meta Data</legend>
                                     <div class="form-group">
                                         <label for="title" class="col-sm-3 control-label">Meta Title</label>
                                         <div class="col-sm-9">
-                                            <input form="form" type="text" class="form-control" id="title" name="title" <?php if(isset($title)){echo $title ;}?>>
+                                            <input form="form" type="text" class="form-control" id="title" name="title" <?php
+                                            if (isset($title)) {
+                                                echo $title;
+                                            }
+                                            ?>>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="keywords" class="col-sm-3 control-label">Meta Keywords</label>
                                         <div class="col-sm-9">
-                                            <input form="form" type="text" class="form-control" id="keywords" name="keywords" <?php if(isset($keywords)){echo $keywords ;}?>>
+                                            <input form="form" type="text" class="form-control" id="keywords" name="keywords" <?php
+                                            if (isset($keywords)) {
+                                                echo $keywords;
+                                            }
+                                            ?>>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="description" class="col-sm-3 control-label">Meta Description</label>
                                         <div class="col-sm-9">
-                                            <input form="form" type="text" class="form-control" id="description" name="description" <?php if(isset($description)){echo $description ;}?>>
+                                            <input form="form" type="text" class="form-control" id="description" name="description" <?php
+                                            if (isset($description)) {
+                                                echo $description;
+                                            }
+                                            ?>>
                                         </div>
                                     </div>
                                 </fieldset>
@@ -321,32 +367,37 @@ and open the template in the editor.
                     </div>
                     <div class="col-sm-12 col-md-5">
                         <div class="post-images row">
-                            <fieldset>
-                                <legend>Post Images</legend>
-                                <div class="form-group">
-                                    <div class="col-sm-12">
-                                        <input form="form" type="file" name="images[]" multiple="" />
+                            <div class="col-md-12">
+                                <fieldset>
+                                    <legend>Post Images</legend>
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <input form="form" type="file" name="images[]" multiple="" />
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-sm-12 ">
-                                    <div class="row img-row">
-                                    <?php 
-                                    if(isset($post_images)){
-                                        while ($row1 = mysqli_fetch_array($post_images)) {
-                                    ?>
-                                    <div class="images col-sm-4">
-                                    <img class="img-responsive" src="../upload/<?php echo $row1['name']; ?>" alt="<?php echo $row1['name']; ?>" />
-                                    <sup class="glyphicon glyphicon-remove-circle remove"></sup>
-                                    </div>
-                                        <?php }} ?>
+                                    <div class="col-sm-12 ">
+                                        <div class="row img-row">
+                                            <?php
+                                            if (isset($post_images)) {
+                                                while ($row1 = mysqli_fetch_array($post_images)) {
+                                                    ?>
+                                                    <div class="images col-sm-4">
+                                                        <img class="img-responsive" src="../upload/<?php echo $row1['name']; ?>" alt="<?php echo $row1['name']; ?>" />
+                                                        <sup class="glyphicon glyphicon-remove-circle remove"></sup>
+                                                    </div>
+                                                    <?php
+                                                }
+                                            }
+                                            ?>
                                         </div>
 <!--                                    <img class="img-responsive" src="../images/1172.jpg" alt="" />
                                     <img class="img-responsive" src="../images/1172.jpg" alt="" />
                                     <img class="img-responsive" src="../images/1172.jpg" alt="" />-->
+                                    </div>
+                                </fieldset>
+                                <div class="form-group pull-right">
+                                    <button value="submit" class="btn btn-primary" name="submit" form="form"> submit</button>
                                 </div>
-                            </fieldset>
-                            <div class="form-group pull-right">
-                                <button value="submit" class="btn btn-primary" name="submit" form="form"> submit</button>
                             </div>
                         </div>
                     </div>

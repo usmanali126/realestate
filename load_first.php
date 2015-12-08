@@ -1,4 +1,7 @@
 <?php
+$obj = new realestate();
+$category='';
+$first_load = $obj->first_load($category);
 $i = 1;
 $no_of_row=  mysqli_num_rows($first_load);
 while ($row = mysqli_fetch_array($first_load)) {

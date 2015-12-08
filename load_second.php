@@ -2,7 +2,8 @@
 $last_msg_id = $_GET['last_msg_id'];
 //exit();
 $obj = new realestate();
-$second_load = $obj->second_load($last_msg_id);
+$category='';
+$second_load = $obj->second_load($last_msg_id,$category);
 $last_msg_id = "";
 $total_rows = mysqli_num_rows($second_load);
 $j = 1;

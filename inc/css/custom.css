@@ -972,6 +972,10 @@ form .disclaimer-note .note-holder .note-text {
     line-height: 40px;
     text-align: center;
 }
+
+#last_msg_loader img{
+    margin-left: 41%;
+}
     /*footer css*/
 footer{
     background: #e6e6e6 none repeat scroll 0 0;

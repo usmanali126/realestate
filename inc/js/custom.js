@@ -34,29 +34,28 @@ $(document).ready(function () {
         $(this).parents('#cookie-message').remove();
     });
 
-//});
-//
-////$(document).ready(function () {
+    $(window).scroll(function () {
+        if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+            last_msg_funtion();
+        }
+    });
+    
+    
+    function last_msg_funtion()
+    {
 
-//    function last_msg_funtion()
-//    {
-//
-//        var ID = $(".post_box:last").attr("id");
-//        $('div#last_msg_loader').html('<img src="images/200_s.gif">');
-//        $.post("index.php?action=get&last_msg_id=" + ID,
-//                function (data) {
-//                    if (data != "") {
-//                        $(".post_box:last").after(data);
-//                    }
-//                    $('div#last_msg_loader').empty();
-//                });
-//    }
-//    ;
-//
-//    $(window).scroll(function () {
-//        if ($(window).scrollTop() == $(document).height() - $(window).height()) {
-//            last_msg_funtion();
-//        }
-//    });
-
+        var ID = $(".post_box:last").attr("id");
+        $('div#last_msg_loader').html('<img src="images/200_s.gif">');
+        $.post("index.php?action=get&last_msg_id=" + ID,
+                function (data) {
+                    if (data != "") {
+                        $(".post_box:last").after(data);
+                        $("img").lazyload({
+                            effect: "fadeIn"
+                        });
+                    }
+                    $('div#last_msg_loader').empty();
+                });
+    }
+    ;
 });

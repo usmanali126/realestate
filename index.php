@@ -1,7 +1,5 @@
 <?php
 include_once 'classes/realestate.php';
-$obj = new realestate();
-$first_load = $obj->first_load();
 
 if (isset($_GET['last_msg_id'])) {
     $last_msg_id = $_GET['last_msg_id'];
@@ -63,6 +61,7 @@ if ($action <> "get") {
                                     <!-- Collect the nav links, forms, and other content for toggling -->
                                     <div class="collapse navbar-collapse" id="search-navbar-collapse-1">
                                         <ul class="nav navbar-nav">
+                                            <li><a href="#" active="">All</a></li>
                                             <li><a href="#">Apartment</a></li>
                                             <li><a href="#">House</a></li>
                                             <li><a href="#">Commercial</a></li>
@@ -110,28 +109,6 @@ if ($action <> "get") {
             <footer>
                 <?php include 'inc/footer.php'; ?>
             </footer>
-            <script src="inc/js/jquery-1.2.6.pack.js" type="text/javascript"></script>
-            <script>
-            function last_msg_funtion()
-    {
-
-        var ID = $(".post_box:last").attr("id");
-        $('div#last_msg_loader').html('<img src="images/200_s.gif">');
-        $.post("index.php?action=get&last_msg_id=" + ID,
-                function (data) {
-                    if (data != "") {
-                        $(".post_box:last").after(data);
-                    }
-                    $('div#last_msg_loader').empty();
-                });
-    }
-    ;
-
-    $(window).scroll(function () {
-        if ($(window).scrollTop() == $(document).height() - $(window).height()) {
-            last_msg_funtion();
-        }
-    });</script>
         </body>
     </html>
     <?php
