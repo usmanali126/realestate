@@ -35,7 +35,7 @@
 
                                     </form>
         <ul class="nav navbar-nav navbar-right">
-          <li class="icon-lock"><a href="../index.php">Log Out</a></li>
+            <li class="icon-lock"><a href="login.php?logout=true">Log Out</a></li>
         </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

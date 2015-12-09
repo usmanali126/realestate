@@ -1,5 +1,11 @@
 <?php
 include_once '../classes/realestate.php';
+
+if(!isset($_SESSION['login']) && $_SESSION['login']!='login'){
+    header("Location:../index.php");
+}
+
+
 $obj= new realestate();
 $result=$obj->get_data();
 ?>

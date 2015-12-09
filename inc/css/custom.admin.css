@@ -77,8 +77,45 @@ border-bottom: 0px;
 .login-form{
     position: relative;
 }
-.form{
+.login-form .form{
     position: absolute;
-    left: 35%;
+    left: 30%;
     top: 10em;
+    width: 35%;
+}
+
+.forget {
+    margin-top: 10px;
+}
+
+.forget a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media (width:768px){
+    .login-form .form{
+    position: absolute;
+    left: 15%;
+    top: 10em;
+    width: 70%;
+}
+}
+
+@media (width:360px){
+    .login-form .form{
+    position: absolute;
+    left: 15%;
+    top: 10em;
+    width: 70%;
+}
+}
+
+@media (width:320px){
+    .login-form .form{
+    position: absolute;
+    left: 15%;
+    top: 10em;
+    width: 70%;
+}
 }

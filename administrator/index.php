@@ -1,6 +1,10 @@
 <?php
 include_once '../classes/realestate.php';
 //echo session_status();
+if(!isset($_SESSION['login']) && $_SESSION['login']!='login'){
+    header("Location:../index.php");
+}
+
 $obj = new realestate();
 //echo $_SESSION['post_id'];
 if (isset($_SESSION['post_id']) && isset($_GET['token']) && $_GET['token'] == TRUE) {
