@@ -91,12 +91,12 @@ and open the template in the editor.
             <div class="add-object-section-mail add-object-sub-section" id="upload_email">
                 <div class="container">
                     <div class="row">
-                        <div class="image_holder col-xs-12"><a href="mailto:portfolio@leadingproperties.com">
+                        <div class="image_holder col-xs-12"><a href="mailto:info@bismillahstate.com">
                                 <img src="images/upload_email.png" alt="">
                             </a></div>
                         <div class="text_holder col-xs-12">
                             <div class="text"><p>You can send your properties on our e-mail<br>
-                                    <a href="mailto:abc@xyz.com">abc@xyz.com</a></p></div>
+                                    <a href="mailto:info@bismillahstate.com">info@bismillahstate.com</a></p></div>
                         </div>
                     </div>
                 </div>

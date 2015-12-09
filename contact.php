@@ -40,10 +40,9 @@ and open the template in the editor.
 
                             <div class="contacts_holder">
                                 <ul>
-                                    <li><a href="tel:42 966 03 03">Lhr 42 966 03 03</a></li>
-                                    <li><a href="tel:41 565 34 09">FSD 41 565 34 09</a></li>
-                                    <li><a href="tel:51 2 005 331">RPD 51 2 005 331</a></li>
-                                    <li><a href="mailto:abc@xyz.com">abc@xyz.com</a></li>
+                                    <li><a href="tel:0331-000 000 00">Mobile No: 0331-000 000 00 </a></li>
+                                    <li><a href="tel:0423-000-000-00">Phone No: 0423-000-000-00</a></li>
+                                    <li><a href="mailto:info@bismillahstate.com">info@bismillahstate.com</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -100,7 +99,7 @@ and open the template in the editor.
 
                 <div class="contact_section contact_page_offices">
                     <div class="container">
-                        <div class="row objects-list-wrapper"><h2>Our offices</h2>
+                        <div class="row objects-list-wrapper"><h2 class="text-uppercase">Our offices</h2>
 
                             <div class="object-item">
                                 <div class="object-inner-wrapper">
@@ -110,10 +109,18 @@ and open the template in the editor.
                                         </div>
                                     </div>
                                     <div class="object-info-holder">
-                                        <div class="info-address"><span>Place</span> <span>Name</span></div>
-                                        <h3 class="info-title">Office name</h3>
+                                        <div class="info-address"><span>Head office:</span></div>
+                                        <h3 class="info-title">Bismillah Estate</h3>
 
-                                        <p class="info-details">Office Address</p></div>
+                                        <p class="info-details">R-18, Block Q, Garden Town Lahore.</p>
+                                        <div class="contacts_holder">
+                                            <ul>
+                                                <li><a href="tel:0331-000 000 00">Mobile No: 0331-000 000 00 </a></li>
+                                                <li><a href="tel:0423-000-000-00">Phone No: 0423-000-000-00</a></li>
+                                                <li><a href="mailto:info@bismillahstate.com">info@bismillahstate.com</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="object-item">
@@ -124,10 +131,16 @@ and open the template in the editor.
                                         </div>
                                     </div>
                                     <div class="object-info-holder">
-                                        <div class="info-address"><span>Place</span> <span>Name</span></div>
-                                        <h3 class="info-title">Office name</h3>
+                                        <div class="info-address"><span>Site Office:</span></div>
+                                        <h3 class="info-title">Bismillah Estate </h3>
 
-                                        <p class="info-details">Office Address</p></div>
+                                        <p class="info-details">9 Saima Heights, Main university Road, Karachi.</p>
+                                        <div class="contacts_holder">
+                                            <ul>
+                                                <li><a href="mailto:info@bismillahstate.com">info@bismillahstate.com</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

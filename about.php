@@ -33,7 +33,7 @@ and open the template in the editor.
                 <div class="about_section about_section_grey about_section_top">
                     <div class="container">
                         <div class="row">
-                            <div class="col-xs-12 about-top-col"><h1>The Leading Properties of the World</h1>
+                            <div class="col-xs-12 about-top-col"><h1>Pakistan's Best Real Estate Marketplace</h1>
 
                                 <p>We are an international company with a special focus on the sale and marketing of high-end residential property</p></div>
                         </div>
@@ -43,13 +43,13 @@ and open the template in the editor.
                     <div class="container">
                         <div class="row">
                             <div class="col-xs-12 col-sm-4 about-image-col">
-                                <img src="https://d18mncbmmvtpqd.cloudfront.net/assets/images/elements/sales.svg" class="about_img img-responsive">
+                                <img src="images/sales.svg" class="about_img img-responsive">
                             </div>
                             <div class="col-xs-12 col-sm-8">
                                 <div class="about_text"><h2>High-end residential property</h2>
 
-                                    <p>There is an ever-rising demand and an acute shortage of quality housing in major cities with developed infrastructure. Discerning buyers are looking for it both for their personal use and as an investment. We have set ourselves an ambitious task to provide them with the carefully chosen selection of properties and a tailor made acquisition services.</p></div>
-                                <a href="https://www.leadingproperties.com/add-property/" class="about_section_sell_link">Go to add property page<sup class="sup-free">FREE</sup> </a></div>
+                                    <p>Bismillah Estate.com caters to the needs of both real estate buyers and sellers. Our objective is to help individuals in the property market to find their ideal home, land or commercial property. We also provide state of the art services and features for Pakistan real estate agents. Our aim is to empower consumers with the most detailed and dependable information in the market. Lamudi will revolutionize real estate buying and selling in Pakistan.</p></div>
+                                <a href="add-property.php" class="about_section_sell_link">Go to add property page<sup class="sup-free">FREE</sup> </a></div>
                         </div>
                     </div>
                 </div>
@@ -57,12 +57,12 @@ and open the template in the editor.
                     <div class="container">
                         <div class="row">
                             <div class="col-xs-12 col-sm-4 col-sm-push-8 col-xs-12 about-image-col">
-                                <img src="https://d18mncbmmvtpqd.cloudfront.net/assets/images/elements/search.svg" class="about_img img-responsive">
+                                <img src="images/search.svg" class="about_img img-responsive">
                             </div>
                             <div class="col-xs-12 col-sm-8 col-sm-pull-4 col-xs-12 about_text">
                                 <h2>Sale and individual property search</h2>
 
-                                <p>We provide sale and marketing services of high-end residential property to owners, developers and estate agencies around the world. We provide private clients with an individual property search and assist them in property transactions.</p></div>
+                                <p>Bismillah Estate.com helps you to get in touch with the agents who have the direct mandate for the property from the owner. This brings increased efficiency to the property market in Pakistan. For the agents, we bring in quality leads, connections and tools to manage and develop client base.</p></div>
                         </div>
                     </div>
                 </div>
@@ -70,11 +70,11 @@ and open the template in the editor.
                     <div class="container">
                         <div class="row">
                             <div class="col-xs-12 col-sm-4 about-image-col">
-                                <img src="https://d18mncbmmvtpqd.cloudfront.net/assets/images/elements/investments.svg" class="about_img">
+                                <img src="images/investments.svg" class="about_img">
                             </div>
-                            <div class="col-xs-12 col-sm-8 about_text"><h2>Property Investment</h2>
+                            <div class="col-xs-12 col-sm-8 about_text"><h2>A Rocket Internet Venture</h2>
 
-                                <p>We are also involved in development projects in central London and offer our clients a unique possibility to invest with us with returns of around 30% or more. Please contact us for a detailed presentation.</p></div>
+                                <p>Lamudi is a part of the Rocket Internet family which is the fastest and the most successful online venture builder across the globe. With an exceptional team, that has been building online companies since 1999 and has created over 100 market leading companies in 40+ countries. We bring unrivaled expertise from launching of various ventures. In Pakistan, we have successfully launched several ventures and employed over 200 people. Superior expertise and proficiency of an international company together with an acute understanding of the local market, we bring you the best online real estate market place in Pakistan.</p></div>
                         </div>
                     </div>
                 </div>
@@ -114,7 +114,7 @@ and open the template in the editor.
                                     <div class="form-group form-group-disclaimer">
                                         <div class="disclaimer-content-wrapper"><i class="glyphicon glyphicon-lock"></i>
                                             <p class="note-text">Your contact details will be used only to provide you with more information about the property.<br>
-                                                <a href="https://www.leadingproperties.com/protection-policy-personal-information/">Read more</a> about our Privacy policy
+                                                <a href="privacy.php">Read more</a> about our Privacy policy
                                             </p>
                                         </div>
                                     </div>

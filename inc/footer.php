@@ -2,12 +2,12 @@
     <div class="row">
         <div class="col-md-4 col-sm-12">
             <p>
-                business Address here
+                Bismillah Estate
             </p>
             <div class="contact-info">
-                <span>email Address</span>
-                <span>Phone No.</span>
-                <span>Phone No.</span>
+                <span>info@bismillahstate.com</span>
+                <span>0331-000 000 00</span>
+                <span>0423-000-000-00</span>
             </div>
         </div>
         <div class="col-md-4 col-sm-12">
@@ -15,9 +15,9 @@
                 Reg No.
             </p>
             <div class="contact-info">
-                <span><a href="">Sitemap</a></span>
-                <span><a href="">Contact information</a></span>
-                <span><a href="">Privacy Policy</a></span>
+                <span><a href="#">Sitemap</a></span>
+                <span><a href="contact.php">Contact information</a></span>
+                <span><a href="privacy.php">Privacy Policy</a></span>
             </div>
         </div>
         <div class="col-md-4 col-sm-12">
@@ -25,11 +25,11 @@
                Legal protection 
             </p>
             <div class="social-icon">
-                <a href=""><span class="socicon-twitter"></span></a>
-                <a href=""><span class="socicon-facebook"></span></a>
-                <a href=""><span class="socicon-linkedin"></span></a>
-                <a href=""><span class="socicon-rss"></span></a>
-                <a href=""><span class="socicon-googleplus"></span></a>
+                <a href="#"><span class="socicon-twitter"></span></a>
+                <a href="#"><span class="socicon-facebook"></span></a>
+                <a href="#"><span class="socicon-linkedin"></span></a>
+                <a href="#"><span class="socicon-rss"></span></a>
+                <a href="#"><span class="socicon-googleplus"></span></a>
             </div>
         </div>
     </div>
