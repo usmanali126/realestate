@@ -965,6 +965,10 @@ form .disclaimer-note .note-holder .note-text {
     font-size: 20px;
     top: 5px;
 }
+
+.glyphicon.glyphicon-folder-open {
+    padding-left: 10px;
+}
 #similar-objects .similar-objects-title {
     font-size: 30px;
     line-height: 40px;
@@ -972,7 +976,8 @@ form .disclaimer-note .note-holder .note-text {
 }
 
 #last_msg_loader img{
-    margin-left: 41%;
+    margin-left: 48%;
+    width: 50px;
 }
     /*footer css*/
 footer{
