@@ -1,3 +1,19 @@
+<?php 
+include 'classes/realestate.php';
+if(!isset($_GET['get_id'])){
+    header('Location:index.php');
+}else{
+    $param['post_id']=$_GET['get_id'];
+    $obj=new realestate();
+    $row= $obj->get_post($param);
+    $main_post=  mysqli_fetch_array($row);
+//    print_r($main_post);
+    
+}
+
+
+?>
+
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -43,7 +59,7 @@ and open the template in the editor.
                                     </ol>
                                     <div role="listbox" class="carousel-inner">
                                         <div class="item active">
-                                            <img alt="First slide" src="images/img1.jpg" class="first-slide">
+                                            <img alt="First slide" src="upload/<?php echo $main_post['fimage'] ?>" class="first-slide">
                                         </div>
                                         <div class="item ">
                                             <img alt="Second slide" src="images/img2.jpg" class="second-slide">
@@ -69,30 +85,30 @@ and open the template in the editor.
 
                         <div itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" class="info-address clearfix">
                             <div>
-                                <a itemprop="url" itemref="bbc" href="/"><span itemprop="title">Real Estate Catalogue</span></a>
+                                <a itemprop="url" itemref="bbc" href="/"><span itemprop="title"><?php echo $main_post['city'] ?></span></a>
                             </div>
-                            <div itemref="cbc" itemprop="child" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" id="bbc"><a itemprop="url" href="" class="prevent"><span itemprop="title">Spain</span></a></div><div itemref="dbc" itemprop="child" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" id="cbc"><a itemprop="url" href="" class="prevent"><span itemprop="title">Costa Blanca</span></a></div><div itemprop="child" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" id="dbc"><a itemprop="url" href="#" class="prevent"><span itemprop="title">Guardamar del Segura</span></a></div><div class="object_sku">ES-82517</div>
+                            <!--<div itemref="cbc" itemprop="child" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" id="bbc"><a itemprop="url" href="" class="prevent"><span itemprop="title">Spain</span></a></div><div itemref="dbc" itemprop="child" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" id="cbc"><a itemprop="url" href="" class="prevent"><span itemprop="title">Costa Blanca</span></a></div><div itemprop="child" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" id="dbc"><a itemprop="url" href="#" class="prevent"><span itemprop="title">Guardamar del Segura</span></a></div><div class="object_sku">ES-82517</div>-->
                         </div>
 
 
 
-                        <h1 itemprop="name" class="info-title">Apartment for sale in Villamartin, Costa Blanca</h1>
+                        <h1 itemprop="name" class="info-title"><?php echo $main_post['name'] ?></h1>
 
                         <div class="row single-object-row">
                             <div class="single-object-main-col col-sm-12 col-md-8">
                                 <div class="row">
                                     <div class="object_info_left col-sm-12">
                                         <div itemtype="http://schema.org/AggregateOffer" itemscope="" itemprop="offers" class="row price-row">
-                                            <p itemprop="price" class="object_price"><span itemprop="lowPrice">132 000</span>&nbsp;<span content="EUR" itemprop="priceCurrency">EUR</span></p><span data-obj_id="82517" class="glyphicon glyphicon-bookmark"><span class="glyphicon glyphicon-star"></span></span></div>
+                                            <p itemprop="price" class="object_price"><span itemprop="lowPrice"><?php echo $main_post['price'] ?></span>&nbsp;<span content="rs" itemprop="priceCurrency">R.S</span></p><span data-obj_id="82517" class="glyphicon glyphicon-bookmark"><span class="glyphicon glyphicon-star"></span></span></div>
 
                                         <div itemprop="description" class="description">
-                                            <p>This new modern apartment is&nbsp;located in&nbsp;Villamartin on&nbsp;the Southern Costa Blanca and overlooks the sea. Layout: 2&nbsp;bedrooms, 2&nbsp;bathrooms, a&nbsp;living room, a&nbsp;terrace. Close to&nbsp;a&nbsp;golf club, shopping centers and beaches. The residence features several swimming pools, a&nbsp;spa, a&nbsp;hot tub, a&nbsp;gym, saunas.</p>
+                                            <p><?php echo $main_post['about'] ?></p>
                                         </div>
                                     </div>
 
                                     <div class="object_info_right col-sm-12">
                                         <div class="object_properties clearfix">
-                                            <ul><li class="col-xs-6">number of rooms</li><li class="col-xs-6">3</li><li class="col-xs-6">area, sq. m</li><li class="col-xs-6">107</li><li class="col-xs-6">parking/garage</li><li class="col-xs-6">yes</li></ul>
+                                            <ul><li class="col-xs-6">number of rooms</li><li class="col-xs-6"><?php echo $main_post['rooms'] ?></li><li class="col-xs-6">area, sq. m</li><li class="col-xs-6"><?php echo $main_post['area'] ?></li><li class="col-xs-6">parking/garage</li><li class="col-xs-6"><?php echo $main_post['parking'] ?></li></ul>
                                         </div>
                                     </div>
                                 </div>
@@ -104,19 +120,20 @@ and open the template in the editor.
                                         </p>
 
                                         <noindex>
-                                            <a rel="nofollow" target="_blank" class="icon_link" href="https://www.google.com/maps/place//@38.0851461,-0.651282300000048,14z">
+                                            <a rel="nofollow" target="_blank" class="icon_link" href="<?php echo $main_post['location']; ?>">
                                                 <span class="glyphicon glyphicon-globe"></span> <span class="map_location_text">show on the map</span>
                                             </a>
                                         </noindex>
 
                                     </div>
                                     <div class="object-bottom-right col-xs-12">
-                                        <noindex>
+                                    <?php /*    <noindex>
                                             <a href="/pdf/82517?code=ES-82517&amp;lang=en&amp;url=es-82517-bungalow-for-sale-in-guardamar-del-segura-costa-blanca" data-remote="true" rel="nofollow" id="icon-download-pdf" class="icon-download-pdf" data-url="https://api-lpw.herokuapp.com/v1/objects/82517/pdf-download?locale=en&amp;t=00711a0ae6fd45aae365cc84861c08e4"></a>
                                         </noindex>
                                         <div style="display: none" id="pdf-download-notice">
                                             <p>Generating pdf. <span class="icon-spin2 animate-spin"></span></p>
                                         </div>
+                                           */?>
                                     </div>
                                 </div>
                             </div>

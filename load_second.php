@@ -14,7 +14,7 @@ while ($row = mysqli_fetch_array($second_load)) {
             <article class="object-item post_box object-item-regular object-wide col-sm-12" id="<?php echo $row['post_id']; ?>">
                 <div class="object-inner-wrapper">
                     <div class="object-thumbnail">
-                        <a href="single.php">
+                        <a href="single.php?get_id=<?php echo  $row['post_id']; ?>">
                             <img class="img-responsive" src="upload/<?php echo $row['fimage']; ?>">
                         </a>
                         <div class="add-favorite-button" data-obj_id="56198">
@@ -62,7 +62,7 @@ while ($row = mysqli_fetch_array($second_load)) {
             ?>" id="<?php echo $row['post_id']; ?>">
                 <div class="object-inner-wrapper">
                     <div class="object-thumbnail">
-                        <a href="single.php">
+                        <a href="single.php?get_id=<?php echo  $row['post_id']; ?>">
                             <img class="img-responsive" src="upload/<?php echo $row['fimage']; ?>">
                         </a>
                         <div class="add-favorite-button" data-obj_id="56198">
@@ -110,7 +110,7 @@ while ($row = mysqli_fetch_array($second_load)) {
             ?>" id="<?php echo $row['post_id']; ?>">
                 <div class="object-inner-wrapper">
                     <div class="object-thumbnail">
-                        <a href="single.php">
+                        <a href="single.php?get_id=<?php echo  $row['post_id']; ?>">
                             <img class="img-responsive" src="upload/<?php echo $row['fimage']; ?>">
                         </a>
                         <div class="add-favorite-button" data-obj_id="56198">
@@ -158,7 +158,7 @@ while ($row = mysqli_fetch_array($second_load)) {
             ?>" id="<?php echo $row['post_id']; ?>">
                 <div class="object-inner-wrapper">
                     <div class="object-thumbnail">
-                        <a href="single.php">
+                        <a href="single.php?get_id=<?php echo  $row['post_id']; ?>">
                             <img class="img-responsive" src="upload/<?php echo $row['fimage']; ?>">
                         </a>
                         <div class="add-favorite-button" data-obj_id="56198">
@@ -206,7 +206,7 @@ while ($row = mysqli_fetch_array($second_load)) {
             ?>" id="<?php echo $row['post_id']; ?>">
                 <div class="object-inner-wrapper">
                     <div class="object-thumbnail">
-                        <a href="single.php">
+                        <a href="single.php?get_id=<?php echo  $row['post_id']; ?>">
                             <img class="img-responsive" src="upload/<?php echo $row['fimage']; ?>">
                         </a>
                         <div class="add-favorite-button" data-obj_id="56198">

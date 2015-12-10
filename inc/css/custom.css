@@ -696,9 +696,7 @@ article.object-item {
     overflow: hidden;
 }
 #single-page-object-item .object-info-holder {
-    padding-left: 80px;
-    padding-right: 80px;
-    padding-top: 50px;
+    padding: 25px;
 }
 .row.single-object-row{
     margin-left: 0;
@@ -1019,13 +1017,13 @@ footer{
     }
     
 }
-@media (min-width: 360px){
+@media (width: 360px){
 #single-page-object-item .object-info-holder {
     padding-left: 0px;
     padding-right: 0px;
 }
 }
-@media (min-width: 320px){
+@media (width: 320px){
 #single-page-object-item .object-info-holder {
     padding-left: 0px;
     padding-right: 0px;

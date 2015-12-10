@@ -61,10 +61,14 @@ if ($action <> "get") {
                                     <!-- Collect the nav links, forms, and other content for toggling -->
                                     <div class="collapse navbar-collapse" id="search-navbar-collapse-1">
                                         <ul class="nav navbar-nav">
-                                            <li><a href="#" active="">All</a></li>
-                                            <li><a href="#">Apartment</a></li>
+                                            <li class="dropdown sorting-ico"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Category<span class="glyphicon glyphicon-folder-open"></span> <span class="caret"></span></a>
+											<ul class="dropdown-menu">
+											<li><a href="#">All</a></li>
+											<li><a href="#">Apartment</a></li>
                                             <li><a href="#">House</a></li>
                                             <li><a href="#">Commercial</a></li>
+											</ul>
+                                            </li>
                                             <li class="dropdown sorting-ico"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><span class="glyphicon glyphicon-usd"></span> <span class="caret"></span></a>
                                                 <ul class="dropdown-menu">
                                                     <li><a href=""><span class="glyphicon glyphicon-sort-by-attributes"></span><span> Cheapest first </span></a></li>
