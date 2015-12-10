@@ -168,6 +168,11 @@ if ((!empty($_DATA['location'])) || isset($_DATA['location'])) {
 } else {
     $location = 'placeholder="Add Property Google Loation link"';
 }
+if ((!empty($_DATA['address'])) || isset($_DATA['address'])) {
+    $address = 'value="' . $_DATA['address'] . '"';
+} else {
+    $address = 'placeholder="Add Property Address"';
+}
 if (((!empty($_DATA['parking'])) || isset($_DATA['parking'])) && $_DATA['parking'] == 'yes') {
     $parking = 'checked=""';
 } else {
@@ -330,6 +335,16 @@ and open the template in the editor.
                                             <input type="text" class="form-control" id="location" name="location" <?php
                                             if (isset($location)) {
                                                 echo $location;
+                                            }
+                                            ?>>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="address" class="col-sm-3 control-label">Property Address</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="address" name="address" <?php
+                                            if (isset($address)) {
+                                                echo $address;
                                             }
                                             ?>>
                                         </div>

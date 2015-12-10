@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 08, 2015 at 07:11 AM
+-- Generation Time: Dec 10, 2015 at 10:56 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `images` (
 `id` int(11) NOT NULL,
   `post_id` bigint(11) NOT NULL,
   `name` varchar(255) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=96 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `images`
@@ -45,13 +45,6 @@ INSERT INTO `images` (`id`, `post_id`, `name`) VALUES
 (36, 1449388119, '06122015161650kTgKG02122015094631273010-3g4xIP1411841556.png'),
 (37, 1449388119, '06122015161707xfBkJ02122015094631273010-3g4xIP1411841556.png'),
 (43, 1449388119, '06122015170007FbilZ02122015094631273010-3g4xIP1411841556.png'),
-(44, 1449403571, '06122015170656bCTEh03122015174245kCL3N70x70-5347cd16a18994a77348983f.png'),
-(45, 1449403571, '06122015170656pPxNV03122015174245kFdSb70x70-5347cd16a18994a77348984c.png'),
-(46, 1449403571, '06122015170656JAXij03122015174245UQynG70x70-5347cd16a18994a77348983d.png'),
-(47, 1449403571, '06122015170656630mC0312201515162770x70-5347cd16a18994a773489854.png'),
-(48, 1449403571, '06122015170656LrpG60312201515162770x70-5347cd17a18994a77348985a.png'),
-(49, 1449403571, '06122015170656GpvWI0312201515162770x70-5347cd17a18994a77348985c.png'),
-(50, 1449463269, '07122015095250UXWIRimg1.jpg'),
 (51, 1449463269, '07122015095250I2Gijimg2.jpg'),
 (52, 1449464871, '07122015100851D5xNA1172.jpg'),
 (53, 1449464871, '07122015100851YKyQfimg1.jpg'),
@@ -95,7 +88,8 @@ INSERT INTO `images` (`id`, `post_id`, `name`) VALUES
 (91, 1449465687, '07122015102212vPi0yimg2.jpg'),
 (92, 1449465687, '071220151022136lMFhimg3.jpg'),
 (93, 1449465687, '07122015102213jnvKtimg5.jpg'),
-(94, 1449465687, '07122015102213Kbyzhmontreux1.jpg');
+(94, 1449465687, '07122015102213Kbyzhmontreux1.jpg'),
+(95, 1449463269, '10122015135150U1d5D07122015101610HTho9montreux1.jpg');
 
 -- --------------------------------------------------------
 
@@ -113,36 +107,57 @@ CREATE TABLE IF NOT EXISTS `post` (
   `rooms` int(11) NOT NULL,
   `area` int(11) NOT NULL,
   `price` int(11) NOT NULL,
+  `sim1` bigint(20) NOT NULL,
+  `sim2` bigint(20) NOT NULL,
   `location` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
   `parking` text NOT NULL,
   `fimage` varchar(255) NOT NULL,
   `title` varchar(100) NOT NULL,
   `keywords` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
   `date` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `post`
 --
 
-INSERT INTO `post` (`id`, `post_id`, `name`, `about`, `category`, `city`, `rooms`, `area`, `price`, `location`, `parking`, `fimage`, `title`, `keywords`, `description`, `date`) VALUES
-(8, 1449388119, 'Name', 'about property', 1, 'lahore', 7, 12, 29000, 'http://localhost/realestate/administrator/index.php?edit=1&token=TRUE', 'no', '07122015184313P90Htmontreux1.jpg', 'title', 'keywords', 'description', '2015-12-07 13:43:13'),
-(9, 1449392102, 'name', 'about property', 3, 'fsd', 5, 27, 25800, 'http://localhost/realestate/administrator/index.php?edit=1&token=TRUE', 'yes', '07122015184353iHBq3img4.jpg', 'title', 'keywords', 'description', '2015-12-07 13:43:53'),
-(26, 1449403571, 'new', 'new', 2, 'rwp', 5, 26, 25200, 'http://localhost/realestate/administrator/index.php?edit=1&token=TRUE', 'no', '07122015184424EJHco1172.jpg', 'title', 'keywords', 'description', '2015-12-07 13:44:24'),
-(27, 1449463269, '3rd name', 'about ; jukdfs-nlkjf & s/jkl seirl #kl s* ', 1, 'fasd', 5, 12, 12528, 'http://localhost/realestate/administrator/index.php?edit=1&token=TRUE', 'no', '07122015095249a8K731172.jpg', 'title', 'keywords', 'description', '2015-12-07 05:06:20'),
-(35, 1449464871, '4th name', 'jlkjsfoj -spo fw-;lk. aspka sf', 2, 'rwp', 2, 12, 258222, 'http://localhost/realestate/administrator/index.php?edit=1&token=TRUE', 'yes', '07122015100851qJ8wTimg3.jpg', 'title', 'keywords', 'description', '2015-12-07 05:08:51'),
-(36, 1449464941, '5THOO', 'ABLJOSJ LKJ0SFDKJLK JSDFSKKLJ', 3, 'SALRAWAL', 5, 25, 256820, 'http://localhost/realestate/administrator/index.php?edit=1&token=TRUE', 'no', '071220151010059VoGXmontreux1.jpg', 'find days b/w two dates', 'keywords', 'description', '2015-12-07 05:10:05'),
-(37, 1449465025, '5 sneiw lkjso askljoiasfn ioljxh oisdf', 'lkjlsf oij Ã©jlk jokjfoj kljlkdjfo0j oasejl;j osijfej ', 1, 'lahore', 5, 44, 21154, 'http://localhost/realestate/administrator/index.php?edit=1&token=TRUE', 'no', '07122015101127xIuOMimg3.jpg', 'title', 'keywords', 'description', '2015-12-07 05:11:27'),
-(38, 1449465095, 'asdjjlj asklujile lkjdfi eljl adi', 'jsfoi ejr jiojofij ljaerlk jiopsflkjse io laisdfjlkjioer liasjfl ioasfklj lasjfio kljkljfio lj', 2, 'fasd', 7, 34, 445755, 'http://localhost/realestate/administrator/index.php?edit=1&token=TRUE', 'yes', '07122015101315ajFlrprague1.jpg', 'title', 'keywords', 'description', '2015-12-07 05:13:15'),
-(39, 1449465258, 'lkjoie aljie lkajaijl halfdjioe', 'jljasdfio ljlkasdjfo aekjfljhofhh lndahfoui hwejlkhjdfoih ohleno', 1, 'isl', 8, 457, 5225542, 'http://localhost/realestate/administrator/index.php?edit=1&token=TRUE', 'yes', '071220151015081nbsximg5.jpg', 'title', 'keywords', 'description', '2015-12-07 05:15:08'),
-(40, 1449465311, 'uerijslkjj lkhdililkjf qlkj', 'jkljolidf kljjlsdfoi alsdnkljk-dfjljj /joijd oeoiu& *(8 3ilju ', 2, 'karachi', 3, 245, 451254, 'http://localhost/realestate/administrator/index.php?edit=1&token=TRUE', 'yes', '07122015101610tEZOwimg1.jpg', 'title', 'keywords', 'description', '2015-12-07 05:16:10'),
-(41, 1449465377, 'sdfjlickk', 'kljiodf lkjsdij ekkj', 1, 'lahore', 545, 21542, 455445, 'http://localhost/realestate/administrator/index.php?edit=1&token=TRUE', 'yes', '07122015101702lcxO51172.jpg', 'title', 'keywords', 'description', '2015-12-07 05:17:02'),
-(42, 1449465444, 'LKNEIkjlj dskf kljf', 'kljljioas fjlkn 990er[\\3;ilj jsf''po-3;k ', 1, 'lahore', 45, 452, 24587542, 'http://localhost/realestate/administrator/index.php?edit=1&token=TRUE', 'yes', '07122015101817MEfKSmontreux1.jpg', 'title', 'keywords', 'description', '2015-12-07 05:18:17'),
-(43, 1449465501, 'jienlkdfi', 'kljldfi lkajofjso waekjloi f', 1, 'fsd', 5, 45, 487545, 'http://localhost/realestate/administrator/index.php?edit=1&token=TRUE', 'no', '07122015101911aM1x2img2.jpg', 'title', 'keywords', 'description', '2015-12-07 05:19:11'),
-(44, 1449465555, 'kljei sjfkljsdi ', 'iljliifj -0k;34kjj 09j/\\dfjlkjf', 1, 'SALARAWAL', 4, 55, 44557552, 'http://localhost/realestate/administrator/index.php?edit=1&token=TRUE', 'yes', '071220151020144gqlVimg4.jpg', 'title', 'keywords', 'description', '2015-12-07 05:20:14'),
-(45, 1449465617, 'epos;kfk khjljkjfkiio', 'kjlkjsdfoi ekjkl soipfsjflk', 3, 'fsd', 4, 55, 4557585, 'http://localhost/realestate/administrator/index.php?edit=1&token=TRUE', 'no', '07122015102101vV9PBmontreux1.jpg', 'title', 'keywords', 'description', '2015-12-07 05:21:01'),
-(46, 1449465687, 'kioelknmlvkljh', 'kjisdofj aslkjosdif lkjerioo akfljljasodfj jijlkjsdfoi jlk adsjfoi asdnflkn oisaflkjl joijasiofdj lkjoidf aiojljioah fdoijlajflkj oiasdf ijaisfj iouaifj iouiodru ;iljklfjio asi', 1, 'isl', 5, 55, 554857, 'http://localhost/realestate/administrator/index.php?edit=1&token=TRUE', 'no', '0712201510221215FJd1172.jpg', 'title', 'keywords', 'description', '2015-12-07 05:22:12');
+INSERT INTO `post` (`id`, `post_id`, `name`, `about`, `category`, `city`, `rooms`, `area`, `price`, `sim1`, `sim2`, `location`, `address`, `parking`, `fimage`, `title`, `keywords`, `description`, `date`) VALUES
+(27, 1449463269, '3rd name', 'about ; jukdfs-nlkjf & s/jkl seirl #kl s* ', 1, 'fasd', 5, 12, 12528, 1449464941, 1449465258, 'http://localhost/realestate/administrator/index.php?edit=1&token=TRUE', 'Abdula pur ', 'no', '101220151351126TUIn071220151022136lMFhimg3.jpg', 'title', 'keywords', 'description', '2015-12-10 09:45:15'),
+(35, 1449464871, '4th name', 'jlkjsfoj -spo fw-;lk. aspka sf', 2, 'rwp', 2, 12, 258222, 1449465258, 1449465311, 'http://localhost/realestate/administrator/index.php?edit=1&token=TRUE', 'Golra shareef', 'yes', '07122015100851qJ8wTimg3.jpg', 'title', 'keywords', 'description', '2015-12-10 09:46:34'),
+(36, 1449464941, '5THOO', 'ABLJOSJ LKJ0SFDKJLK JSDFSKKLJ', 3, 'SALRAWAL', 5, 25, 256820, 0, 0, 'http://localhost/realestate/administrator/index.php?edit=1&token=TRUE', '', 'no', '071220151010059VoGXmontreux1.jpg', 'find days b/w two dates', 'keywords', 'description', '2015-12-07 05:10:05'),
+(37, 1449465025, '5 sneiw lkjso askljoiasfn ioljxh oisdf', 'lkjlsf oij Ã©jlk jokjfoj kljlkdjfo0j oasejl;j osijfej ', 1, 'lahore', 5, 44, 21154, 0, 0, 'http://localhost/realestate/administrator/index.php?edit=1&token=TRUE', '', 'no', '07122015101127xIuOMimg3.jpg', 'title', 'keywords', 'description', '2015-12-07 05:11:27'),
+(38, 1449465095, 'asdjjlj asklujile lkjdfi eljl adi', 'jsfoi ejr jiojofij ljaerlk jiopsflkjse io laisdfjlkjioer liasjfl ioasfklj lasjfio kljkljfio lj', 2, 'fasd', 7, 34, 445755, 0, 0, 'http://localhost/realestate/administrator/index.php?edit=1&token=TRUE', '', 'yes', '07122015101315ajFlrprague1.jpg', 'title', 'keywords', 'description', '2015-12-07 05:13:15'),
+(39, 1449465258, 'lkjoie aljie lkajaijl halfdjioe', 'jljasdfio ljlkasdjfo aekjfljhofhh lndahfoui hwejlkhjdfoih ohleno', 1, 'isl', 8, 457, 5225542, 0, 0, 'http://localhost/realestate/administrator/index.php?edit=1&token=TRUE', '', 'yes', '071220151015081nbsximg5.jpg', 'title', 'keywords', 'description', '2015-12-07 05:15:08'),
+(40, 1449465311, 'uerijslkjj lkhdililkjf qlkj', 'jkljolidf kljjlsdfoi alsdnkljk-dfjljj /joijd oeoiu& *(8 3ilju ', 2, 'karachi', 3, 245, 451254, 0, 0, 'http://localhost/realestate/administrator/index.php?edit=1&token=TRUE', '', 'yes', '07122015101610tEZOwimg1.jpg', 'title', 'keywords', 'description', '2015-12-07 05:16:10'),
+(41, 1449465377, 'sdfjlickk', 'kljiodf lkjsdij ekkj', 1, 'lahore', 545, 21542, 455445, 0, 0, 'http://localhost/realestate/administrator/index.php?edit=1&token=TRUE', '', 'yes', '07122015101702lcxO51172.jpg', 'title', 'keywords', 'description', '2015-12-07 05:17:02'),
+(42, 1449465444, 'LKNEIkjlj dskf kljf', 'kljljioas fjlkn 990er[\\3;ilj jsf''po-3;k ', 1, 'lahore', 45, 452, 24587542, 0, 0, 'http://localhost/realestate/administrator/index.php?edit=1&token=TRUE', '', 'yes', '07122015101817MEfKSmontreux1.jpg', 'title', 'keywords', 'description', '2015-12-07 05:18:17'),
+(43, 1449465501, 'jienlkdfi', 'kljldfi lkajofjso waekjloi f', 1, 'fsd', 5, 45, 487545, 0, 0, 'http://localhost/realestate/administrator/index.php?edit=1&token=TRUE', '', 'no', '07122015101911aM1x2img2.jpg', 'title', 'keywords', 'description', '2015-12-07 05:19:11'),
+(44, 1449465555, 'kljei sjfkljsdi ', 'iljliifj -0k;34kjj 09j/\\dfjlkjf', 1, 'SALARAWAL', 4, 55, 44557552, 0, 0, 'http://localhost/realestate/administrator/index.php?edit=1&token=TRUE', '', 'yes', '071220151020144gqlVimg4.jpg', 'title', 'keywords', 'description', '2015-12-07 05:20:14'),
+(45, 1449465617, 'epos;kfk khjljkjfkiio', 'kjlkjsdfoi ekjkl soipfsjflk', 3, 'fsd', 4, 55, 4557585, 0, 0, 'http://localhost/realestate/administrator/index.php?edit=1&token=TRUE', '', 'no', '07122015102101vV9PBmontreux1.jpg', 'title', 'keywords', 'description', '2015-12-07 05:21:01'),
+(46, 1449465687, 'kioelknmlvkljh', 'kjisdofj aslkjosdif lkjerioo akfljljasodfj jijlkjsdfoi jlk adsjfoi asdnflkn oisaflkjl joijasiofdj lkjoidf aiojljioah fdoijlajflkj oiasdf ijaisfj iouaifj iouiodru ;iljklfjio asi', 1, 'isl', 5, 55, 554857, 0, 0, 'http://localhost/realestate/administrator/index.php?edit=1&token=TRUE', '', 'no', '0712201510221215FJd1172.jpg', 'title', 'keywords', 'description', '2015-12-07 05:22:12');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE IF NOT EXISTS `user` (
+`id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `user_name` varchar(100) NOT NULL,
+  `user_email` varchar(100) NOT NULL,
+  `user_pass` varchar(225) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `name`, `user_name`, `user_email`, `user_pass`) VALUES
+(1, 'admin', 'admin', 'admin@abc.com', '$2y$10$HcUBiW0ra5ghyaPY1YKhKuzaE4TibdashGHE2jHWc2VZzxRQNXVE.');
 
 --
 -- Indexes for dumped tables
@@ -161,6 +176,12 @@ ALTER TABLE `post`
  ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `post_id` (`post_id`);
 
 --
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+ ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `user_email` (`user_email`), ADD UNIQUE KEY `user_name` (`user_name`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -168,12 +189,17 @@ ALTER TABLE `post`
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=95;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=96;
 --
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=47;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=52;
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
