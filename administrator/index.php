@@ -153,6 +153,16 @@ if ((!empty($_DATA['price'])) || isset($_DATA['price'])) {
 } else {
     $price = 'placeholder="Write Property price"';
 }
+if ((!empty($_DATA['sim1'])) || isset($_DATA['sim1'])) {
+    $sim1 = 'value="' . $_DATA['sim1'] . '"';
+} else {
+    $sim1 = 'placeholder="Write Similar properties id"';
+}
+if ((!empty($_DATA['sim2'])) || isset($_DATA['sim2'])) {
+    $sim2 = 'value="' . $_DATA['sim2'] . '"';
+} else {
+    $sim2 = 'placeholder="Write Similar properties id"';
+}
 if ((!empty($_DATA['location'])) || isset($_DATA['location'])) {
     $location = 'value="' . $_DATA['location'] . '"';
 } else {
@@ -290,6 +300,26 @@ and open the template in the editor.
                                             <input type="number" class="form-control" id="price" name="price" <?php
                                             if (isset($price)) {
                                                 echo $price;
+                                            }
+                                            ?>>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="sim1" class="col-sm-3 control-label">Similar property 1</label>
+                                        <div class="col-sm-9">
+                                            <input type="number" class="form-control" id="sim1" name="sim1" <?php
+                                            if (isset($sim1)) {
+                                                echo $sim1;
+                                            }
+                                            ?>>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="sim2" class="col-sm-3 control-label">Similar property 2</label>
+                                        <div class="col-sm-9">
+                                            <input type="number" class="form-control" id="sim2" name="sim2" <?php
+                                            if (isset($sim2)) {
+                                                echo $sim2;
                                             }
                                             ?>>
                                         </div>

@@ -56,8 +56,10 @@ class realestate {
             //echo $password=$param['user_password'];
             if (password_verify($param['user_password'], $dbpassword)) {
                 $_SESSION['login'] = 'login';
-                header("Location:../administrator");
+                $_SESSION['name'] = $data['name'];
+                $_SESSION['user_name'] = $data['user_name'];
                 $_SESSION['secour'] = NULL;
+                header("Location:../administrator");
                 //echo'successfull';
             } else {
                 return 'Your password or User name is invalid';
@@ -66,9 +68,19 @@ class realestate {
         //exit();
     }
 
+    function change_pass($param){
+        $link = $this->connection();
+        $password = $param;
+        $password=  password_hash($password, PASSWORD_DEFAULT);
+        $query="UPDATE `user` SET `user_pass`='$password' WHERE `user_name`='".$_SESSION['user_name']."'";
+        $result=  mysqli_query($link, $query) or die(mysqli_error($link));
+        return $result;
+    }
+    
     function pass_update($param) {
         $link = $this->connection();
         $password = $this->rand_string(7);
+        
         $email=array("email"=>$param['user_email'],"name"=>$param['user_name'],"pass"=>$password);
         $send=  $this->send_email($email);
         if($send==true){
@@ -93,7 +105,7 @@ class realestate {
 //        print_r(mysqli_real_escape_string($link, $param['location']));
 //        exit();
 
-        $query = "INSERT INTO `post` (`id`, `post_id`, `name`, `about`, `category`, `city`, `rooms`, `area`, `price`, `location`, `parking`, `fimage`, `title`, `keywords`, `description`) VALUES (NULL,'" . $param['post_id'] . "','" . $param['name'] . "','" . mysqli_real_escape_string($link, $param['about']) . "','" . $param['category'] . "','" . $param['city'] . "','" . $param['rooms'] . "','" . $param['area'] . "','" . $param['price'] . "','" . mysqli_real_escape_string($link, $param['location']) . "','" . $param['parking'] . "','" . $param['fimage'] . "','" . $param['title'] . "','" . $param['keywords'] . "','" . $param['description'] . "') ON DUPLICATE KEY UPDATE `post_id`='" . $param['post_id'] . "',`name`='" . $param['name'] . "',`about`='" . mysqli_real_escape_string($link, $param['about']) . "',`category`='" . $param['category'] . "',`city`='" . $param['city'] . "',`rooms`='" . $param['rooms'] . "',`area`='" . $param['area'] . "',`price`='" . $param['price'] . "',`location`='" . mysqli_real_escape_string($link, $param['location']) . "',`parking`='" . $param['parking'] . "',`fimage`='" . $param['fimage'] . "',`title`='" . $param['title'] . "',`keywords`='" . $param['keywords'] . "',`description`='" . $param['description'] . "' ";
+        $query = "INSERT INTO `post` (`id`, `post_id`, `name`, `about`, `category`, `city`, `rooms`, `area`, `price`, `location`, `parking`, `sim1`, `sim2`, `fimage`, `title`, `keywords`, `description`) VALUES (NULL,'" . $param['post_id'] . "','" . $param['name'] . "','" . mysqli_real_escape_string($link, $param['about']) . "','" . $param['category'] . "','" . $param['city'] . "','" . $param['rooms'] . "','" . $param['area'] . "','" . $param['price'] . "','" . $param['sim1'] . "','" . $param['sim2'] . "','" . mysqli_real_escape_string($link, $param['location']) . "','" . $param['parking'] . "','" . $param['fimage'] . "','" . $param['title'] . "','" . $param['keywords'] . "','" . $param['description'] . "') ON DUPLICATE KEY UPDATE `post_id`='" . $param['post_id'] . "',`name`='" . $param['name'] . "',`about`='" . mysqli_real_escape_string($link, $param['about']) . "',`category`='" . $param['category'] . "',`city`='" . $param['city'] . "',`rooms`='" . $param['rooms'] . "',`area`='" . $param['area'] . "',`price`='" . $param['price'] . "',`sim1`='" . $param['sim1'] . "',`sim2`='" . $param['sim2'] . "',`location`='" . mysqli_real_escape_string($link, $param['location']) . "',`parking`='" . $param['parking'] . "',`fimage`='" . $param['fimage'] . "',`title`='" . $param['title'] . "',`keywords`='" . $param['keywords'] . "',`description`='" . $param['description'] . "' ";
         //$q='INSERT INTO `events`(ID, EventID, Name, ParentCategoryID, ChildCategoryID, GrandchildCategoryID, CountryID, VenueID, VenueConfigurationID, Venue, StateProvinceID, StateProvince, City, Clicks, Date, DisplayDate, IsWomensEvent, MapURL, InteractiveMapURL) VALUES (NULL, ' . $row->ID . ', "' . mysqli_real_escape_string($link, $row->Name) . '", ' . $row->ParentCategoryID . ', ' . $row->ChildCategoryID . ', ' . $row->GrandchildCategoryID . ', ' . $row->CountryID . ', ' . $row->VenueID . ', ' . $row->VenueConfigurationID . ', "' . mysqli_real_escape_string($link, $row->Venue) . '", ' . $row->StateProvinceID . ', "' . mysqli_real_escape_string($link, $row->StateProvince) . '", "' . mysqli_real_escape_string($link, $row->City) . '", ' . $row->Clicks . ', "' . date("Y-m-d H:i:s", strtotime($row->Date)) . '", "' . $row->DisplayDate . '", "' . $row->IsWomensEvent . '", "' . mysqli_real_escape_string($link, $row->MapURL) . '", "' . mysqli_real_escape_string($link, $row->InteractiveMapURL) . '") ON DUPLICATE KEY UPDATE  Name="' . mysqli_real_escape_string($link, $row->Name) . '", VenueID=' . $row->VenueID . ', VenueConfigurationID=' . $row->VenueConfigurationID . ', Venue="' . mysqli_real_escape_string($link, $row->Venue) . '", Clicks=' . $row->Clicks . ', Date="' . date("Y-m-d H:i:s", strtotime($row->Date)) . '", DisplayDate="' . $row->DisplayDate . '", MapURL="' . mysqli_real_escape_string($link, $row->MapURL) . '", InteractiveMapURL="' . mysqli_real_escape_string($link, $row->InteractiveMapURL) . '"';
         $result = mysqli_query($link, $query) or die(mysqli_error($link));
         if ($result == TRUE) {

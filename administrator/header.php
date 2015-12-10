@@ -16,6 +16,7 @@
       <ul class="nav navbar-nav">
           <li class="icon-lock"><a href="index.php">New Post </a></li>
         <li><a href="posts.php">Posts</a></li>
+        <li><a href="password.php">Change Password</a></li>
       </ul>
     <form class="navbar-form nav navbar-nav navbar-right " role="search" id="hsearch" action="record.php" method="POST">
                                         <div class="form-group">
@@ -35,7 +36,8 @@
 
                                     </form>
         <ul class="nav navbar-nav navbar-right">
-            <li class="icon-lock"><a href="login.php?logout=true">Log Out</a></li>
+            <li class=""><a>Welcome: <?php echo $_SESSION['name'] ?></a></li>
+            <li class=""><a href="login.php?logout=true">Log Out</a></li>
         </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
