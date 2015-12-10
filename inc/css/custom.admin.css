@@ -52,7 +52,11 @@ border-bottom: 0px;
 }
 
 .table tr td img{
-    width: 10%;
+    width: 50px;
+}
+
+.table tr td.name{
+    //width: 50%;
 }
 .table tr td{
     vertical-align: middle;

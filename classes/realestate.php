@@ -68,27 +68,27 @@ class realestate {
         //exit();
     }
 
-    function change_pass($param){
+    function change_pass($param) {
         $link = $this->connection();
         $password = $param;
-        $password=  password_hash($password, PASSWORD_DEFAULT);
-        $query="UPDATE `user` SET `user_pass`='$password' WHERE `user_name`='".$_SESSION['user_name']."'";
-        $result=  mysqli_query($link, $query) or die(mysqli_error($link));
+        $password = password_hash($password, PASSWORD_DEFAULT);
+        $query = "UPDATE `user` SET `user_pass`='$password' WHERE `user_name`='" . $_SESSION['user_name'] . "'";
+        $result = mysqli_query($link, $query) or die(mysqli_error($link));
         return $result;
     }
-    
+
     function pass_update($param) {
         $link = $this->connection();
         $password = $this->rand_string(7);
-        
-        $email=array("email"=>$param['user_email'],"name"=>$param['user_name'],"pass"=>$password);
-        $send=  $this->send_email($email);
-        if($send==true){
-          $password=  password_hash($password, PASSWORD_DEFAULT);
-          $query="UPDATE `user` SET `user_pass`='$password' WHERE `user_email`='".$param['user_email']."'";
-          $result=  mysqli_query($link, $query) or die(mysqli_error($link));
-          return $result;
-          //exit();
+
+        $email = array("email" => $param['user_email'], "name" => $param['user_name'], "pass" => $password);
+        $send = $this->send_email($email);
+        if ($send == true) {
+            $password = password_hash($password, PASSWORD_DEFAULT);
+            $query = "UPDATE `user` SET `user_pass`='$password' WHERE `user_email`='" . $param['user_email'] . "'";
+            $result = mysqli_query($link, $query) or die(mysqli_error($link));
+            return $result;
+            //exit();
         }
     }
 
@@ -191,17 +191,35 @@ class realestate {
         return $result;
     }
 
+    function delete_post($param) {
+        $link = $this->connection();
+        $param_id['post_id'] = $param;
+        $fimage = $this->get_post($param_id);
+        $query = "DELETE FROM `post` WHERE `post_id`='" . $param . "'";
+        if (mysqli_query($link, $query)) {
+            $fimage = mysqli_fetch_array($fimage);
+            unlink('../upload/' . $fimage['fimage']);
+            $images = $this->get_images($param_id);
+            while ($row = mysqli_fetch_array($images)) {
+                $query = "DELETE FROM `images` WHERE `name`='" . $row['name'] . "'";
+                $result = mysqli_query($link, $query) or die(mysqli_error($link));
+                unlink('../upload/' . $row['name']);
+            }
+        }
+
+        return $result;
+    }
+
     function send_email($param) {
         $to = $param['email'];
         $subject = "Your Password";
-        $txt = "Hello Dear </br> Your Password is <strong>".$param['pass']."</strong>";
+        $txt = "Hello Dear </br> Your Password is <strong>" . $param['pass'] . "</strong>";
 //        $headers = "From: webmaster@example.com" . "\r\n" .
 //                "CC: somebodyelse@example.com";
 
-        if(mail($to, $subject, $txt)){
-        return $result=true;
+        if (mail($to, $subject, $txt)) {
+            return $result = true;
         }
-        
     }
 
     function logout() {
