@@ -1,16 +1,35 @@
 <?php 
 include 'classes/realestate.php';
+$obj=new realestate();
 if(!isset($_GET['get_id'])){
     header('Location:index.php');
 }else{
     $param['post_id']=$_GET['get_id'];
-    $obj=new realestate();
+    
     $row= $obj->get_post($param);
     $main_post=  mysqli_fetch_array($row);
 //    print_r($main_post);
     
 }
 
+if(isset($_POST['submit'])){
+    
+    foreach ($_POST as $key => $value) {
+        if(empty($_POST[$key])){
+            $error=true;
+        }
+        $_data[$key]=$value;
+    }
+    if(!isset($error)){
+      print_r($_data);
+      $to='abc@xyz.com';
+      $subject='About property';
+      $message='<h2>Hi Dear</h2><br>'.$_data['message'].'<br> Property URL: '.$_data['url'].'<br> Property ID: '.$_data['post_id'].'<br><br> Redards:<br> '.$_data['name'].'<br> '.$_data['email'].'<br> '.$_data['phone'];
+      //echo $message;
+      $result=$obj->send_email($to,$subject,$message);
+    }
+    
+}
 
 ?>
 
@@ -85,7 +104,7 @@ and open the template in the editor.
 
                         <div itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" class="info-address clearfix">
                             <div>
-                                <a itemprop="url" itemref="bbc" href="/"><span itemprop="title"><?php echo $main_post['city'] ?></span></a>
+                                <a itemprop="url" itemref="bbc" href="index.php"><span itemprop="title">Realestate</span></a><a itemprop="url" itemref="bbc" href="/"><span itemprop="title"><?php echo $main_post['city'] ?></span></a>
                             </div>
                             <!--<div itemref="cbc" itemprop="child" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" id="bbc"><a itemprop="url" href="" class="prevent"><span itemprop="title">Spain</span></a></div><div itemref="dbc" itemprop="child" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" id="cbc"><a itemprop="url" href="" class="prevent"><span itemprop="title">Costa Blanca</span></a></div><div itemprop="child" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" id="dbc"><a itemprop="url" href="#" class="prevent"><span itemprop="title">Guardamar del Segura</span></a></div><div class="object_sku">ES-82517</div>-->
                         </div>
@@ -116,7 +135,7 @@ and open the template in the editor.
                                 <div class="object_bottom row">
                                     <div class="object-bottom-left col-xs-12">
                                         <p class="object_address">
-                                            Guardamar del Segura, España
+                                            <?php echo $main_post['address'] ?>
                                         </p>
 
                                         <noindex>
@@ -140,7 +159,7 @@ and open the template in the editor.
                             <div class="single-object-form-col col-sm-12 col-md-4">
                                 <div class="object_download_wrap clearfix">
                                     <div class="icon-info"></div>
-                                    <form method="post" data-remote="true" accept-charset="UTF-8" action="/request" class="new_request" id="object_download_form"><input type="hidden" value="✓" name="utf8">
+                                    <form method="post" data-remote="true" accept-charset="UTF-8" action="" class="new_request" id="object_download_form">
 
 
                                         <div id="short-form-validation">
@@ -164,19 +183,17 @@ and open the template in the editor.
                                             </div>
                                             <div class="od_carrot ">
                                                 <div class="get_info_form clearfix">
-                                                    <input type="text" id="request_name" name="request[name]" placeholder="Enter your name" class="get_info_name">
-                                                    <input type="email" id="request_email" name="request[email]" placeholder="your email" class="get_info_email paired">
-                                                    <input type="tel" id="request_phone" name="request[phone]" placeholder="or your phone" class="get_info_phone paired">
-                                                    <textarea id="request_message" name="request[message]" placeholder="and your question" class="get_info_question"></textarea>
-                                                    <input type="hidden" id="request_code" name="request[code]" value="ES-82517">
-                                                    <input type="hidden" id="request_property_url" name="request[property_url]" value="es-82517-bungalow-for-sale-in-guardamar-del-segura-costa-blanca">
-                                                    <input type="hidden" id="request_lang" name="request[lang]" value="en">
-                                                    <input type="hidden" id="request_prop_id" name="request[prop_id]" value="82517">
+                                                    <input type="text" id="request_name" name="name" placeholder="Enter your name" class="get_info_name">
+                                                    <input type="email" id="request_email" name="email" placeholder="your email" class="get_info_email paired">
+                                                    <input type="tel" id="request_phone" name="phone" placeholder="or your phone" class="get_info_phone paired">
+                                                    <textarea id="request_message" name="message" placeholder="and your question" class="get_info_question"></textarea>
+                                                    <input type="hidden" id="request_property_url" name="url" value="<?php echo $_SERVER['REQUEST_URI']; ?>">
+                                                    <input type="hidden" id="request_prop_id" name="post_id" value="<?php echo $main_post['post_id'] ?>">
                                                 </div>
                                             </div>
                                             <div class=" ">
                                                 <div class="get_info_btn">
-                                                    <input type="submit" class="button" value="Send request" name="commit">
+                                                    <input type="submit" class="button" value="submit" name="submit">
                                                 </div>
                                                 <div class="object_download_carrot"></div>
                                             </div>
@@ -265,65 +282,6 @@ and open the template in the editor.
 
                             </div>
                         </article>
-                    </div>
-                </div>
-
-
-                <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" class="modal fade" id="download_modal">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <img alt="" src="https://d18mncbmmvtpqd.cloudfront.net/assets/images/elements/winner.svg" class="modal_winner visible-xs">
-
-                            <h3>Great! You have downloaded property brochure and now you can learn:</h3>
-
-                            <div class="row-custom">
-                                <div class="col-sm-4 hidden-xs download_modal_img_wrap">
-                                    <img alt="" src="https://d18mncbmmvtpqd.cloudfront.net/assets/images/elements/winner.svg" class="modal_winner">
-                                </div>
-                                <div class="col-sm-8 col-xs-12 download_modal_descr_wrap">
-                                    <ul>
-                                        <li>specifications of this project</li>
-                                        <li>special terms for a buyer</li>
-                                        <li>alternative off-market options that are not included in this TOP</li>
-                                        <li>financing possibilities</li>
-                                        <li>investment attractiveness</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="figure-stripe-down"><span></span></div>
-
-                            <form method="post" data-remote="true" accept-charset="UTF-8" action="/modal" class="contactpage_form" id="contact_form"><input type="hidden" value="✓" name="utf8">
-                                <div id="modal-form-validation">
-                                    <div class="form-message error-form-message"><p>We need your contact information to answer your question. Please, fill required fields.</p></div>
-                                    <div class="form-message success-form-message"><p>Thank you, your request was received.</p></div>
-                                </div>
-                                <div class="row-custom">
-                                    <div class="cf_input cf_email col-sm-6 col-xs-12">
-                                        <input type="email" id="request_email" name="request[email]" placeholder="Just leave us your e-mail" class="get_info_email paired">
-                                    </div>
-                                    <div class="cf_input cf_tel col-sm-6 col-xs-12">
-                                        <input type="tel" id="request_phone" name="request[phone]" placeholder="or your phone" class="get_info_phone paired">
-                                    </div>
-                                </div>
-                                <input type="hidden" id="request_code" name="request[code]" value="ES-82517">
-                                <input type="hidden" id="request_property_url" name="request[property_url]" value="es-82517-bungalow-for-sale-in-guardamar-del-segura-costa-blanca">
-                                <input type="hidden" id="request_lang" name="request[lang]" value="en">
-                                <input type="hidden" id="request_prop_id" name="request[prop_id]" value="82517">
-                                <div class="cf_submit_wrap col-md-6 col-sm-12 col-md-push-6">
-                                    <button class="cf_submit" id="modal_submit_btn" type="submit" name="button">
-                                        <i class="icon icon-v"></i><span>Yes, I would like to know</span>
-                                    </button>          </div>
-                                <div class="security-warning col-md-6 col-sm-12 col-md-pull-6"><i class="icon icon-15 icon-lock"></i>
-
-                                    <p class="warning-text">Your contact details will be used only to provide you with more information about the property.
-                                        <a href="">Read more</a> about our Privacy policy
-                                    </p>
-                                </div>
-                            </form>
-
-
-                            <button data-dismiss="modal" class="close_modal" type="button"><i class="icon icon-x"></i>May be later</button>
-                        </div>
                     </div>
                 </div>
             </div>

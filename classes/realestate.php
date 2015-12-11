@@ -81,8 +81,11 @@ class realestate {
         $link = $this->connection();
         $password = $this->rand_string(7);
 
-        $email = array("email" => $param['user_email'], "name" => $param['user_name'], "pass" => $password);
-        $send = $this->send_email($email);
+//        $email = array("email" => $param['user_email'], "name" => $param['user_name'], "pass" => $password);
+        $to=$param['user_email'];
+        $subject="Your Password";
+        $message="Hello Dear </br> Your Password is <strong>" . $password . "</strong>";
+        $send = $this->send_email($to,$subject,$message);
         if ($send == true) {
             $password = password_hash($password, PASSWORD_DEFAULT);
             $query = "UPDATE `user` SET `user_pass`='$password' WHERE `user_email`='" . $param['user_email'] . "'";
@@ -210,14 +213,14 @@ class realestate {
         return $result;
     }
 
-    function send_email($param) {
-        $to = $param['email'];
-        $subject = "Your Password";
-        $txt = "Hello Dear </br> Your Password is <strong>" . $param['pass'] . "</strong>";
+    function send_email($to,$subject,$message) {
+//        $to = $param['email'];
+//        $subject = "Your Password";
+//        $txt = "Hello Dear </br> Your Password is <strong>" . $param['pass'] . "</strong>";
 //        $headers = "From: webmaster@example.com" . "\r\n" .
 //                "CC: somebodyelse@example.com";
 
-        if (mail($to, $subject, $txt)) {
+        if (mail($to,$subject,$message)) {
             return $result = true;
         }
     }
