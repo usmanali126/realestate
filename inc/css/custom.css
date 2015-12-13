@@ -164,9 +164,18 @@ a{
     cursor: pointer;
     text-shadow: -2px 0 #eeeeee, 0 2px #eeeeee, 2px 0 #eeeeee, 0 -2px #eeeeee;
 }
-.add-favorite-button .glyphicon-bookmark:hover , .price-row .glyphicon-bookmark:hover{
+.add-favorite-button .glyphicon-bookmark:hover , .price-row .glyphicon-bookmark:hover, .cookie:hover{
     color: #FC6666;
 }
+
+.glyphicon-bookmark.bmark{
+    color: #FC6666;
+    //font-size: 35px;
+    //position: relative;
+    //cursor: pointer;
+    //text-shadow: -2px 0 #eeeeee, 0 2px #eeeeee, 2px 0 #eeeeee, 0 -2px #eeeeee;
+}
+
 .glyphicon.glyphicon-star {
     color: #fff;
     font-size: 15px;

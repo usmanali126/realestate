@@ -1,28 +1,56 @@
 <?php
 $obj = new realestate();
-$category='';
+if (isset($_GET['category'])) {
+    $category = $_GET['category'];
+    
+} else {
+    $category = '';
+}
+//switch ($category) {
+//    case 1:
+//        break;
+//    case 2:
+//        break;
+//    case 3:
+//        break;
+//
+//    default:
+//        break;
+//}
+
 $first_load = $obj->first_load($category);
+$category = "";
 $i = 1;
-$no_of_row=  mysqli_num_rows($first_load);
+$no_of_row = mysqli_num_rows($first_load);
 while ($row = mysqli_fetch_array($first_load)) {
-switch ($i) {
+    
+        switch ($row['category']) {
+    case 1: $category='Apartment';
+        break;
+    case 2: $category='House';
+        break;
+    case 3: $category='Commercial';
+        break;
+}
+
+    switch ($i) {
         case 1:
             ?>
             <div class="row">
                 <article class="object-item post_box object-item-regular object-wide col-sm-12" id="<?php echo $row['post_id']; ?>">
                     <div class="object-inner-wrapper">
                         <div class="object-thumbnail">
-                            <a href="single.php?get_id=<?php echo  $row['post_id']; ?>">
+                            <a href="single.php?get_id=<?php echo $row['post_id']; ?>">
                                 <img class="img-responsive" src="upload/<?php echo $row['fimage']; ?>">
                             </a>
                             <div class="add-favorite-button" data-obj_id="56198">
-                                <span class="glyphicon glyphicon-bookmark"><span class="glyphicon glyphicon-star"></span></span>
+                                <span class="glyphicon glyphicon-bookmark <?php if(isset($cookie)){echo in_array($i, $cookie)?"bmark":"cookie";}else{echo "cookie";} ?>" data-post-id="<?php echo $row['post_id']; ?>"><span class="glyphicon glyphicon-star"></span></span>
                             </div>
                         </div>
                         <div class="object-info-holder">
                             <div class="info-address col-sm-12">
                                 <a href=""><?php echo $row['city'] ?></a>
-                                <a href="">Burgas Province</a>
+                                <a href="" class="category" id="<?php echo $row['category']; ?>"><?php echo  $category; ?></a>
                                 <a href="">Kosharitsa</a>
                             </div>
                             <h2 class="info-title col-sm-12" itemprop="name">
@@ -51,20 +79,26 @@ switch ($i) {
                 break;
             case 2:
                 ?>
-                <article class="object-item post_box object-item-regular object-wide  <?php if($no_of_row==2){echo "col-sm-12";}else{echo "col-sm-6";} ?>" id="<?php echo $row['post_id']; ?>">
+                <article class="object-item post_box object-item-regular object-wide  <?php
+                if ($no_of_row == 2) {
+                    echo "col-sm-12";
+                } else {
+                    echo "col-sm-6";
+                }
+                ?>" id="<?php echo $row['post_id']; ?>">
                     <div class="object-inner-wrapper">
                         <div class="object-thumbnail">
-                            <a href="single.php?get_id=<?php echo  $row['post_id']; ?>">
+                            <a href="single.php?get_id=<?php echo $row['post_id']; ?>">
                                 <img class="img-responsive" src="upload/<?php echo $row['fimage']; ?>">
                             </a>
                             <div class="add-favorite-button" data-obj_id="56198">
-                                <span class="glyphicon glyphicon-bookmark"><span class="glyphicon glyphicon-star"></span></span>
+                                <span class="glyphicon glyphicon-bookmark <?php if(isset($cookie)){echo in_array($i, $cookie)?"bmark":"cookie";}else{echo "cookie";} ?>" data-post-id="<?php echo $row['post_id']; ?>"><span class="glyphicon glyphicon-star"></span></span>
                             </div>
                         </div>
                         <div class="object-info-holder">
                             <div class="info-address col-sm-12">
                                 <a href=""><?php echo $row['city'] ?></a>
-                                <a href="">Burgas Province</a>
+                                <a href=""><?php echo  $category; ?></a>
                                 <a href="">Kosharitsa</a>
                             </div>
                             <h2 class="info-title col-sm-12" itemprop="name">
@@ -96,17 +130,17 @@ switch ($i) {
                 <article class="object-item post_box object-item-regular object-wide col-sm-6" id="<?php echo $row['post_id']; ?>">
                     <div class="object-inner-wrapper">
                         <div class="object-thumbnail">
-                            <a href="single.php?get_id=<?php echo  $row['post_id']; ?>">
+                            <a href="single.php?get_id=<?php echo $row['post_id']; ?>">
                                 <img class="img-responsive" src="upload/<?php echo $row['fimage']; ?>">
                             </a>
                             <div class="add-favorite-button" data-obj_id="56198">
-                                <span class="glyphicon glyphicon-bookmark"><span class="glyphicon glyphicon-star"></span></span>
+                                <span class="glyphicon glyphicon-bookmark <?php if(isset($cookie)){echo in_array($i, $cookie)?"bmark":"cookie";}else{echo "cookie";} ?>" data-post-id="<?php echo $row['post_id']; ?>"><span class="glyphicon glyphicon-star"></span></span>
                             </div>
                         </div>
                         <div class="object-info-holder">
                             <div class="info-address col-sm-12">
                                 <a href=""><?php echo $row['city']; ?></a>
-                                <a href="">Burgas Province</a>
+                                <a href=""><?php echo  $category; ?></a>
                                 <a href="">Kosharitsa</a>
                             </div>
                             <h2 class="info-title col-sm-12" itemprop="name">

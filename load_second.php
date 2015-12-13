@@ -2,14 +2,33 @@
 $last_msg_id = $_GET['last_msg_id'];
 //exit();
 $obj = new realestate();
-$category='';
+if(!isset($_GET['category'])){
+    $category = 'dfgsd';
+}else{
+    $category = $_GET['category'];
+}
+//$category = $_GET['category'];
 $second_load = $obj->second_load($last_msg_id,$category);
 $last_msg_id = "";
+$category = "";
 $total_rows = mysqli_num_rows($second_load);
+
 $j = 1;
 while ($row = mysqli_fetch_array($second_load)) {
+//    echo $categoryget;
+    switch ($row['category']) {
+    case 1: $category='Apartment';
+        break;
+    case 2: $category='House';
+        break;
+    case 3: $category='Commercial';
+        break;
+}
+    
+    
     switch ($j) {
         case 1:
+            
             ?>
             <article class="object-item post_box object-item-regular object-wide col-sm-12" id="<?php echo $row['post_id']; ?>">
                 <div class="object-inner-wrapper">
@@ -18,13 +37,13 @@ while ($row = mysqli_fetch_array($second_load)) {
                             <img class="img-responsive" src="upload/<?php echo $row['fimage']; ?>">
                         </a>
                         <div class="add-favorite-button" data-obj_id="56198">
-                            <span class="glyphicon glyphicon-bookmark"><span class="glyphicon glyphicon-star"></span></span>
+                            <span class="glyphicon glyphicon-bookmark <?php if(isset($cookie)){echo in_array($i, $cookie)?"mark":"cookie";}else{echo "cookie";} ?>" data-post-id="<?php echo $row['post_id']; ?>"><span class="glyphicon glyphicon-star"></span></span>
                         </div>
                     </div>
                     <div class="object-info-holder">
                         <div class="info-address col-sm-12">
                             <a href=""><?php echo $row['city'] ?></a>
-                            <a href="">Burgas Province</a>
+                            <a href=""><?php echo  $category; ?></a>
                             <a href="">Kosharitsa</a>
                         </div>
                         <h2 class="info-title col-sm-12" itemprop="name">
@@ -66,13 +85,13 @@ while ($row = mysqli_fetch_array($second_load)) {
                             <img class="img-responsive" src="upload/<?php echo $row['fimage']; ?>">
                         </a>
                         <div class="add-favorite-button" data-obj_id="56198">
-                            <span class="glyphicon glyphicon-bookmark"><span class="glyphicon glyphicon-star"></span></span>
+                            <span class="glyphicon glyphicon-bookmark <?php if(isset($cookie)){echo in_array($i, $cookie)?"mark":"cookie";}else{echo "cookie";} ?>" data-post-id="<?php echo $row['post_id']; ?>"><span class="glyphicon glyphicon-star"></span></span>
                         </div>
                     </div>
                     <div class="object-info-holder">
                         <div class="info-address col-sm-12">
                             <a href=""><?php echo $row['city'] ?></a>
-                            <a href="">Burgas Province</a>
+                            <a href=""><?php echo  $category; ?></a>
                             <a href="">Kosharitsa</a>
                         </div>
                         <h2 class="info-title col-sm-12" itemprop="name">
@@ -114,13 +133,13 @@ while ($row = mysqli_fetch_array($second_load)) {
                             <img class="img-responsive" src="upload/<?php echo $row['fimage']; ?>">
                         </a>
                         <div class="add-favorite-button" data-obj_id="56198">
-                            <span class="glyphicon glyphicon-bookmark"><span class="glyphicon glyphicon-star"></span></span>
+                            <span class="glyphicon glyphicon-bookmark <?php if(isset($cookie)){echo in_array($i, $cookie)?"mark":"cookie";}else{echo "cookie";} ?>" data-post-id="<?php echo $row['post_id']; ?>"><span class="glyphicon glyphicon-star"></span></span>
                         </div>
                     </div>
                     <div class="object-info-holder">
                         <div class="info-address col-sm-12">
                             <a href=""><?php echo $row['city'] ?></a>
-                            <a href="">Burgas Province</a>
+                            <a href=""><?php echo  $category; ?></a>
                             <a href="">Kosharitsa</a>
                         </div>
                         <h2 class="info-title col-sm-12" itemprop="name">
@@ -162,13 +181,13 @@ while ($row = mysqli_fetch_array($second_load)) {
                             <img class="img-responsive" src="upload/<?php echo $row['fimage']; ?>">
                         </a>
                         <div class="add-favorite-button" data-obj_id="56198">
-                            <span class="glyphicon glyphicon-bookmark"><span class="glyphicon glyphicon-star"></span></span>
+                            <span class="glyphicon glyphicon-bookmark <?php if(isset($cookie)){echo in_array($i, $cookie)?"mark":"cookie";}else{echo "cookie";} ?>" data-post-id="<?php echo $row['post_id']; ?>"><span class="glyphicon glyphicon-star"></span></span>
                         </div>
                     </div>
                     <div class="object-info-holder">
                         <div class="info-address col-sm-12">
                             <a href=""><?php echo $row['city'] ?></a>
-                            <a href="">Burgas Province</a>
+                            <a href=""><?php echo  $category; ?></a>
                             <a href="">Kosharitsa</a>
                         </div>
                         <h2 class="info-title col-sm-12" itemprop="name">
@@ -210,13 +229,13 @@ while ($row = mysqli_fetch_array($second_load)) {
                             <img class="img-responsive" src="upload/<?php echo $row['fimage']; ?>">
                         </a>
                         <div class="add-favorite-button" data-obj_id="56198">
-                            <span class="glyphicon glyphicon-bookmark"><span class="glyphicon glyphicon-star"></span></span>
+                            <span class="glyphicon glyphicon-bookmark <?php if(isset($cookie)){echo in_array($i, $cookie)?"mark":"cookie";}else{echo "cookie";} ?>" data-post-id="<?php echo $row['post_id']; ?>"><span class="glyphicon glyphicon-star"></span></span>
                         </div>
                     </div>
                     <div class="object-info-holder">
                         <div class="info-address col-sm-12">
                             <a href=""><?php echo $row['city'] ?></a>
-                            <a href="">Burgas Province</a>
+                            <a href=""><?php echo  $category; ?></a>
                             <a href="">Kosharitsa</a>
                         </div>
                         <h2 class="info-title col-sm-12" itemprop="name">

@@ -45,8 +45,9 @@ $(document).ready(function () {
     {
 
         var ID = $(".post_box:last").attr("id");
+        var category = $(".category").attr("id");
         $('div#last_msg_loader').html('<img src="images/200_s.gif">');
-        $.post("index.php?action=get&last_msg_id=" + ID,
+        $.post("index.php?action=get&last_msg_id=" + ID+"&category="+category,
                 function (data) {
                     if (data != "") {
                         $(".post_box:last").after(data);
