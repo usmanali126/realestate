@@ -176,6 +176,10 @@ a{
     //text-shadow: -2px 0 #eeeeee, 0 2px #eeeeee, 2px 0 #eeeeee, 0 -2px #eeeeee;
 }
 
+.fav{
+    color: red;
+}
+
 .glyphicon.glyphicon-star {
     color: #fff;
     font-size: 15px;

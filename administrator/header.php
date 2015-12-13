@@ -18,7 +18,7 @@
         <li><a href="posts.php">Posts</a></li>
         <li><a href="password.php">Change Password</a></li>
       </ul>
-    <form class="navbar-form nav navbar-nav navbar-right " role="search" id="hsearch" action="record.php" method="POST">
+<!--    <form class="navbar-form nav navbar-nav navbar-right " role="search" id="hsearch" action="record.php" method="POST">
                                         <div class="form-group">
 
                                             <div id="custom-search-input">
@@ -34,7 +34,7 @@
                                             </div>
                                         </div>
 
-                                    </form>
+                                    </form>-->
         <ul class="nav navbar-nav navbar-right">
             <li class=""><a>Welcome: <?php echo $_SESSION['name'] ?></a></li>
             <li class=""><a href="login.php?logout=true">Log Out</a></li>

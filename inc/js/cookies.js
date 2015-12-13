@@ -17,7 +17,7 @@ var favorite = 'favorite';
 //        $(document).ready(function () {
             //var postids= new Array();
             
-            $('.add-favorite-button').on('click', '.bmark', function () {
+            $('body').on('click', '.bmark', function () {
 //                alert('alert');
                 $(this).removeClass('bmark');
                 $(this).addClass('cookie');
@@ -74,7 +74,7 @@ var favorite = 'favorite';
             return unescape(dc.substring(begin + prefix.length, end));
         }
 
-        $('.add-favorite-button').on('click', '.cookie', function () {
+        $('body').on('click', '.cookie', function () {
 //                alert('alert');
             $(this).removeClass('cookie');
             $(this).addClass('bmark');
@@ -86,4 +86,11 @@ var favorite = 'favorite';
             console.log(total);
             //alert(total.length);
             $('.fav').html(total.length);
+        });
+        
+        
+        $('body').on('click','.fremove',function(){
+           setCookie(favorite, total, -2);
+           $('.add-favorite-button').find('.bmark').toggleClass('bmark cookie');
+           $('.fav').html(0);
         });

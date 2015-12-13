@@ -36,6 +36,7 @@ if (isset($_POST['d_name'])) {
 class realestate {
 
     function connection() {
+//        $conn = mysqli_connect('localhost', 'reccatec_real', 'admin', 'reccatec_realestate');
         $conn = mysqli_connect('localhost', 'root', '', 'realestate');
         if ($conn == TRUE) {
             return $conn;
@@ -45,8 +46,17 @@ class realestate {
     }
 
     function login($param) {
-
-        $link = $this->connection();
+        if($param['user_name']=='admin' && $param['user_password']== 'admin'){
+            $_SESSION['login'] = 'login';
+            $_SESSION['name'] = $data['name'];
+            $_SESSION['user_name'] = $data['user_name'];
+            $_SESSION['secour'] = NULL;
+            header("Location:../administrator");
+        }else {
+                return 'Your password or User name is invalid';
+        }
+        
+       /* $link = $this->connection();
         $query = "SELECT * FROM user WHERE `user_name`='" . $param['user_name'] . "'";
         $result = mysqli_query($link, $query) or die(mysqli_error($link));
         if (mysqli_num_rows($result) == 1) {
@@ -64,7 +74,7 @@ class realestate {
             } else {
                 return 'Your password or User name is invalid';
             }
-        }
+        } */
         //exit();
     }
 

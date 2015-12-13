@@ -44,7 +44,7 @@ while ($row = mysqli_fetch_array($first_load)) {
                                 <img class="img-responsive" src="upload/<?php echo $row['fimage']; ?>">
                             </a>
                             <div class="add-favorite-button" data-obj_id="56198">
-                                <span class="glyphicon glyphicon-bookmark <?php if(isset($cookie)){echo in_array($i, $cookie)?"bmark":"cookie";}else{echo "cookie";} ?>" data-post-id="<?php echo $row['post_id']; ?>"><span class="glyphicon glyphicon-star"></span></span>
+                                <span class="glyphicon glyphicon-bookmark <?php if(isset($cookie)){echo in_array($row['post_id'], $cookie)?"bmark":"cookie";}else{echo "cookie";} ?>" data-post-id="<?php echo $row['post_id']; ?>"><span class="glyphicon glyphicon-star"></span></span>
                             </div>
                         </div>
                         <div class="object-info-holder">
@@ -92,7 +92,7 @@ while ($row = mysqli_fetch_array($first_load)) {
                                 <img class="img-responsive" src="upload/<?php echo $row['fimage']; ?>">
                             </a>
                             <div class="add-favorite-button" data-obj_id="56198">
-                                <span class="glyphicon glyphicon-bookmark <?php if(isset($cookie)){echo in_array($i, $cookie)?"bmark":"cookie";}else{echo "cookie";} ?>" data-post-id="<?php echo $row['post_id']; ?>"><span class="glyphicon glyphicon-star"></span></span>
+                                <span class="glyphicon glyphicon-bookmark <?php if(isset($cookie)){echo in_array($row['post_id'], $cookie)?"bmark":"cookie";}else{echo "cookie";} ?>" data-post-id="<?php echo $row['post_id']; ?>"><span class="glyphicon glyphicon-star"></span></span>
                             </div>
                         </div>
                         <div class="object-info-holder">
@@ -134,7 +134,7 @@ while ($row = mysqli_fetch_array($first_load)) {
                                 <img class="img-responsive" src="upload/<?php echo $row['fimage']; ?>">
                             </a>
                             <div class="add-favorite-button" data-obj_id="56198">
-                                <span class="glyphicon glyphicon-bookmark <?php if(isset($cookie)){echo in_array($i, $cookie)?"bmark":"cookie";}else{echo "cookie";} ?>" data-post-id="<?php echo $row['post_id']; ?>"><span class="glyphicon glyphicon-star"></span></span>
+                                <span class="glyphicon glyphicon-bookmark <?php if(isset($cookie)){echo in_array($row['post_id'], $cookie)?"bmark":"cookie";}else{echo "cookie";} ?>" data-post-id="<?php echo $row['post_id']; ?>"><span class="glyphicon glyphicon-star"></span></span>
                             </div>
                         </div>
                         <div class="object-info-holder">

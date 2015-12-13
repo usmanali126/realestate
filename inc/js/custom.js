@@ -36,7 +36,15 @@ $(document).ready(function () {
 
     $(window).scroll(function () {
         if ($(window).scrollTop() == $(document).height() - $(window).height()) {
-            last_msg_funtion();
+			
+			//var arr = split($(location).attr('pathname'));
+			//var last_val = arr[arr.length-1];
+			var url = $(location).attr('pathname');
+			var last_val= url.split('/')[url.split('/').length - 1];
+			
+			if(last_val=='index.php' || last_val==''){
+				last_msg_funtion();
+				}
         }
     });
     
