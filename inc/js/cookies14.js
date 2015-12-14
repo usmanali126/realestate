@@ -93,5 +93,4 @@ var favorite = 'favorite';
            setCookie(favorite, total, -2);
            $('.add-favorite-button').find('.bmark').toggleClass('bmark cookie');
            $('.fav').html(0);
-           $(location).attr('href', 'index.php');
         });

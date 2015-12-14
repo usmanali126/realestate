@@ -43,8 +43,16 @@ and open the template in the editor.
                                     <?php
                                     $i = 1;
                                     while ($row = mysqli_fetch_array($result)) {
+                                        switch ($row['category']) {
+                                            case 1: $category = 'Apartment';
+                                                break;
+                                            case 2: $category = 'House';
+                                                break;
+                                            case 3: $category = 'Commercial';
+                                                break;
+                                        }
                                         ?>
-                                        <tr><td><?php echo $i ?></td><td><a href="index.php?edit=<?php echo $i ?>&token=TRUE"><?php echo $row['post_id'] ?></a></td><td class="name"><a href="index.php?edit=<?php echo $i ?>&token=TRUE" ><?php echo $row['name'] ?></a></td><td><?php echo $row['category'] ?></td><td><?php echo $row['city'] ?></td><td><img class="" src="../upload/<?php echo $row['fimage'] ?>"></td><td><a class="btn btn-danger" href="posts.php?delete_id=<?php echo $row['post_id']; ?>">DELETE</a></td></tr>
+                                        <tr><td><?php echo $i ?></td><td><a href="index.php?edit=<?php echo $i ?>&token=TRUE"><?php echo $row['post_id'] ?></a></td><td class="name"><a href="index.php?edit=<?php echo $i ?>&token=TRUE" ><?php echo $row['name'] ?></a></td><td><?php echo $category ?></td><td><?php echo $row['city'] ?></td><td><img class="" src="../upload/<?php echo $row['fimage'] ?>"></td><td><a class="btn btn-danger" href="posts.php?delete_id=<?php echo $row['post_id']; ?>">DELETE</a></td></tr>
                                                 <?php
                                                 $_SESSION['post_id'][$i] = $row['post_id'];
                                                 $i++;

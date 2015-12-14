@@ -168,6 +168,11 @@ a{
     color: #FC6666;
 }
 
+.fremove{
+    cursor: pointer;
+    top: -15px;
+}
+
 .glyphicon-bookmark.bmark{
     color: #FC6666;
     //font-size: 35px;

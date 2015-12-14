@@ -1,36 +1,69 @@
-<?php 
+<?php
 include 'classes/realestate.php';
-$obj=new realestate();
-if(!isset($_GET['get_id'])){
+$obj = new realestate();
+if (!isset($_GET['get_id'])) {
     header('Location:index.php');
-}else{
-    $param['post_id']=$_GET['get_id'];
-    
-    $row= $obj->get_post($param);
-    $main_post=  mysqli_fetch_array($row);
-//    print_r($main_post);
-    
+} else {
+    $param['post_id'] = $_GET['get_id'];
+
+    $row = $obj->get_post($param);
+    $main_post = mysqli_fetch_array($row);
+    switch ($main_post['category']) {
+        case 1: $category = 'Apartment';
+            break;
+        case 2: $category = 'House';
+            break;
+        case 3: $category = 'Commercial';
+            break;
+    }
+
+
+    $param['post_id'] = $main_post['sim1'];
+    $row3 = $obj->get_post($param);
+    $sim1 = mysqli_fetch_array($row3);
+    switch ($sim1['category']) {
+        case 1: $category = 'Apartment';
+            break;
+        case 2: $category = 'House';
+            break;
+        case 3: $category = 'Commercial';
+            break;
+    }
+
+
+    $param['post_id'] = $main_post['sim2'];
+    $row4 = $obj->get_post($param);
+    $sim2 = mysqli_fetch_array($row4);
+    switch ($sim2['category']) {
+        case 1: $category = 'Apartment';
+            break;
+        case 2: $category = 'House';
+            break;
+        case 3: $category = 'Commercial';
+            break;
+    }
+
+    $post_images = $obj->get_images($param);
+//    print_r($sim1);
 }
 
-if(isset($_POST['submit'])){
-    
+if (isset($_POST['submit'])) {
+
     foreach ($_POST as $key => $value) {
-        if(empty($_POST[$key])){
-            $error=true;
+        if (empty($_POST[$key])) {
+            $error = true;
         }
-        $_data[$key]=$value;
+        $_data[$key] = $value;
     }
-    if(!isset($error)){
-      print_r($_data);
-      $to='abc@xyz.com';
-      $subject='About property';
-      $message='<h2>Hi Dear</h2><br>'.$_data['message'].'<br> Property URL: '.$_data['url'].'<br> Property ID: '.$_data['post_id'].'<br><br> Redards:<br> '.$_data['name'].'<br> '.$_data['email'].'<br> '.$_data['phone'];
-      //echo $message;
-      $result=$obj->send_email($to,$subject,$message);
+    if (!isset($error)) {
+        print_r($_data);
+        $to = 'abc@xyz.com';
+        $subject = 'About property';
+        $message = '<h2>Hi Dear</h2><br>' . $_data['message'] . '<br> Property URL: ' . $_data['url'] . '<br> Property ID: ' . $_data['post_id'] . '<br><br> Redards:<br> ' . $_data['name'] . '<br> ' . $_data['email'] . '<br> ' . $_data['phone'];
+        //echo $message;
+        $result = $obj->send_email($to, $subject, $message);
     }
-    
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +75,9 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title><?php echo $main_post['title']; ?></title>
+        <meta name="description" content="<?php echo $main_post['description']; ?>">
+        <meta name="keywords" content="<?php echo $main_post['keywords']; ?>">
         <?php include 'inc/head.php'; ?>
     </head>
     <body>
@@ -71,22 +106,34 @@ and open the template in the editor.
                             <div class="bx-viewport">
                                 <div data-ride="carousel" class="carousel slide" id="myCarousel">
                                     <!-- Indicators -->
-                                    <ol class="carousel-indicators">
-                                        <li data-slide-to="0" data-target="#myCarousel" class="active" ></li>
-                                        <li data-slide-to="1" data-target="#myCarousel" class=""></li>
-                                        <li data-slide-to="2" data-target="#myCarousel" class=""></li>
-                                    </ol>
+
                                     <div role="listbox" class="carousel-inner">
                                         <div class="item active">
-                                            <img alt="First slide" src="upload/<?php echo $main_post['fimage'] ?>" class="first-slide">
+                                            <img alt="<?php echo $main_post['fimage'] ?>" src="upload/<?php echo $main_post['fimage'] ?>" class="first-slide">
                                         </div>
-                                        <div class="item ">
-                                            <img alt="Second slide" src="images/img2.jpg" class="second-slide">
-                                        </div>
-                                        <div class="item">
-                                            <img alt="Third slide" src="images/img3.jpg" class="third-slide">
-                                        </div>
+                                        <?php
+                                        $images = 0;
+                                        while ($row1 = mysqli_fetch_array($post_images)) {
+                                            ?>
+                                            <div class="item ">
+                                                <img alt="<?php echo $row1['name'] ?>" src="upload/<?php echo $row1['name'] ?>" class="second-slide">
+                                            </div>    
+                                            <?php
+                                            $images++;
+                                        }
+                                        ?>
                                     </div>
+                                    <ol class="carousel-indicators">
+                                        <li data-slide-to="0" data-target="#myCarousel" class="active" ></li>
+                                        <?php
+                                        mysqli_data_seek($post_images, 0);
+                                        $i = 0;
+                                        while ($i < $images) {
+                                            ?>
+                                            <li data-slide-to="<?php echo ++$i; ?>" data-target="#myCarousel" class=""></li>
+                                        <?php } ?>
+
+                                    </ol>
                                     <a data-slide="prev" role="button" href="#myCarousel" class="left carousel-control">
                                         <span aria-hidden="true" class="glyphicon glyphicon-chevron-left"></span>
                                         <span class="sr-only">Previous</span>
@@ -104,7 +151,7 @@ and open the template in the editor.
 
                         <div itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" class="info-address clearfix">
                             <div>
-                                <a itemprop="url" itemref="bbc" href="index.php"><span itemprop="title">Realestate</span></a><a itemprop="url" itemref="bbc" href="/"><span itemprop="title"><?php echo $main_post['city'] ?></span></a>
+                                <a itemprop="url" itemref="bbc" href="index.php"><span itemprop="title"><?php echo $category; ?></span></a><a itemprop="url" itemref="bbc" href="/"><span itemprop="title"><?php echo $main_post['city'] ?></span></a>
                             </div>
                             <!--<div itemref="cbc" itemprop="child" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" id="bbc"><a itemprop="url" href="" class="prevent"><span itemprop="title">Spain</span></a></div><div itemref="dbc" itemprop="child" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" id="cbc"><a itemprop="url" href="" class="prevent"><span itemprop="title">Costa Blanca</span></a></div><div itemprop="child" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" id="dbc"><a itemprop="url" href="#" class="prevent"><span itemprop="title">Guardamar del Segura</span></a></div><div class="object_sku">ES-82517</div>-->
                         </div>
@@ -146,13 +193,13 @@ and open the template in the editor.
 
                                     </div>
                                     <div class="object-bottom-right col-xs-12">
-                                    <?php /*    <noindex>
-                                            <a href="/pdf/82517?code=ES-82517&amp;lang=en&amp;url=es-82517-bungalow-for-sale-in-guardamar-del-segura-costa-blanca" data-remote="true" rel="nofollow" id="icon-download-pdf" class="icon-download-pdf" data-url="https://api-lpw.herokuapp.com/v1/objects/82517/pdf-download?locale=en&amp;t=00711a0ae6fd45aae365cc84861c08e4"></a>
-                                        </noindex>
-                                        <div style="display: none" id="pdf-download-notice">
-                                            <p>Generating pdf. <span class="icon-spin2 animate-spin"></span></p>
-                                        </div>
-                                           */?>
+                                        <?php /*    <noindex>
+                                          <a href="/pdf/82517?code=ES-82517&amp;lang=en&amp;url=es-82517-bungalow-for-sale-in-guardamar-del-segura-costa-blanca" data-remote="true" rel="nofollow" id="icon-download-pdf" class="icon-download-pdf" data-url="https://api-lpw.herokuapp.com/v1/objects/82517/pdf-download?locale=en&amp;t=00711a0ae6fd45aae365cc84861c08e4"></a>
+                                          </noindex>
+                                          <div style="display: none" id="pdf-download-notice">
+                                          <p>Generating pdf. <span class="icon-spin2 animate-spin"></span></p>
+                                          </div>
+                                         */ ?>
                                     </div>
                                 </div>
                             </div>
@@ -203,7 +250,7 @@ and open the template in the editor.
                                                 <i class="glyphicon "></i>
                                                 <p class="note-text">
                                                     Your contact details will be used only to provide you with more information about the property.
-                                                    <a href="">Read more</a> about our Privacy policy
+                                                    <a href="privacy.php">Read more</a> about our Privacy policy
                                                 </p>
                                             </div>
                                         </div>
@@ -219,7 +266,7 @@ and open the template in the editor.
 
                 <div class="clearfix" id="object_navigation">
 
-                    <a href="" class="col-xs-4 prev-btn text-center">
+                    <a href="single.php?get_id=<?php echo $main_post['sim1']; ?>" class="col-xs-4 prev-btn text-center">
                         <i class="glyphicon glyphicon-arrow-left"></i> <span class="hidden-xs">previous property</span>
                     </a>
 
@@ -227,7 +274,7 @@ and open the template in the editor.
                         <i class="glyphicon glyphicon-share-alt icon-flipped"></i> <span class="hidden-xs">back to the list</span>
                     </a>
 
-                    <a href="" class="col-xs-4 next-btn text-center disabled">
+                    <a href="single.php?get_id=<?php echo $main_post['sim2']; ?>" class="col-xs-4 next-btn text-center disabled">
                         <span class="hidden-xs">next property</span> <i class="glyphicon glyphicon-arrow-right"></i>
                     </a>
 
@@ -240,43 +287,43 @@ and open the template in the editor.
                             <div class="object-inner-wrapper">
 
                                 <div class="object-thumbnail">
-                                    <a href="" target="_self" itemprop="url" title="Bungalow for sale in Guardamar del Segura, Costa Blanca" class="object-thumbnail-holder"><img src="https://d18mncbmmvtpqd.cloudfront.net/2015/11/136.jpg" itemprop="image" alt="Bungalow for sale in Guardamar del Segura, Costa Blanca" class="img-responsive"></a>      <div data-obj_id="82481" class="add-favorite-button">
+                                    <a href="single.php?get_id=<?php echo $sim1['post_id']; ?>" target="_self" itemprop="url" title="<?php echo $sim1['name']; ?>" class="object-thumbnail-holder"><img src="upload/<?php echo $sim1['fimage']; ?>" itemprop="image" alt="<?php echo $sim1['name']; ?>" class="img-responsive"></a>      <div data-obj_id="82481" class="add-favorite-button">
                                         <span class="glyphicon glyphicon-bookmark"><span class="glyphicon glyphicon-star"></span></span>
                                     </div>
                                 </div>
 
                                 <div class="object-info-holder">
                                     <div class="info-address">
-                                        <a href="" title="Spain" class="">Spain</a><a href="" title="Costa Blanca" class="">Costa Blanca</a><a href="" title="Guardamar del Segura" class="empty">Guardamar del Segura</a>
+                                        <a href="single.php?get_id=<?php echo $sim1['post_id']; ?>" title="<?php echo $sim1['city']; ?>" class=""><?php echo $sim1['city']; ?></a><a href="" title="<?php echo $category; ?>" class=""><?php echo $category; ?></a>
                                     </div>
                                     <h2 itemprop="name" class="info-title">
-                                        <a href="" target="_self" title="Bungalow for sale in Guardamar del Segura, Costa Blanca">Bungalow for sale in Guardamar del Segura, Costa Blanca</a>
+                                        <a href="single.php?get_id=<?php echo $sim1['post_id']; ?>" target="_self" title="<?php echo $sim1['name']; ?>"><?php echo $sim1['name']; ?></a>
                                     </h2>
                                     <p class="info-details">
-                                        <span itemtype="http://schema.org/AggregateOffer" itemscope="" itemprop="offers"><span itemprop="lowPrice">149 000</span>&nbsp;<span content="EUR" itemprop="priceCurrency">EUR</span></span>, <span>4&nbsp;rooms</span>, <span>98&nbsp;m<sup>2</sup></span>
+                                        <span itemtype="http://schema.org/AggregateOffer" itemscope="" itemprop="offers"><span itemprop="lowPrice"><?php echo $sim1['price']; ?></span>&nbsp;<span content="EUR" itemprop="priceCurrency">R.S</span></span>, <span><?php echo $sim1['rooms']; ?>&nbsp;rooms</span>, <span><?php echo $sim1['area']; ?>&nbsp;m<sup>2</sup></span>
                                     </p>
                                 </div>
 
                             </div>
                         </article>
-                        <article itemtype="http://schema.org/Product" itemscope="" class="object-item object-item-regular col-xs-12 col-sm-12 col-md-6">
+                        <article itemtype="" itemscope="" class="object-item object-item-regular col-xs-12 col-sm-12 col-md-6">
                             <div class="object-inner-wrapper">
 
                                 <div class="object-thumbnail">
-                                    <a href="" target="_self" itemprop="url" title="Apartment for sale in Guardamar del Segura, Costa Blanca" class="object-thumbnail-holder"><img src="https://d18mncbmmvtpqd.cloudfront.net/2015/11/05.jpg" itemprop="image" alt="Apartment for sale in Guardamar del Segura, Costa Blanca" class="img-responsive"></a>      <div data-obj_id="82184" class="add-favorite-button">
+                                    <a href="single.php?get_id=<?php echo $sim2['post_id']; ?>" target="_self" itemprop="url" title="<?php echo $sim2['name']; ?>" class="object-thumbnail-holder"><img src="upload/<?php echo $sim2['fimage']; ?>" itemprop="image" alt="<?php echo $sim2['name']; ?>" class="img-responsive"></a>      <div data-obj_id="82481" class="add-favorite-button">
                                         <span class="glyphicon glyphicon-bookmark"><span class="glyphicon glyphicon-star"></span></span>
                                     </div>
                                 </div>
 
                                 <div class="object-info-holder">
                                     <div class="info-address">
-                                        <a href="" title="Spain" class="">Spain</a><a href="" title="Costa Blanca" class="">Costa Blanca</a><a href="" title="Guardamar del Segura" class="empty">Guardamar del Segura</a>
+                                        <a href="single.php?get_id=<?php echo $sim2['post_id']; ?>" title="<?php echo $sim2['city']; ?>" class=""><?php echo $sim2['city']; ?></a><a href="" title="<?php echo $category; ?>" class=""><?php echo $category; ?></a>
                                     </div>
                                     <h2 itemprop="name" class="info-title">
-                                        <a href="" target="_self" title="Apartment for sale in Guardamar del Segura, Costa Blanca">Apartment for sale in Guardamar del Segura, Costa Blanca</a>
+                                        <a href="single.php?get_id=<?php echo $sim2['post_id']; ?>" target="_self" title="<?php echo $sim2['name']; ?>"><?php echo $sim2['name']; ?></a>
                                     </h2>
                                     <p class="info-details">
-                                        <span itemtype="http://schema.org/AggregateOffer" itemscope="" itemprop="offers"><span itemprop="lowPrice">245 000</span>&nbsp;<span content="EUR" itemprop="priceCurrency">EUR</span></span>, <span>3&nbsp;rooms</span>, <span>118&nbsp;m<sup>2</sup></span>
+                                        <span itemtype="http://schema.org/AggregateOffer" itemscope="" itemprop="offers"><span itemprop="lowPrice"><?php echo $sim2['price']; ?></span>&nbsp;<span content="EUR" itemprop="priceCurrency">R.S</span></span>, <span><?php echo $sim2['rooms']; ?>&nbsp;rooms</span>, <span><?php echo $sim2['area']; ?>&nbsp;m<sup>2</sup></span>
                                     </p>
                                 </div>
 
