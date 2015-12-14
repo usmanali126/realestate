@@ -111,7 +111,7 @@ if ($action <> "get") {
                                                         <input class="  search-query form-control" placeholder="Search" type="text">
                                                         <span class="input-group-btn">
                                                             <button class="btn btn-danger" type="button">
-                                                                <span class=" glyphicon glyphicon-search"></span>
+                                                                <a href='index.php?search=1'><span class=" glyphicon glyphicon-search"></span></a>
                                                             </button>
                                                         </span>
                                                     </div>

@@ -7,7 +7,7 @@ if (isset($_COOKIE['favorite'])) {
 }
 
 $obj = new realestate();
-$result = $obj->get_data();
+$data = $obj->get_data();
 ?>
 
 <!DOCTYPE html>
@@ -105,8 +105,68 @@ and open the template in the editor.
                     <?php
 //                    if ($action <> "get") {
                     $i = 1;
-                    $no_of_row = mysqli_num_rows($result);
-                    while ($row = mysqli_fetch_array($result)) {
+                    /*$no_of_row =0;
+                    while ($row = mysqli_fetch_array($data)) {
+                        if (isset($cookie) && in_array($row['post_id'], $cookie)) {
+                            $result[]=$row;
+                            $no_of_row ++;
+                        }
+                    }
+//                    print_r($result);
+                    //echo '<br>'.$no_of_row.'<br>';
+                    
+                    $j = 0;
+					$i=4;
+					
+                      while ($j < $i) {
+                      echo $j%3;
+                      $result = $j % 3;
+                      switch ($result) {
+                      case 0: $category = 'col-sm-12';
+					  $k=$i;
+					  //if($j==9){
+						  echo '<br>col-sm-12<br>';
+						  $i=$k;
+					  //}else{
+						// echo '<br>col-sm-6<br>';
+					  //}
+                      
+                      break;
+                      case 1:
+					  $k=$i;
+                       if($j==(--$i)){
+						  echo '<br>col-sm- 12<br>';
+						  $i=$k;
+					  }else{
+						  echo'<br>col-sm-6<br>';
+						  $i=$k;
+					  }
+                      break;
+					  case 2:
+					  $k=$i;
+                       if($j==--$i){
+						  echo '<br>col-sm-12<br>';
+						  $i=$k;
+					  }else{
+						  echo'<br>col-sm-6<br>';
+						  $i=$k;
+					  }
+                      break;
+                     
+                      }
+                      $j++;
+                      }
+                    
+                    
+                    
+                    exit();*/
+                    
+                    
+                    
+                    
+                    
+                    //mysqli_data_seek($result,0);
+                    while ($row = mysqli_fetch_array($data)) {
                         if (isset($cookie) && in_array($row['post_id'], $cookie)) {
                         switch ($row['category']) {
                             case 1: $category = 'Apartment';
@@ -116,7 +176,8 @@ and open the template in the editor.
                             case 3: $category = 'Commercial';
                                 break;
                         }
-
+                        
+                      
                         switch ($i) {
                             case 1:
                                 ?>
