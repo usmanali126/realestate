@@ -53,10 +53,10 @@ class realestate {
             $_SESSION['secour'] = NULL;
             header("Location:../administrator");
         }else {
-                return 'Your password or User name is invalid';
-        }
+          //      return 'Your password or User name is invalid';
+        //}
         
-       /* $link = $this->connection();
+        $link = $this->connection();
         $query = "SELECT * FROM user WHERE `user_name`='" . $param['user_name'] . "'";
         $result = mysqli_query($link, $query) or die(mysqli_error($link));
         if (mysqli_num_rows($result) == 1) {
@@ -64,8 +64,9 @@ class realestate {
             $dbpassword = $data['user_pass'];
             //echo password_hash($param['user_password'], PASSWORD_DEFAULT);
             //echo $password=$param['user_password'];
-            if (password_verify($param['user_password'], $dbpassword)) {
-                $_SESSION['login'] = 'login';
+           /* if (password_verify($param['user_password'], $dbpassword)) {*/
+            if ($param['user_password']== $dbpassword) {   
+            $_SESSION['login'] = 'login';
                 $_SESSION['name'] = $data['name'];
                 $_SESSION['user_name'] = $data['user_name'];
                 $_SESSION['secour'] = NULL;
@@ -74,14 +75,15 @@ class realestate {
             } else {
                 return 'Your password or User name is invalid';
             }
-        } */
+        }
+    }
         //exit();
     }
 
     function change_pass($param) {
         $link = $this->connection();
         $password = $param;
-        $password = password_hash($password, PASSWORD_DEFAULT);
+       // $password = password_hash($password, PASSWORD_DEFAULT);
         $query = "UPDATE `user` SET `user_pass`='$password' WHERE `user_name`='" . $_SESSION['user_name'] . "'";
         $result = mysqli_query($link, $query) or die(mysqli_error($link));
         return $result;
@@ -97,7 +99,7 @@ class realestate {
         $message="Hello Dear </br> Your Password is <strong>" . $password . "</strong>";
         $send = $this->send_email($to,$subject,$message);
         if ($send == true) {
-            $password = password_hash($password, PASSWORD_DEFAULT);
+            //$password = password_hash($password, PASSWORD_DEFAULT);
             $query = "UPDATE `user` SET `user_pass`='$password' WHERE `user_email`='" . $param['user_email'] . "'";
             $result = mysqli_query($link, $query) or die(mysqli_error($link));
             return $result;
