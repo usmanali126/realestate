@@ -16,6 +16,7 @@
       <ul class="nav navbar-nav">
           <li class="icon-lock"><a href="index.php">New Post </a></li>
         <li><a href="posts.php">Posts</a></li>
+        <li><a href="contactus.php">Contact Us</a></li>
         <li><a href="password.php">Change Password</a></li>
       </ul>
 <!--    <form class="navbar-form nav navbar-nav navbar-right " role="search" id="hsearch" action="record.php" method="POST">

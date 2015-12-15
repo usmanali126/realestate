@@ -107,6 +107,31 @@ class realestate {
         }
     }
 
+    function contactus($param){
+//        print_r($param);
+//        exit();
+        $link = $this->connection();
+        if($param['submit']=='submit'){
+           foreach ($param as $key => $value) {
+//            echo $value;
+//            exit();
+           $query = "INSERT INTO `contactus` (`id`, `name`, `value`) VALUES (NULL,'" . $key . "','" . mysqli_real_escape_string($link, $value) . "') ON DUPLICATE KEY UPDATE `name`='" . $key . "',`value`='" . mysqli_real_escape_string($link, $value) . "'"; 
+           $result=  mysqli_query($link, $query) or die(mysqli_error($link));
+        }
+        if($result==TRUE){
+            $query="SELECT * FROM `contactus`";
+            $result=  mysqli_query($link, $query) or die(mysqli_error($link));
+            return $result;
+        } 
+        }else{
+            $query="SELECT * FROM `contactus`";
+            $result=  mysqli_query($link, $query) or die(mysqli_error($link));
+            return $result;
+        }
+        
+        
+    }
+    
     function store_data($param) {
         $link = $this->connection();
         if (isset($param['edit'])) {
