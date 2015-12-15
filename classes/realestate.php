@@ -113,22 +113,29 @@ class realestate {
             $param['fimage'] = $param['basename'];
 //            exit($param['fimage']);
         } else {
-            $param['fimage'] = $this->image_name($param['basename']);
+            $ImgName = $param['post_id'] . $str = $this->rand_string(5) . $param['basename'];
+            $param['fimage'] = $ImgName;
+//            $param['fimage'] = $this->image_name($param['basename']);
         }
 
         //$param['images']=$_FILES["images"];
 //        print_r(mysqli_real_escape_string($link, $param['location']));
 //        exit();
 
-        $query = "INSERT INTO `post` (`id`, `post_id`, `name`, `about`, `category`, `city`, `rooms`, `area`, `price`, `location`, `address`, `parking`, `sim1`, `sim2`, `fimage`, `title`, `keywords`, `description`) VALUES (NULL,'" . $param['post_id'] . "','" . $param['name'] . "','" . mysqli_real_escape_string($link, $param['about']) . "','" . $param['category'] . "','" . $param['city'] . "','" . $param['rooms'] . "','" . $param['area'] . "','" . $param['price'] . "','" . $param['sim1'] . "','" . $param['sim2'] . "','" . mysqli_real_escape_string($link, $param['location']) . "','" . mysqli_real_escape_string($link, $param['address']) . "','" . $param['parking'] . "','" . $param['fimage'] . "','" . $param['title'] . "','" . $param['keywords'] . "','" . $param['description'] . "') ON DUPLICATE KEY UPDATE `post_id`='" . $param['post_id'] . "',`name`='" . $param['name'] . "',`about`='" . mysqli_real_escape_string($link, $param['about']) . "',`category`='" . $param['category'] . "',`city`='" . $param['city'] . "',`rooms`='" . $param['rooms'] . "',`area`='" . $param['area'] . "',`price`='" . $param['price'] . "',`sim1`='" . $param['sim1'] . "',`sim2`='" . $param['sim2'] . "',`location`='" . mysqli_real_escape_string($link, $param['location']) . "',`address`='" . mysqli_real_escape_string($link, $param['address']) . "',`parking`='" . $param['parking'] . "',`fimage`='" . $param['fimage'] . "',`title`='" . $param['title'] . "',`keywords`='" . $param['keywords'] . "',`description`='" . $param['description'] . "' ";
+        $query = "INSERT INTO `post` (`id`, `post_id`, `name`, `about`, `category`, `city`, `rooms`, `area`, `price`, `sim1`, `sim2`, `location`, `address`, `parking`, `fimage`, `title`, `keywords`, `description`) VALUES (NULL,'" . $param['post_id'] . "','" . $param['name'] . "','" . mysqli_real_escape_string($link, $param['about']) . "','" . $param['category'] . "','" . $param['city'] . "','" . $param['rooms'] . "','" . $param['area'] . "','" . $param['price'] . "','" . $param['sim1'] . "','" . $param['sim2'] . "','" . mysqli_real_escape_string($link, $param['location']) . "','" . mysqli_real_escape_string($link, $param['address']) . "','" . $param['parking'] . "','" . $param['fimage'] . "','" . $param['title'] . "','" . $param['keywords'] . "','" . $param['description'] . "') ON DUPLICATE KEY UPDATE `post_id`='" . $param['post_id'] . "',`name`='" . $param['name'] . "',`about`='" . mysqli_real_escape_string($link, $param['about']) . "',`category`='" . $param['category'] . "',`city`='" . $param['city'] . "',`rooms`='" . $param['rooms'] . "',`area`='" . $param['area'] . "',`price`='" . $param['price'] . "',`sim1`='" . $param['sim1'] . "',`sim2`='" . $param['sim2'] . "',`location`='" . mysqli_real_escape_string($link, $param['location']) . "',`address`='" . mysqli_real_escape_string($link, $param['address']) . "',`parking`='" . $param['parking'] . "',`fimage`='" . $param['fimage'] . "',`title`='" . $param['title'] . "',`keywords`='" . $param['keywords'] . "',`description`='" . $param['description'] . "' ";
         //$q='INSERT INTO `events`(ID, EventID, Name, ParentCategoryID, ChildCategoryID, GrandchildCategoryID, CountryID, VenueID, VenueConfigurationID, Venue, StateProvinceID, StateProvince, City, Clicks, Date, DisplayDate, IsWomensEvent, MapURL, InteractiveMapURL) VALUES (NULL, ' . $row->ID . ', "' . mysqli_real_escape_string($link, $row->Name) . '", ' . $row->ParentCategoryID . ', ' . $row->ChildCategoryID . ', ' . $row->GrandchildCategoryID . ', ' . $row->CountryID . ', ' . $row->VenueID . ', ' . $row->VenueConfigurationID . ', "' . mysqli_real_escape_string($link, $row->Venue) . '", ' . $row->StateProvinceID . ', "' . mysqli_real_escape_string($link, $row->StateProvince) . '", "' . mysqli_real_escape_string($link, $row->City) . '", ' . $row->Clicks . ', "' . date("Y-m-d H:i:s", strtotime($row->Date)) . '", "' . $row->DisplayDate . '", "' . $row->IsWomensEvent . '", "' . mysqli_real_escape_string($link, $row->MapURL) . '", "' . mysqli_real_escape_string($link, $row->InteractiveMapURL) . '") ON DUPLICATE KEY UPDATE  Name="' . mysqli_real_escape_string($link, $row->Name) . '", VenueID=' . $row->VenueID . ', VenueConfigurationID=' . $row->VenueConfigurationID . ', Venue="' . mysqli_real_escape_string($link, $row->Venue) . '", Clicks=' . $row->Clicks . ', Date="' . date("Y-m-d H:i:s", strtotime($row->Date)) . '", DisplayDate="' . $row->DisplayDate . '", MapURL="' . mysqli_real_escape_string($link, $row->MapURL) . '", InteractiveMapURL="' . mysqli_real_escape_string($link, $row->InteractiveMapURL) . '"';
         $result = mysqli_query($link, $query) or die(mysqli_error($link));
         if ($result == TRUE) {
-            $this->upload_image($param['tmpname'], $param['fimage']);
+            if(!isset($param['edit'])){
+                $this->upload_image($param['tmpname'], $param['fimage']);
+            }
+            
             if (isset($param['images']) && $param['images_empty'] == 'no') {
                 $i = 0;
                 foreach ($param['images']["name"] as $value) {
-                    $imageName = $this->image_name($value);
+//                    echo $ImgName = $param['post_id'] . $str = $this->rand_string(5) . $value;
+//                    exit();
+                    $imageName = $this->image_name($value,$param['post_id']);
                     $query = "INSERT INTO `images`(`id`, `post_id`, `name`) VALUES (NULL,'" . $param['post_id'] . "','$imageName')";
                     $result = mysqli_query($link, $query) or die(mysqli_error($link));
                     if ($result == TRUE) {
@@ -184,11 +191,11 @@ class realestate {
         return substr(str_shuffle($chars), 0, $length);
     }
 
-    function image_name($basename) {
+    function image_name($basename,$id) {
         $formate = 'dmYHis';
         date_default_timezone_set('Asia/Karachi');
         $timestemp = date($formate, time());
-        $ImgName = $timestemp . $str = $this->rand_string(5) . $basename;
+        $ImgName = $id . $str = $this->rand_string(5) . $basename;
         return $ImgName;
     }
 
@@ -222,7 +229,7 @@ class realestate {
             }
         }
 
-        return $result;
+//        return $result;
     }
 
     function send_email($to,$subject,$message) {

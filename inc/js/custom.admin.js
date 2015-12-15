@@ -69,7 +69,7 @@ $(document).ready(function () {
     
     $('.remove').on('click', function () {
         var value = $(this).siblings('img').attr('alt');
-        alert(value);
+//        alert(value);
         var con = confirm("Are you sure want to delete this image");
         if (con == true) {
             $.ajax({
@@ -77,7 +77,7 @@ $(document).ready(function () {
                 type: 'POST',
                 data: {d_name: value},
                 success: function (result) {
-                    alert(result);
+//                    alert(result);
                     console.log(result);
                     //$(this).parent().parent('.form-group').remove();
                     //window.location.replace("record.php");
