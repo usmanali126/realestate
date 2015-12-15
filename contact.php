@@ -11,20 +11,6 @@ and open the template in the editor.
         <?php include 'inc/head.php'; ?>
     </head>
     <body>
-
-        <div id="cookie-message" class="cookie-message-wrapper" style="display: block;">
-            <div class="container">
-                <div class="row">
-                    <div class="message-col col-xs-10 col-sm-9 col-md-10">
-                        <p>We use cookies to ensure that we give you the best experience on our website. If you continue without changing your settings, we'll assume that you are happy to receive all cookies from this website. If you would like to change your preferences you may do so by <a href="#">following the instructions</a>.</p>
-                    </div>
-                    <div class="button-col col-xs-2 col-sm-3 col-md-2">
-                        <span id="cookie-message-button" class="button-close-cookie"> <span class="hidden-xs button-close-cookie-text">Close <span class="glyphicon glyphicon-remove"></span></span> </span>
-                    </div>
-                </div>
-            </div>
-        </div> 
-
         <header>
             <?php include 'inc/header.php'; ?>
         </header>
@@ -40,9 +26,9 @@ and open the template in the editor.
 
                             <div class="contacts_holder">
                                 <ul>
-                                    <li><a href="tel:0331-000 000 00">Mobile No: 0331-000 000 00 </a></li>
-                                    <li><a href="tel:0423-000-000-00">Phone No: 0423-000-000-00</a></li>
-                                    <li><a href="mailto:info@bismillahstate.com">info@bismillahstate.com</a></li>
+                                    <li><a href="tel:<?php echo $_DATA['hcell']; ?>">Mobile No: <?php echo $_DATA['hcell']; ?> </a></li>
+                                    <li><a href="tel:<?php echo $_DATA['hlandline']; ?>">Phone No: <?php echo $_DATA['hlandline']; ?></a></li>
+                                    <li><a href="mailto:<?php echo $_DATA['hemail']; ?>"><?php echo $_DATA['hemail']; ?></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -110,14 +96,14 @@ and open the template in the editor.
                                     </div>
                                     <div class="object-info-holder">
                                         <div class="info-address"><span>Head office:</span></div>
-                                        <h3 class="info-title">Bismillah Estate</h3>
+                                        <h3 class="info-title"><?php echo $_DATA['hname']; ?></h3>
 
-                                        <p class="info-details">R-18, Block Q, Garden Town Lahore.</p>
+                                        <p class="info-details"><?php echo $_DATA['haddress']; ?></p>
                                         <div class="contacts_holder">
                                             <ul>
-                                                <li><a href="tel:0331-000 000 00">Mobile No: 0331-000 000 00 </a></li>
-                                                <li><a href="tel:0423-000-000-00">Phone No: 0423-000-000-00</a></li>
-                                                <li><a href="mailto:info@bismillahstate.com">info@bismillahstate.com</a></li>
+                                                <li><a href="tel:<?php echo $_DATA['hcell']; ?>">Mobile No: <?php echo $_DATA['hcell']; ?> </a></li>
+                                                <li><a href="tel:<?php echo $_DATA['hlandline']; ?>">Phone No: <?php echo $_DATA['hlandline']; ?></a></li>
+                                                <li><a href="mailto:<?php echo $_DATA['hemail']; ?>"><?php echo $_DATA['hemail']; ?></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -132,12 +118,14 @@ and open the template in the editor.
                                     </div>
                                     <div class="object-info-holder">
                                         <div class="info-address"><span>Site Office:</span></div>
-                                        <h3 class="info-title">Bismillah Estate </h3>
+                                        <h3 class="info-title"><?php echo $_DATA['sname']; ?> </h3>
 
-                                        <p class="info-details">9 Saima Heights, Main university Road, Karachi.</p>
+                                        <p class="info-details"><?php echo $_DATA['saddress']; ?></p>
                                         <div class="contacts_holder">
                                             <ul>
-                                                <li><a href="mailto:info@bismillahstate.com">info@bismillahstate.com</a></li>
+                                                <li><a href="tel:<?php echo $_DATA['scell']; ?>">Mobile No: <?php echo $_DATA['scell']; ?> </a></li>
+                                                <li><a href="tel:<?php echo $_DATA['slandline']; ?>">Phone No: <?php echo $_DATA['slandline']; ?></a></li>
+                                                <li><a href="mailto:<?php echo $_DATA['semail']; ?>"><?php echo $_DATA['semail']; ?></a></li>
                                             </ul>
                                         </div>
                                     </div>

@@ -38,17 +38,15 @@ if (isset($_POST['submit'])) {
     //print_r($_DATA);
     //echo implode(',' ,$_DATA['image']);
 }else{
-    $_DATA['submit']='fresh';
-    $result = $obj->contactus($_DATA);
-    while ($row = mysqli_fetch_array($result)) {
-//        print_r($row);
-//        exit();
-        foreach ($row as $key => $value) {
-            $_DATA[$key] = $value;
-        }
+    
+    $param['submit']='fresh';
+    $get_data = $obj->contactus($param);
+    while ($row = mysqli_fetch_array($get_data)) {
+        $_DATA[$row['name']]=$row['value'];
     } 
 }
-
+//print_r($_DATA);
+//exit();
 
 
 /* defult variable to set in input */

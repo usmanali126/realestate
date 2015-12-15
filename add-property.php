@@ -83,7 +83,7 @@ and open the template in the editor.
 
                             <div class="text">
                                 <p>Download the Property Sale Agreement Form, complete it, and return a signed copy to us by e-mail along with the description and photos of your property item.</p></div>
-                            <a href="https://d18mncbmmvtpqd.cloudfront.net/2014/12/lpw_mandate_eng.pdf" class="icon_link">
+                            <a href="" class="icon_link">
                                 <span class="icon icon-01"></span><span>download PDF</span> </a></div>
                     </div>
                 </div>
@@ -91,12 +91,12 @@ and open the template in the editor.
             <div class="add-object-section-mail add-object-sub-section" id="upload_email">
                 <div class="container">
                     <div class="row">
-                        <div class="image_holder col-xs-12"><a href="mailto:info@bismillahstate.com">
+                        <div class="image_holder col-xs-12"><a href="mailto:<?php echo $_DATA['hemail']; ?>">
                                 <img src="images/upload_email.png" alt="">
                             </a></div>
                         <div class="text_holder col-xs-12">
                             <div class="text"><p>You can send your properties on our e-mail<br>
-                                    <a href="mailto:info@bismillahstate.com">info@bismillahstate.com</a></p></div>
+                                    <a href="mailto:<?php echo $_DATA['hemail']; ?>"><?php echo $_DATA['hemail']; ?></a></p></div>
                         </div>
                     </div>
                 </div>
