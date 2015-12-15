@@ -152,7 +152,7 @@ and open the template in the editor.
 
                         <div itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" class="info-address clearfix">
                             <div>
-                                <a itemprop="url" itemref="bbc" href="index.php"><span itemprop="title"><?php echo $category; ?></span></a><a itemprop="url" itemref="bbc" href="/"><span itemprop="title"><?php echo $main_post['city'] ?></span></a>
+                                <a itemprop="url" itemref="bbc" href=""><span itemprop="title"><?php echo $category; ?></span></a><a itemprop="url" itemref="bbc" href=""><span itemprop="title"><?php echo $main_post['city'] ?></span></a>
                             </div>
                             <!--<div itemref="cbc" itemprop="child" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" id="bbc"><a itemprop="url" href="" class="prevent"><span itemprop="title">Spain</span></a></div><div itemref="dbc" itemprop="child" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" id="cbc"><a itemprop="url" href="" class="prevent"><span itemprop="title">Costa Blanca</span></a></div><div itemprop="child" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" id="dbc"><a itemprop="url" href="#" class="prevent"><span itemprop="title">Guardamar del Segura</span></a></div><div class="object_sku">ES-82517</div>-->
                         </div>

@@ -6,6 +6,8 @@
 
 
 $(document).ready(function () {
+    
+    var last_id='';
 //$('#scroll_up').css('display','none');
     $(window).scroll(function () {
 
@@ -43,6 +45,7 @@ $(document).ready(function () {
 			var last_val= url.split('/')[url.split('/').length - 1];
 			
 			if(last_val=='index.php' || last_val==''){
+//                            $('div#last_msg_loader').html('<img src="images/200_s.gif">');
 				last_msg_funtion();
 				}
         }
@@ -51,20 +54,24 @@ $(document).ready(function () {
     
     function last_msg_funtion()
     {
-
+        
         var ID = $(".post_box:last").attr("id");
         var category = $(".category").attr("id");
-        $('div#last_msg_loader').html('<img src="images/200_s.gif">');
-        $.post("index.php?action=get&last_msg_id=" + ID+"&category="+category,
+//       if(ID != last_id){
+//           alert('alret');
+             $('div#last_msg_loader').html('<img src="images/200_s.gif">');
+           $.post("index.php?action=get&last_msg_id=" +ID+"&category="+category,
                 function (data) {
                     if (data != "") {
                         $(".post_box:last").after(data);
-                        $("img").lazyload({
-                            effect: "fadeIn"
-                        });
+                        
                     }
-                    $('div#last_msg_loader').empty();
-                });
+                    
+                }); 
+                $('div#last_msg_loader').empty();
+//        }
+        
+        last_id = ID;
     }
     ;
 });
