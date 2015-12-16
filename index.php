@@ -1,12 +1,12 @@
 <?php
 include_once 'classes/realestate.php';
 
-    $obj=new realestate();
-    $param['submit']='fresh';
-    $get_data = $obj->contactus($param);
-    while ($row = mysqli_fetch_array($get_data)) {
-        $_DATA[$row['name']]=$row['value'];
-    }
+$obj = new realestate();
+$param['submit'] = 'fresh';
+$get_data = $obj->contactus($param);
+while ($row = mysqli_fetch_array($get_data)) {
+    $_DATA[$row['name']] = $row['value'];
+}
 
 if (isset($_COOKIE['favorite'])) {
     $cookie = explode(',', $_COOKIE['favorite']);
@@ -16,18 +16,17 @@ if (isset($_COOKIE['favorite'])) {
 if (isset($_GET['category'])) {
     $category = $_GET['category'];
     switch ($category) {
-    case 1: $category='Apartment';
-        break;
-    case 2: $category='House';
-        break;
-    case 3: $category='Commercial';
-        break;
+        case 1: $category = 'Apartment';
+            break;
+        case 2: $category = 'House';
+            break;
+        case 3: $category = 'Commercial';
+            break;
 
-    default:
-        $category='All';
-        break;
-}
-    
+        default:
+            $category = 'All';
+            break;
+    }
 } else {
     $category = '';
 }
@@ -53,20 +52,21 @@ if ($action <> "get") {
             <?php include 'inc/head.php'; ?>
         </head>
         <body>
-
-            <div class="cookie-message-wrapper" id="cookie-message" style="display: block;">
-                <div class="container">
-                    <div class="row">
-                        <div class="message-col col-xs-10 col-sm-9 col-md-10">
-                            <p>We use cookies to ensure that we give you the best experience on our website. If you continue without changing your settings, we'll assume that you are happy to receive all cookies from this website. If you would like to change your preferences you may do so by <a href="privacy.php">following the instructions</a>.</p>
-                        </div>
-                        <div class="button-col col-xs-2 col-sm-3 col-md-2">
-                            <span class="button-close-cookie" id="cookie-message-button"> <span class="hidden-xs button-close-cookie-text">Close</span><span class="icon icon-26"></span> </span>
+            <?php if (!isset($_COOKIE['front_msg']) ) {
+                ?>
+                <div class="cookie-message-wrapper" id="cookie-message" style="display: block;">
+                    <div class="container">
+                        <div class="row">
+                            <div class="message-col col-xs-10 col-sm-9 col-md-10">
+                                <p>We use cookies to ensure that we give you the best experience on our website. If you continue without changing your settings, we'll assume that you are happy to receive all cookies from this website. If you would like to change your preferences you may do so by <a href="privacy.php">following the instructions</a>.</p>
+                            </div>
+                            <div class="button-col col-xs-2 col-sm-3 col-md-2">
+                                <span class="button-close-cookie" id="cookie-message-button"> <span class="hidden-xs button-close-cookie-text">Close</span><span class="icon icon-26"></span> </span>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div> 
-
+                </div> 
+            <?php } ?>
             <header>
                 <?php include 'inc/header.php'; ?>
             </header>
@@ -106,8 +106,8 @@ if ($action <> "get") {
                                                     <li><a href=""><span class="glyphicon glyphicon-sort-by-attributes-alt"></span><span> Most expensive first </span></a></li>
                                                 </ul>
                                             </li>
-                                            <li class="category" id="<?php echo (isset($_GET['category']))?$_GET['category']:''; ?>"><a><?php echo (isset($_GET['category']))?$category:'All'; ?></a></li>
-                                        
+                                            <li class="category" id="<?php echo (isset($_GET['category'])) ? $_GET['category'] : ''; ?>"><a><?php echo (isset($_GET['category'])) ? $category : 'All'; ?></a></li>
+
                                         </ul>
                                         <form class="navbar-form nav navbar-nav navbar-right " role="search" id="hsearch" action="record.php" method="POST">
                                             <div class="form-group">
@@ -115,7 +115,7 @@ if ($action <> "get") {
                                                 <div id="custom-search-input">
                                                     <div class="input-group col-md-12">
                                                         <input class="search-query form-control" placeholder="Search" type="text">
-                                                        <span id="search" class="hidden"><?php echo (isset($_GET['search']))?$_GET['search']:''; ?></span>
+                                                        <span id="search" class="hidden"><?php echo (isset($_GET['search'])) ? $_GET['search'] : ''; ?></span>
                                                         <span class="input-group-btn">
                                                             <button class="btn btn-danger" type="button">
                                                                 <a href='index.php?search=1'><span class=" glyphicon glyphicon-search"></span></a>

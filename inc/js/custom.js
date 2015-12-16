@@ -41,6 +41,7 @@ $(document).ready(function () {
 
 
     $('#cookie-message-button').on('click', function () {
+       Cookies.set('front_msg', 'privacy');
         $(this).parents('#cookie-message').remove();
     });
 
