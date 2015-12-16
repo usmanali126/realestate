@@ -1,13 +1,3 @@
-<?php
-include_once 'classes/realestate.php';
-    $obj=new realestate();
-    $param['submit']='fresh';
-    $get_data = $obj->contactus($param);
-    while ($row = mysqli_fetch_array($get_data)) {
-        $_DATA[$row['name']]=$row['value'];
-    }
-?>
-
 <nav class="navbar navbar-inverse" >
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->

@@ -1,3 +1,12 @@
+<?php
+include_once 'classes/realestate.php';
+    $obj=new realestate();
+    $param['submit']='fresh';
+    $get_data = $obj->contactus($param);
+    while ($row = mysqli_fetch_array($get_data)) {
+        $_DATA[$row['name']]=$row['value'];
+    }
+?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.

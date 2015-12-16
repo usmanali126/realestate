@@ -1,6 +1,13 @@
 <?php
 include_once 'classes/realestate.php';
 
+    $obj=new realestate();
+    $param['submit']='fresh';
+    $get_data = $obj->contactus($param);
+    while ($row = mysqli_fetch_array($get_data)) {
+        $_DATA[$row['name']]=$row['value'];
+    }
+
 if (isset($_COOKIE['favorite'])) {
     $cookie = explode(',', $_COOKIE['favorite']);
     $fav = sizeof($cookie);
@@ -51,7 +58,7 @@ if ($action <> "get") {
                 <div class="container">
                     <div class="row">
                         <div class="message-col col-xs-10 col-sm-9 col-md-10">
-                            <p>We use cookies to ensure that we give you the best experience on our website. If you continue without changing your settings, we'll assume that you are happy to receive all cookies from this website. If you would like to change your preferences you may do so by <a href="#">following the instructions</a>.</p>
+                            <p>We use cookies to ensure that we give you the best experience on our website. If you continue without changing your settings, we'll assume that you are happy to receive all cookies from this website. If you would like to change your preferences you may do so by <a href="privacy.php">following the instructions</a>.</p>
                         </div>
                         <div class="button-col col-xs-2 col-sm-3 col-md-2">
                             <span class="button-close-cookie" id="cookie-message-button"> <span class="hidden-xs button-close-cookie-text">Close</span><span class="icon icon-26"></span> </span>

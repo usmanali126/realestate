@@ -1,5 +1,13 @@
 <?php
-include 'classes/realestate.php';
+include_once 'classes/realestate.php';
+
+    $obj=new realestate();
+    $param['submit']='fresh';
+    $get_data = $obj->contactus($param);
+    while ($row = mysqli_fetch_array($get_data)) {
+        $_DATA[$row['name']]=$row['value'];
+    }
+
 $obj = new realestate();
 if (!isset($_GET['get_id'])) {
     header('Location:index.php');
@@ -82,19 +90,6 @@ and open the template in the editor.
         <?php include 'inc/head.php'; ?>
     </head>
     <body>
-
-        <div id="cookie-message" class="cookie-message-wrapper" style="display: block;">
-            <div class="container">
-                <div class="row">
-                    <div class="message-col col-xs-10 col-sm-9 col-md-10">
-                        <p>We use cookies to ensure that we give you the best experience on our website. If you continue without changing your settings, we'll assume that you are happy to receive all cookies from this website. If you would like to change your preferences you may do so by <a href="#">following the instructions</a>.</p>
-                    </div>
-                    <div class="button-col col-xs-2 col-sm-3 col-md-2">
-                        <span id="cookie-message-button" class="button-close-cookie"> <span class="hidden-xs button-close-cookie-text">Close <span class="glyphicon glyphicon-remove"></span></span> </span>
-                    </div>
-                </div>
-            </div>
-        </div> 
 
         <header>
             <?php include 'inc/header.php'; ?>
