@@ -1,10 +1,18 @@
 <?php
 $obj = new realestate();
 if (isset($_GET['category'])) {
-    $category = $_GET['category'];
+    $search['category'] = $_GET['category'];
     
 } else {
-    $category = '';
+    $search['category'] = '';
+}
+
+
+if (isset($_GET['search'])) {
+    $search['search'] = $_GET['search'];
+    
+} else {
+    $search['search'] = '';
 }
 //switch ($category) {
 //    case 1:
@@ -18,7 +26,7 @@ if (isset($_GET['category'])) {
 //        break;
 //}
 
-$first_load = $obj->first_load($category);
+$first_load = $obj->first_load($search);
 $category = "";
 $i = 1;
 $no_of_row = mysqli_num_rows($first_load);

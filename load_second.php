@@ -3,12 +3,20 @@ $last_msg_id = $_GET['last_msg_id'];
 //exit();
 $obj = new realestate();
 if(!isset($_GET['category'])){
-    $category = 'dfgsd';
+//    $search['category'] = 'dfgsd';
+    $search['search'] = $_GET['search'];
 }else{
-    $category = $_GET['category'];
+    $search['category'] = $_GET['category'];
 }
+
+//if(!isset($_GET['search'])){
+//    $search['search'] = '';
+//}else{
+//    $search['search'] = $_GET['search'];
+//}
+
 //$category = $_GET['category'];
-$second_load = $obj->second_load($last_msg_id,$category);
+$second_load = $obj->second_load($last_msg_id,$search);
 $last_msg_id = "";
 $category = "";
 $total_rows = mysqli_num_rows($second_load);

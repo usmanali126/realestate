@@ -20,7 +20,6 @@ if (isset($_GET['category'])) {
         $category='All';
         break;
 }
-
     
 } else {
     $category = '';
@@ -108,7 +107,8 @@ if ($action <> "get") {
 
                                                 <div id="custom-search-input">
                                                     <div class="input-group col-md-12">
-                                                        <input class="  search-query form-control" placeholder="Search" type="text">
+                                                        <input class="search-query form-control" placeholder="Search" type="text">
+                                                        <span id="search" class="hidden"><?php echo (isset($_GET['search']))?$_GET['search']:''; ?></span>
                                                         <span class="input-group-btn">
                                                             <button class="btn btn-danger" type="button">
                                                                 <a href='index.php?search=1'><span class=" glyphicon glyphicon-search"></span></a>

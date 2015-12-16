@@ -32,6 +32,14 @@ $(document).ready(function () {
         });
     });
 
+    $('.btn-danger').on('click',function(){
+        var value=$('.search-query').val();
+        $('#search').html(value).hide();
+        $(window).attr('location','index.php?search='+value);
+//        alert(value);
+    });
+
+
     $('#cookie-message-button').on('click', function () {
         $(this).parents('#cookie-message').remove();
     });
@@ -54,9 +62,10 @@ $(document).ready(function () {
     
     function last_msg_funtion()
     {
-        
+        var category=[];
         var ID = $(".post_box:last").attr("id");
-        var category = $(".category").attr("id");
+        category['category'] = $(".category").attr("id");
+        category['search'] = $("#search").html();
 //       if(ID != last_id){
 //           alert('alret');
              $('div#last_msg_loader').html('<img src="images/200_s.gif">');
