@@ -9,26 +9,37 @@ $obj = new realestate();
 //    $search['category'] = $_GET['category'];
 //}
 
-if (isset($_GET['search'])) {
+//print_r($_GET);
+//exit();
+if (isset($_GET['search']) && $_GET['search']!='') {
     $search['search'] = $_GET['search'];
-} elseif (isset($_GET['price'])) {
-    if($_GET['price']==1){
-       $search['price-down'] = 'price-down'; 
+//    print_r($search['search']);
+//    exit();
+} elseif (isset($_GET['price'])&& $_GET['price']!='') {
+//    print_r($_GET['price']);
+//    exit();
+    if($_GET['price']=='1'){
+       $search['price-down'] = 'price-down';
+       $search['value'] = $_GET['pricevalue'];
+//       print_r($search['price-down']);
+//    exit();
     }else{
        $search['price-up'] = 'price-up'; 
+       $search['value'] = $_GET['pricevalue'];
     }
     
-} elseif (isset($_GET['category'])) {
+} elseif (isset($_GET['search'])) {
     $search['category'] = $_GET['category'];
-    
+//    print_r($search['category']);
+//    exit();
 } else {
     $search['category'] = 'abc';
 }
 
 //$category = $_GET['category'];
 $second_load = $obj->second_load($last_msg_id,$search);
-$last_msg_id = "";
-$category = "";
+//$last_msg_id = "";
+//$category = "";
 $total_rows = mysqli_num_rows($second_load);
 
 $j = 1;
@@ -69,7 +80,7 @@ while ($row = mysqli_fetch_array($second_load)) {
                         </h2>
                         <p class="info-details col-sm-12">
                             <span itemprop="offers" itemscope="" itemtype="http://schema.org/AggregateOffer">
-                                <span itemprop="price" class="price-wrapper"><span itemprop="lowPrice"><?php echo $row['price']; ?></span>&nbsp;–&nbsp;
+                                <span itemprop="price" class="price-wrapper"><span class="lowPrice"><?php echo $row['price']; ?></span>&nbsp;–&nbsp;
                                     <span itemprop="highPrice">79 000</span>&nbsp;
                                     <span itemprop="priceCurrency" content="EUR">RS.</span>
                                 </span>
@@ -117,7 +128,7 @@ while ($row = mysqli_fetch_array($second_load)) {
                         </h2>
                         <p class="info-details col-sm-12">
                             <span itemprop="offers" itemscope="" itemtype="http://schema.org/AggregateOffer">
-                                <span itemprop="price" class="price-wrapper"><span itemprop="lowPrice"><?php echo $row['price']; ?></span>&nbsp;–&nbsp;
+                                <span itemprop="price" class="price-wrapper"><span class="lowPrice"><?php echo $row['price']; ?></span>&nbsp;–&nbsp;
                                     <span itemprop="highPrice">79 000</span>&nbsp;
                                     <span itemprop="priceCurrency" content="EUR">RS.</span>
                                 </span>
@@ -165,7 +176,7 @@ while ($row = mysqli_fetch_array($second_load)) {
                         </h2>
                         <p class="info-details col-sm-12">
                             <span itemprop="offers" itemscope="" itemtype="http://schema.org/AggregateOffer">
-                                <span itemprop="price" class="price-wrapper"><span itemprop="lowPrice"><?php echo $row['price']; ?></span>&nbsp;–&nbsp;
+                                <span itemprop="price" class="price-wrapper"><span class="lowPrice"><?php echo $row['price']; ?></span>&nbsp;–&nbsp;
                                     <span itemprop="highPrice">79 000</span>&nbsp;
                                     <span itemprop="priceCurrency" content="EUR">RS.</span>
                                 </span>
@@ -213,7 +224,7 @@ while ($row = mysqli_fetch_array($second_load)) {
                         </h2>
                         <p class="info-details col-sm-12">
                             <span itemprop="offers" itemscope="" itemtype="http://schema.org/AggregateOffer">
-                                <span itemprop="price" class="price-wrapper"><span itemprop="lowPrice"><?php echo $row['price']; ?></span>&nbsp;–&nbsp;
+                                <span itemprop="price" class="price-wrapper"><span class="lowPrice"><?php echo $row['price']; ?></span>&nbsp;–&nbsp;
                                     <span itemprop="highPrice">79 000</span>&nbsp;
                                     <span itemprop="priceCurrency" content="EUR">RS.</span>
                                 </span>
@@ -261,7 +272,7 @@ while ($row = mysqli_fetch_array($second_load)) {
                         </h2>
                         <p class="info-details col-sm-12">
                             <span itemprop="offers" itemscope="" itemtype="http://schema.org/AggregateOffer">
-                                <span itemprop="price" class="price-wrapper"><span itemprop="lowPrice"><?php echo $row['price']; ?></span>&nbsp;–&nbsp;
+                                <span itemprop="price" class="price-wrapper"><span class="lowPrice"><?php echo $row['price']; ?></span>&nbsp;–&nbsp;
                                     <span itemprop="highPrice">79 000</span>&nbsp;
                                     <span itemprop="priceCurrency" content="EUR">RS.</span>
                                 </span>

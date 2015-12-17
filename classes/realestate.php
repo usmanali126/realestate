@@ -202,14 +202,16 @@ class realestate {
         if(isset($search['search'])){
             $query = "SELECT * FROM post WHERE post_id < '$id'  AND name LIKE '%" . $search['search'] . "%' ORDER BY post_id DESC LIMIT 5 ";
         }elseif(isset($search['price-down'])){
-            $query = "SELECT * FROM post post_id < '$id'  AND ORDER BY price LIMIT 5 ";
+          $query = "SELECT * FROM post WHERE price > '" . $search['value'] . "'  ORDER BY price LIMIT 5 ";
+//           exit();
         }elseif(isset($search['price-up'])){
-            $query = "SELECT * FROM post post_id < '$id'  AND ORDER BY price DESC LIMIT 5 ";
+            $query = "SELECT * FROM post WHERE price < '" . $search['value'] . "'  ORDER BY price DESC LIMIT 5 ";
+//            exit();
         }elseif(isset($search['category'])){
             $query = "SELECT * FROM post WHERE post_id < '$id'  AND category LIKE '%" . $search['category'] . "' ORDER BY post_id DESC LIMIT 5 ";
         }
 
-        $result = mysqli_query($link, $query);
+        $result = mysqli_query($link, $query) or die(mysqli_error($link));
         return $result;
     }
 

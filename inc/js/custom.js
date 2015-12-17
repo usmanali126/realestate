@@ -63,27 +63,28 @@ $(document).ready(function () {
     
     function last_msg_funtion()
     {
-        var search=[];
+        var searchby=[];
         var ID = $(".post_box:last").attr("id");
         var price=$("#price-order").html();
-        var search_name=$("#search").html();
+        var pricevalue=$(".lowPrice:last").html();
+        var search=$("#search").html();
         var category=$(".category").attr("id");
         
-        if(price!=''){
-          search['price'] = price;  
-        }else if(search_name!=''){
-          search['search'] = search_name;  
-        }else{
-          search['category'] = category;  
-        }
+//        if(price!=''){
+//          searchby['price']= price;  
+//        }else if(search_name!=''){
+//          searchby['search'] = search_name;  
+//        }else{
+//          searchby['category'] = category;  
+//        }
         
-        
+//        var parameters = {  "searchby": searchby};
         
 //       if(ID != last_id){
-//           alert(search['category']);
+//           alert(searchby['search']);
 //           exit;
              $('div#last_msg_loader').html('<img src="images/200_s.gif">');
-           $.post("index.php?action=get&last_msg_id=" +ID+"&search="+search,
+           $.post("index.php?action=get&last_msg_id=" +ID+"&category="+category+"&price="+price+"&pricevalue="+pricevalue+"&search="+search,
                 function (data) {
                     if (data != "") {
                         $(".post_box:last").after(data);

@@ -70,7 +70,7 @@ while ($row = mysqli_fetch_array($first_load)) {
                             </h2>
                             <p class="info-details col-sm-12">
                                 <span itemprop="offers" itemscope="" itemtype="http://schema.org/AggregateOffer">
-                                    <span itemprop="price" class="price-wrapper"><span itemprop="lowPrice"><?php echo $row['price']; ?></span>&nbsp;–&nbsp;
+                                    <span itemprop="price" class="price-wrapper"><span class="lowPrice"><?php echo $row['price']; ?></span>&nbsp;–&nbsp;
                                         <span itemprop="highPrice">79 000</span>&nbsp;
                                         <span itemprop="priceCurrency" content="EUR">RS.</span>
                                     </span>
@@ -118,7 +118,7 @@ while ($row = mysqli_fetch_array($first_load)) {
                             </h2>
                             <p class="info-details col-sm-12">
                                 <span itemprop="offers" itemscope="" itemtype="http://schema.org/AggregateOffer">
-                                    <span itemprop="price" class="price-wrapper"><span itemprop="lowPrice"><?php echo $row['price']; ?></span>&nbsp;–&nbsp;
+                                    <span itemprop="price" class="price-wrapper"><span class="lowPrice"><?php echo $row['price']; ?></span>&nbsp;–&nbsp;
                                         <span itemprop="highPrice">79 000</span>&nbsp;
                                         <span itemprop="priceCurrency" content="EUR">RS.</span>
                                     </span>
@@ -160,7 +160,7 @@ while ($row = mysqli_fetch_array($first_load)) {
                             </h2>
                             <p class="info-details col-sm-12">
                                 <span itemprop="offers" itemscope="" itemtype="http://schema.org/AggregateOffer">
-                                    <span itemprop="price" class="price-wrapper"><span itemprop="lowPrice"><?php echo $row['price']; ?></span>&nbsp;–&nbsp;
+                                    <span itemprop="price" class="price-wrapper"><span class="lowPrice"><?php echo $row['price']; ?></span>&nbsp;–&nbsp;
                                         <span itemprop="highPrice">79 000</span>&nbsp;
                                         <span itemprop="priceCurrency" content="EUR">RS.</span>
                                     </span>
