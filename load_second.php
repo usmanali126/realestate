@@ -2,18 +2,28 @@
 $last_msg_id = $_GET['last_msg_id'];
 //exit();
 $obj = new realestate();
-if(!isset($_GET['category'])){
-//    $search['category'] = 'dfgsd';
-    $search['search'] = $_GET['search'];
-}else{
-    $search['category'] = $_GET['category'];
-}
-
-//if(!isset($_GET['search'])){
-//    $search['search'] = '';
-//}else{
+//if(!isset($_GET['category'])){
+////    $search['category'] = 'dfgsd';
 //    $search['search'] = $_GET['search'];
+//}else{
+//    $search['category'] = $_GET['category'];
 //}
+
+if (isset($_GET['search'])) {
+    $search['search'] = $_GET['search'];
+} elseif (isset($_GET['price'])) {
+    if($_GET['price']==1){
+       $search['price-down'] = 'price-down'; 
+    }else{
+       $search['price-up'] = 'price-up'; 
+    }
+    
+} elseif (isset($_GET['category'])) {
+    $search['category'] = $_GET['category'];
+    
+} else {
+    $search['category'] = 'abc';
+}
 
 //$category = $_GET['category'];
 $second_load = $obj->second_load($last_msg_id,$search);

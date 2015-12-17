@@ -102,8 +102,9 @@ if ($action <> "get") {
                                             </li>
                                             <li class="dropdown sorting-ico"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><span class="glyphicon glyphicon-usd"></span> <span class="caret"></span></a>
                                                 <ul class="dropdown-menu">
-                                                    <li><a href=""><span class="glyphicon glyphicon-sort-by-attributes"></span><span> Cheapest first </span></a></li>
-                                                    <li><a href=""><span class="glyphicon glyphicon-sort-by-attributes-alt"></span><span> Most expensive first </span></a></li>
+                                                    <li><a href='index.php?price=1'><span class="glyphicon glyphicon-sort-by-order"></span><span> Cheapest first </span></a></li>
+                                                    <li><a href='index.php?price=9'><span class="glyphicon glyphicon-sort-by-order-alt"></span><span> Most expensive first </span></a></li>
+                                                    <span id="price-order" class="hidden"><?php echo (isset($_GET['price'])) ? $_GET['price'] : ''; ?></span>
                                                 </ul>
                                             </li>
                                             <li class="category" id="<?php echo (isset($_GET['category'])) ? $_GET['category'] : ''; ?>"><a><?php echo (isset($_GET['category'])) ? $category : 'All'; ?></a></li>

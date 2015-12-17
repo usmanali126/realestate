@@ -183,20 +183,30 @@ class realestate {
 
     function first_load($search) {
         $link = $this->connection();
-//        if($search['category']!=''){
-//            
-//        }
-        $query = "SELECT * FROM post WHERE category LIKE '%" . $search['category'] . "' AND name LIKE '%" . $search['search'] . "%' ORDER BY post_id DESC LIMIT 3 ";
+        if(isset($search['search'])){
+            $query = "SELECT * FROM post WHERE name LIKE '%" . $search['search'] . "%' ORDER BY post_id DESC LIMIT 3 ";
+        }elseif(isset($search['price-down'])){
+            $query = "SELECT * FROM post ORDER BY price LIMIT 3 ";
+        }elseif(isset($search['price-up'])){
+            $query = "SELECT * FROM post ORDER BY price DESC LIMIT 3 ";
+        }elseif(isset($search['category'])){
+            $query = "SELECT * FROM post WHERE category LIKE '%" . $search['category'] . "' ORDER BY post_id DESC LIMIT 3 ";
+        }
+
         $result = mysqli_query($link, $query);
         return $result;
     }
 
     function second_load($id, $search) {
         $link = $this->connection();
-        if (isset($search['search'])) {
-            $query = "SELECT * FROM post WHERE post_id < '$id' AND name LIKE '%" . $search['search'] . "%'  ORDER BY post_id DESC LIMIT 5 ";
-        } else {
-            $query = "SELECT * FROM post WHERE post_id < '$id' AND category LIKE '%" . $search['category'] . "'  ORDER BY post_id DESC LIMIT 5 ";
+        if(isset($search['search'])){
+            $query = "SELECT * FROM post WHERE post_id < '$id'  AND name LIKE '%" . $search['search'] . "%' ORDER BY post_id DESC LIMIT 5 ";
+        }elseif(isset($search['price-down'])){
+            $query = "SELECT * FROM post post_id < '$id'  AND ORDER BY price LIMIT 5 ";
+        }elseif(isset($search['price-up'])){
+            $query = "SELECT * FROM post post_id < '$id'  AND ORDER BY price DESC LIMIT 5 ";
+        }elseif(isset($search['category'])){
+            $query = "SELECT * FROM post WHERE post_id < '$id'  AND category LIKE '%" . $search['category'] . "' ORDER BY post_id DESC LIMIT 5 ";
         }
 
         $result = mysqli_query($link, $query);

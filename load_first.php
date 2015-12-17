@@ -1,18 +1,22 @@
 <?php
 $obj = new realestate();
-if (isset($_GET['category'])) {
-    $search['category'] = $_GET['category'];
-    
-} else {
-    $search['category'] = '';
-}
+
 
 
 if (isset($_GET['search'])) {
     $search['search'] = $_GET['search'];
+} elseif (isset($_GET['price'])) {
+    if($_GET['price']==1){
+       $search['price-down'] = 'price-down'; 
+    }else{
+       $search['price-up'] = 'price-up'; 
+    }
+    
+} elseif (isset($_GET['category'])) {
+    $search['category'] = $_GET['category'];
     
 } else {
-    $search['search'] = '';
+    $search['category'] = '';
 }
 //switch ($category) {
 //    case 1:
