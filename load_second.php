@@ -71,9 +71,9 @@ while ($row = mysqli_fetch_array($second_load)) {
                     </div>
                     <div class="object-info-holder">
                         <div class="info-address col-sm-12">
-                            <a href=""><?php echo $row['city'] ?></a>
-                            <a href=""><?php echo  $category; ?></a>
-                            <a href="">Kosharitsa</a>
+                            <a href="javascript:"><?php echo $row['city'] ?></a>
+                            <a href="javascript:"><?php echo  $category; ?></a>
+                            
                         </div>
                         <h2 class="info-title col-sm-12" itemprop="name">
                             <a href="" title="undefined" target="_blank"><?php echo $row['name']; ?></a>
@@ -81,13 +81,13 @@ while ($row = mysqli_fetch_array($second_load)) {
                         <p class="info-details col-sm-12">
                             <span itemprop="offers" itemscope="" itemtype="http://schema.org/AggregateOffer">
                                 <span itemprop="price" class="price-wrapper"><span class="lowPrice"><?php echo $row['price']; ?></span>&nbsp;–&nbsp;
-                                    <span itemprop="highPrice">79 000</span>&nbsp;
+                                    
                                     <span itemprop="priceCurrency" content="EUR">RS.</span>
                                 </span>
                             </span>, 
                             <span>1</span>&nbsp;–&nbsp;
                             <span><?php echo $row['rooms']; ?></span>&nbsp;rooms, 
-                            <span>33</span>&nbsp;–&nbsp;
+                            
                             <span><?php echo $row['area']; ?></span>&nbsp;m
                             <sup>2</sup>
                         </p>
@@ -119,9 +119,9 @@ while ($row = mysqli_fetch_array($second_load)) {
                     </div>
                     <div class="object-info-holder">
                         <div class="info-address col-sm-12">
-                            <a href=""><?php echo $row['city'] ?></a>
-                            <a href=""><?php echo  $category; ?></a>
-                            <a href="">Kosharitsa</a>
+                            <a href="javascript:"><?php echo $row['city'] ?></a>
+                            <a href="javascript:"><?php echo  $category; ?></a>
+                            
                         </div>
                         <h2 class="info-title col-sm-12" itemprop="name">
                             <a href="" title="undefined" target="_blank"><?php echo $row['name']; ?></a>
@@ -129,13 +129,13 @@ while ($row = mysqli_fetch_array($second_load)) {
                         <p class="info-details col-sm-12">
                             <span itemprop="offers" itemscope="" itemtype="http://schema.org/AggregateOffer">
                                 <span itemprop="price" class="price-wrapper"><span class="lowPrice"><?php echo $row['price']; ?></span>&nbsp;–&nbsp;
-                                    <span itemprop="highPrice">79 000</span>&nbsp;
+                                    
                                     <span itemprop="priceCurrency" content="EUR">RS.</span>
                                 </span>
                             </span>, 
                             <span>1</span>&nbsp;–&nbsp;
                             <span><?php echo $row['rooms']; ?></span>&nbsp;rooms, 
-                            <span>33</span>&nbsp;–&nbsp;
+                            
                             <span><?php echo $row['area']; ?></span>&nbsp;m
                             <sup>2</sup>
                         </p>
@@ -167,9 +167,9 @@ while ($row = mysqli_fetch_array($second_load)) {
                     </div>
                     <div class="object-info-holder">
                         <div class="info-address col-sm-12">
-                            <a href=""><?php echo $row['city'] ?></a>
-                            <a href=""><?php echo  $category; ?></a>
-                            <a href="">Kosharitsa</a>
+                            <a href="javascript:"><?php echo $row['city'] ?></a>
+                            <a href="javascript:"><?php echo  $category; ?></a>
+                            
                         </div>
                         <h2 class="info-title col-sm-12" itemprop="name">
                             <a href="" title="undefined" target="_blank"><?php echo $row['name']; ?></a>
@@ -177,13 +177,13 @@ while ($row = mysqli_fetch_array($second_load)) {
                         <p class="info-details col-sm-12">
                             <span itemprop="offers" itemscope="" itemtype="http://schema.org/AggregateOffer">
                                 <span itemprop="price" class="price-wrapper"><span class="lowPrice"><?php echo $row['price']; ?></span>&nbsp;–&nbsp;
-                                    <span itemprop="highPrice">79 000</span>&nbsp;
+                                    
                                     <span itemprop="priceCurrency" content="EUR">RS.</span>
                                 </span>
                             </span>, 
                             <span>1</span>&nbsp;–&nbsp;
                             <span><?php echo $row['rooms']; ?></span>&nbsp;rooms, 
-                            <span>33</span>&nbsp;–&nbsp;
+                            
                             <span><?php echo $row['area']; ?></span>&nbsp;m
                             <sup>2</sup>
                         </p>
@@ -215,9 +215,9 @@ while ($row = mysqli_fetch_array($second_load)) {
                     </div>
                     <div class="object-info-holder">
                         <div class="info-address col-sm-12">
-                            <a href=""><?php echo $row['city'] ?></a>
-                            <a href=""><?php echo  $category; ?></a>
-                            <a href="">Kosharitsa</a>
+                            <a href="javascript:"><?php echo $row['city'] ?></a>
+                            <a href="javascript:"><?php echo  $category; ?></a>
+                            
                         </div>
                         <h2 class="info-title col-sm-12" itemprop="name">
                             <a href="" title="undefined" target="_blank"><?php echo $row['name']; ?></a>
@@ -225,13 +225,13 @@ while ($row = mysqli_fetch_array($second_load)) {
                         <p class="info-details col-sm-12">
                             <span itemprop="offers" itemscope="" itemtype="http://schema.org/AggregateOffer">
                                 <span itemprop="price" class="price-wrapper"><span class="lowPrice"><?php echo $row['price']; ?></span>&nbsp;–&nbsp;
-                                    <span itemprop="highPrice">79 000</span>&nbsp;
+                                    
                                     <span itemprop="priceCurrency" content="EUR">RS.</span>
                                 </span>
                             </span>, 
                             <span>1</span>&nbsp;–&nbsp;
                             <span><?php echo $row['rooms']; ?></span>&nbsp;rooms, 
-                            <span>33</span>&nbsp;–&nbsp;
+                            
                             <span><?php echo $row['area']; ?></span>&nbsp;m
                             <sup>2</sup>
                         </p>
@@ -263,9 +263,9 @@ while ($row = mysqli_fetch_array($second_load)) {
                     </div>
                     <div class="object-info-holder">
                         <div class="info-address col-sm-12">
-                            <a href=""><?php echo $row['city'] ?></a>
-                            <a href=""><?php echo  $category; ?></a>
-                            <a href="">Kosharitsa</a>
+                            <a href="javascript:"><?php echo $row['city'] ?></a>
+                            <a href="javascript:"><?php echo  $category; ?></a>
+                            
                         </div>
                         <h2 class="info-title col-sm-12" itemprop="name">
                             <a href="" title="undefined" target="_blank"><?php echo $row['name']; ?></a>
@@ -273,13 +273,13 @@ while ($row = mysqli_fetch_array($second_load)) {
                         <p class="info-details col-sm-12">
                             <span itemprop="offers" itemscope="" itemtype="http://schema.org/AggregateOffer">
                                 <span itemprop="price" class="price-wrapper"><span class="lowPrice"><?php echo $row['price']; ?></span>&nbsp;–&nbsp;
-                                    <span itemprop="highPrice">79 000</span>&nbsp;
+                                    
                                     <span itemprop="priceCurrency" content="EUR">RS.</span>
                                 </span>
                             </span>, 
                             <span>1</span>&nbsp;–&nbsp;
                             <span><?php echo $row['rooms']; ?></span>&nbsp;rooms, 
-                            <span>33</span>&nbsp;–&nbsp;
+                            
                             <span><?php echo $row['area']; ?></span>&nbsp;m
                             <sup>2</sup>
                         </p>
