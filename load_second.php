@@ -28,7 +28,7 @@ if (isset($_GET['search']) && $_GET['search']!='') {
        $search['value'] = $_GET['pricevalue'];
     }
     
-} elseif (isset($_GET['search'])) {
+} elseif (isset($_GET['category'])) {
     $search['category'] = $_GET['category'];
 //    print_r($search['category']);
 //    exit();
