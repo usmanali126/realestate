@@ -221,6 +221,13 @@ class realestate {
         $result = mysqli_query($link, $query);
         return $result;
     }
+    
+    function post_pagination($start_from,$num_rec_per_page){
+        $link = $this->connection();
+        $query = "SELECT * FROM post LIMIT $start_from, $num_rec_per_page";
+        $result = mysqli_query($link, $query);
+        return $result;
+    }
 
     function get_images($param) {
         $link = $this->connection();

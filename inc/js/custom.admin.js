@@ -66,7 +66,7 @@ $(document).ready(function () {
 
 //        alert(value);
     });
-    
+
     $('.remove').on('click', function () {
         var value = $(this).siblings('img').attr('alt');
 //        alert(value);
@@ -88,5 +88,28 @@ $(document).ready(function () {
 
 //        alert(value);
     });
+
+    var url = $(location).attr('pathname');
+    var last_val = url.split('/')[url.split('/').length - 1];
+    if (last_val == 'posts.php') {
+        $.urlParam = function (name) {
+            var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+            if (results == null) {
+                return null;
+            }
+            else {
+                return results[1] || 0;
+            }
+        }
+    }
+    if($.urlParam('page')==null){
+        $("#1").addClass('active');
+//        console.log("1");
+    } else{
+        
+        $("#"+$.urlParam('page')).addClass('active');
+//        console.log($.urlParam('page'));
+    }
+     
 
 });
