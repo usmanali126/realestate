@@ -331,7 +331,9 @@ a{
     position: absolute;
     top: -3px;
 }
-
+.object-wide.col-sm-6 .object-thumbnail img {
+    height: 325px;
+}
 /*footer css*/
 .contact-info > span {
     display: block;
