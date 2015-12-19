@@ -11,45 +11,10 @@ if (isset($_COOKIE['favorite'])) {
     $cookie = explode(',', $_COOKIE['favorite']);
     $fav = sizeof($cookie);
 }
-
-if (isset($_GET['search'])) {
-    $search['search'] = $_GET['search'];
-} elseif (isset($_GET['price'])) {
-    if($_GET['price']==1){
-       $search['price-down'] = 'price-down'; 
-    }else{
-       $search['price-up'] = 'price-up'; 
-    }
-    
-} elseif (isset($_GET['category'])) {
-    $search['category'] = $_GET['category'];
-    
-} else {
-    $search['category'] = '';
-}
-
 //print_r($cookie);
 //echo '<br>'.$fav;
 $obj = new realestate();
-$data = $obj->get_data($search);
-
-if (isset($_GET['category'])) {
-    $category = $_GET['category'];
-    switch ($category) {
-        case 1: $category = 'Apartment';
-            break;
-        case 2: $category = 'House';
-            break;
-        case 3: $category = 'Commercial';
-            break;
-
-        default:
-            $category = 'All';
-            break;
-    }
-} else {
-    $category = '';
-}
+$data = $obj->get_data();
 ?>
 
 <!DOCTYPE html>
@@ -61,7 +26,7 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Favorites | The Leading Properties of the Pakistan</title>
+        <title></title>
         <?php include 'inc/head.php'; ?>
     </head>
     <body>
@@ -91,44 +56,42 @@ and open the template in the editor.
 
                                 <!-- Collect the nav links, forms, and other content for toggling -->
                                 <div class="collapse navbar-collapse" id="search-navbar-collapse-1">
-                                        <ul class="nav navbar-nav">
-                                            <li class="dropdown sorting-ico"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Category<span class="glyphicon glyphicon-folder-open"></span> <span class="caret"></span></a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a href="favorites.php">All</a></li>
-                                                    <li><a href="favorites.php?category=1">Apartment</a></li>
-                                                    <li><a href="favorites.php?category=2">House</a></li>
-                                                    <li><a href="favorites.php?category=3">Commercial</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropdown sorting-ico"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><span class="glyphicon glyphicon-usd"></span> <span class="caret"></span></a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a href='favorites.php?price=1'><span class="glyphicon glyphicon-sort-by-order"></span><span> Cheapest first </span></a></li>
-                                                    <li><a href='favorites.php?price=9'><span class="glyphicon glyphicon-sort-by-order-alt"></span><span> Most expensive first </span></a></li>
-                                                    <span id="price-order" class="hidden"><?php echo (isset($_GET['price'])) ? $_GET['price'] : ''; ?></span>
-                                                </ul>
-                                            </li>
-                                            <li class="category" id="<?php echo (isset($_GET['category'])) ? $_GET['category'] : ''; ?>"><a><?php echo (isset($_GET['category'])) ? $category : 'All'; ?></a></li>
+                                    <ul class="nav navbar-nav">
+                                        <li class="dropdown sorting-ico"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Category<span class="glyphicon glyphicon-folder-open"></span> <span class="caret"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="index.php">All</a></li>
+                                                <li><a href="index.php?category=1">Apartment</a></li>
+                                                <li><a href="index.php?category=2">House</a></li>
+                                                <li><a href="index.php?category=3">Commercial</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown sorting-ico"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><span class="glyphicon glyphicon-usd"></span> <span class="caret"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href=""><span class="glyphicon glyphicon-sort-by-attributes"></span><span> Cheapest first </span></a></li>
+                                                <li><a href=""><span class="glyphicon glyphicon-sort-by-attributes-alt"></span><span> Most expensive first </span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="category" id="<?php echo (isset($_GET['category'])) ? $_GET['category'] : ''; ?>"><a><?php echo (isset($_GET['category'])) ? $category : 'All'; ?></a></li>
 
-                                        </ul>
-                                        <form class="navbar-form nav navbar-nav navbar-right " role="search" id="hsearch" action="record.php" method="POST">
-                                            <div class="form-group">
+                                    </ul>
+                                    <form class="navbar-form nav navbar-nav navbar-right " role="search" id="hsearch" action="record.php" method="POST">
+                                        <div class="form-group">
 
-                                                <div id="custom-search-input">
-                                                    <div class="input-group col-md-12">
-                                                        <input class="search-query form-control" placeholder="Search" type="text">
-                                                        <span id="search" class="hidden"><?php echo (isset($_GET['search'])) ? $_GET['search'] : ''; ?></span>
-                                                        <span class="input-group-btn">
-                                                            <button class="btn btn-danger" type="button">
-                                                                <a href='favorites.php?search=1'><span class=" glyphicon glyphicon-search"></span></a>
-                                                            </button>
-                                                        </span>
-                                                    </div>
-
+                                            <div id="custom-search-input">
+                                                <div class="input-group col-md-12">
+                                                    <input class="  search-query form-control" placeholder="Search" type="text">
+                                                    <span class="input-group-btn">
+                                                        <button class="btn btn-danger" type="button">
+                                                            <span class=" glyphicon glyphicon-search"></span>
+                                                        </button>
+                                                    </span>
                                                 </div>
-                                            </div>
 
-                                        </form>
-                                    </div><!-- /.navbar-collapse -->
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div><!-- /.navbar-collapse -->
                             </div><!-- /.container-fluid -->
                         </nav>
                     </div>

@@ -16,7 +16,7 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Protection policy of Personal Information</title>
         <?php include 'inc/head.php'; ?>
     </head>
     <body>

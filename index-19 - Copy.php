@@ -48,9 +48,7 @@ if ($action <> "get") {
     <html>
         <head>
             <meta charset="UTF-8">
-            <title>The Leading Properties of the Pakistan for sale, click here</title>
-            <meta name="description" content="The Leading Properties of the Pakistan — a national company with a special focus on the sale and marketing of high-end residential property">
-            <meta name="keywords" content="real estate for sale, real estate in pakistan, real estate in lahore, real estate in Faisalabad, real estate in karachi, real estate in islamabad, real estate in rawalpindi, real estate in quita, real estate in pashawar">
+            <title></title>
             <?php include 'inc/head.php'; ?>
         </head>
         <body>

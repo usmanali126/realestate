@@ -215,9 +215,19 @@ class realestate {
         return $result;
     }
 
-    function get_data() {
+    function get_data($search) {
         $link = $this->connection();
-        $query = "SELECT * FROM post";
+        
+        if(isset($search['search'])){
+            $query = "SELECT * FROM post WHERE name LIKE '%" . $search['search'] . "%' ORDER BY post_id DESC ";
+        }elseif(isset($search['price-down'])){
+            $query = "SELECT * FROM post ORDER BY price";
+        }elseif(isset($search['price-up'])){
+            $query = "SELECT * FROM post ORDER BY price DESC ";
+        }elseif(isset($search['category'])){
+            $query = "SELECT * FROM post WHERE category LIKE '%" . $search['category'] . "' ORDER BY post_id DESC ";
+        }
+//        $query = "SELECT * FROM post";
         $result = mysqli_query($link, $query);
         return $result;
     }

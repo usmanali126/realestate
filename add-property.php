@@ -16,7 +16,9 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Add Property | The Leading Properties of the Pakistan</title>
+        <meta name="description" content="Post information about your real estate property on our website free of charge. Provide a description, photos. Click here to learn more about our services.">
+        <meta name="keywords" content="real estate for sale, real estate in pakistan, real estate in lahore, real estate in Faisalabad, real estate in karachi, real estate in islamabad, real estate in rawalpindi, real estate in quita, real estate in pashawar">
         <?php include 'inc/head.php'; ?>
     </head>
     <body>

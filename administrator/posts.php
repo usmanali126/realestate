@@ -22,8 +22,8 @@ if (isset($_GET["page"])) {
 $start_from = ($page - 1) * $num_rec_per_page;
 $result = $obj->post_pagination($start_from, $num_rec_per_page);
 
-
-$rs_result = $obj->get_data();
+$search['category'] = '';
+$rs_result = $obj->get_data($search);
 $total_records = mysqli_num_rows($rs_result);  //count number of records
 $total_pages = ceil($total_records / $num_rec_per_page);
 ?>
