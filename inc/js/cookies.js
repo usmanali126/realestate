@@ -5,7 +5,7 @@
  */
 
 
-var favorite = 'favorite';
+        var favorite = 'favorite';
         var exdays= 365;
         var total = getCookie(favorite);
 //        alert(total);
@@ -23,7 +23,7 @@ var favorite = 'favorite';
                 $(this).addClass('cookie');
 
                 var id = $(this).data("post-id");
-                id = id.toString()
+                id = id.toString();
                 console.log(total);
                 //index=total.indexOf(id);
                 total.splice($.inArray(id, total), 1);

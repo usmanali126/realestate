@@ -27,6 +27,16 @@ $param['post_id'] = $_GET['get_id'];
     
     $post_images = $obj->get_images($param);
 
+    $param['next_id'] = TRUE;
+    $next_row = $obj->get_post($param);
+    $next_id = mysqli_fetch_array($next_row);
+    $param['next_id'] = FALSE;
+
+    $param['previous_id'] = TRUE;
+    $previous_row  = $obj->get_post($param);
+    $previous_id = mysqli_fetch_array($previous_row);
+    $param['previous_id'] = FALSE;
+    
    $param['post_id'] = $main_post['sim1'];
     $row3 = $obj->get_post($param);
     $sim1 = mysqli_fetch_array($row3);
@@ -161,7 +171,7 @@ and open the template in the editor.
                                 <div class="row">
                                     <div class="object_info_left col-sm-12">
                                         <div itemtype="http://schema.org/AggregateOffer" itemscope="" itemprop="offers" class="row price-row">
-                                            <p itemprop="price" class="object_price"><span itemprop="lowPrice"><?php echo $main_post['price'] ?></span>&nbsp;<span content="rs" itemprop="priceCurrency">R.S</span></p><span data-obj_id="82517" class="glyphicon glyphicon-bookmark"><span class="glyphicon glyphicon-star"></span></span></div>
+                                            <p itemprop="price" class="object_price"><span itemprop="lowPrice"><?php echo $main_post['price'] ?></span>&nbsp;<span content="rs" itemprop="priceCurrency">R.S</span></p><span  class="glyphicon glyphicon-bookmark <?php if(isset($cookie)){echo in_array($main_post['post_id'], $cookie)?"bmark":"cookie";}else{echo "cookie";} ?>" data-post-id="<?php echo $main_post['post_id']; ?>"><span class="glyphicon glyphicon-star"></span></span></div>
 
                                         <div itemprop="description" class="description">
                                             <p><?php echo $main_post['about'] ?></p>
@@ -262,16 +272,16 @@ and open the template in the editor.
 
                 <div class="clearfix" id="object_navigation">
 
-                    <a href="single.php?get_id=<?php echo $main_post['sim1']; ?>" class="col-xs-4 prev-btn text-center">
-                        <i class="glyphicon glyphicon-arrow-left"></i> <span class="hidden-xs">previous property</span>
+                    <a href="single.php?get_id=<?php echo empty($next_id)?$main_post['post_id']:$next_id['post_id']; ?>" class="col-xs-4 prev-btn text-center">
+                        <i class="glyphicon glyphicon-arrow-left"></i> <span class="hidden-xs"><?php echo empty($next_id)?'No More':'Previous property'; ?></span>
                     </a>
 
                     <a href="index.php" class="col-xs-4 back-btn text-center">
                         <i class="glyphicon glyphicon-share-alt icon-flipped"></i> <span class="hidden-xs">back to the list</span>
                     </a>
 
-                    <a href="single.php?get_id=<?php echo $main_post['sim2']; ?>" class="col-xs-4 next-btn text-center disabled">
-                        <span class="hidden-xs">next property</span> <i class="glyphicon glyphicon-arrow-right"></i>
+                    <a href="single.php?get_id=<?php echo empty($previous_id)?$main_post['post_id']:$previous_id['post_id']; ?>" class="col-xs-4 next-btn text-center disabled">
+                        <span class="hidden-xs"><?php echo empty($previous_id)?'No More':'Next Property'; ?></span> <i class="glyphicon glyphicon-arrow-right"></i>
                     </a>
 
                 </div>
@@ -283,8 +293,8 @@ and open the template in the editor.
                             <div class="object-inner-wrapper">
 
                                 <div class="object-thumbnail">
-                                    <a href="single.php?get_id=<?php echo $sim1['post_id']; ?>" target="_self" itemprop="url" title="<?php echo $sim1['name']; ?>" class="object-thumbnail-holder"><img src="upload/<?php echo $sim1['fimage']; ?>" itemprop="image" alt="<?php echo $sim1['name']; ?>" class="img-responsive"></a>      <div data-obj_id="82481" class="add-favorite-button">
-                                        <span class="glyphicon glyphicon-bookmark"><span class="glyphicon glyphicon-star"></span></span>
+                                    <a href="single.php?get_id=<?php echo $sim1['post_id']; ?>" target="_self" itemprop="url" title="<?php echo $sim1['name']; ?>" class="object-thumbnail-holder"><img src="upload/<?php echo $sim1['fimage']; ?>" itemprop="image" alt="<?php echo $sim1['name']; ?>" class="img-responsive"></a>      <div class="add-favorite-button">
+                                        <span class="glyphicon glyphicon-bookmark <?php if(isset($cookie)){echo in_array($row['post_id'], $cookie)?"bmark":"cookie";}else{echo "cookie";} ?>" data-post-id="<?php echo $sim1['post_id']; ?>"><span class="glyphicon glyphicon-star"></span></span>
                                     </div>
                                 </div>
 
@@ -306,8 +316,8 @@ and open the template in the editor.
                             <div class="object-inner-wrapper">
 
                                 <div class="object-thumbnail">
-                                    <a href="single.php?get_id=<?php echo $sim2['post_id']; ?>" target="_self" itemprop="url" title="<?php echo $sim2['name']; ?>" class="object-thumbnail-holder"><img src="upload/<?php echo $sim2['fimage']; ?>" itemprop="image" alt="<?php echo $sim2['name']; ?>" class="img-responsive"></a>      <div data-obj_id="82481" class="add-favorite-button">
-                                        <span class="glyphicon glyphicon-bookmark"><span class="glyphicon glyphicon-star"></span></span>
+                                    <a href="single.php?get_id=<?php echo $sim2['post_id']; ?>" target="_self" itemprop="url" title="<?php echo $sim2['name']; ?>" class="object-thumbnail-holder"><img src="upload/<?php echo $sim2['fimage']; ?>" itemprop="image" alt="<?php echo $sim2['name']; ?>" class="img-responsive"></a>      <div class="add-favorite-button">
+                                        <span class="glyphicon glyphicon-bookmark <?php if(isset($cookie)){echo in_array($row['post_id'], $cookie)?"bmark":"cookie";}else{echo "cookie";} ?>" data-post-id="<?php echo $sim2['post_id']; ?>"><span class="glyphicon glyphicon-star"></span></span>
                                     </div>
                                 </div>
 

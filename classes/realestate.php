@@ -176,7 +176,14 @@ class realestate {
 
     function get_post($param) {
         $link = $this->connection();
-        $query = "SELECT * FROM post WHERE `post_id`='" . $param['post_id'] . "'";
+        if(isset($param['next_id']) && $param['next_id']== 1){
+            $query = "SELECT * FROM post WHERE `post_id`<'" . $param['post_id'] . "'";
+        }elseif(isset($param['previous_id']) && $param['previous_id']== 1){
+            $query = "SELECT * FROM post WHERE `post_id`>'" . $param['post_id'] . "'";
+        }else{
+            $query = "SELECT * FROM post WHERE `post_id`='" . $param['post_id'] . "'";
+        }
+        
         $result = mysqli_query($link, $query) or die(mysqli_error($link));
         return $result;
     }

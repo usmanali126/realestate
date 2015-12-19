@@ -99,3 +99,59 @@ $(document).ready(function () {
     }
     ;
 });
+        var favorite = 'favorite';
+        var exdays= 365;
+        var total = Cookies.get(favorite);
+//        alert(total);
+        if(total!=null){
+        var total = total.split(",");
+        }else{
+        total = new Array();
+        }
+$('body').on('click', '.bmark', function () {
+    $(this).removeClass('bmark');
+            $(this).addClass('cookie');
+//    $(this).toggleClass('bmark','cookie');
+    var id = $(this).data("post-id");
+                id = id.toString();
+                console.log(total);
+                total.splice($.inArray(id, total), 1);
+                console.log(total);
+                console.log(total.length);
+                $('.fav').html(total.length);
+                //postids.push(id);
+                //alert(name);
+                //console.log(postids);
+                if(total.length!=0){
+//                  setCookie(favorite, total, exdays);
+                  Cookies.set(favorite, total, { expires: exdays});
+                }
+                else{
+//                    setCookie(favorite, favorite, -2);
+                    Cookies.remove(favorite);
+                }
+});
+
+$('body').on('click', '.cookie', function () {
+//                alert('alert');
+//            $(this).toggleClass('bmark','cookie');
+            $(this).removeClass('cookie');
+            $(this).addClass('bmark');
+            var id = $(this).data("post-id");
+            total.push(id);
+            //alert(name);
+            //console.log(postids);
+//            setCookie(favorite, total, exdays);
+            Cookies.set(favorite, total, { expires: exdays});
+            console.log(total);
+            //alert(total.length);
+            $('.fav').html(total.length);
+        });
+        
+$('body').on('click','.fremove',function(){
+//           setCookie(favorite, total, -2);
+           Cookies.remove(favorite);
+           $('.add-favorite-button').find('.bmark').toggleClass('bmark cookie');
+           $('.fav').html(0);
+           $(location).attr('href', 'index.php');
+        });
