@@ -56,7 +56,7 @@ if ($action <> "get") {
         <body>
             <?php if (!isset($_COOKIE['front_msg']) ) {
                 ?>
-                <div class="cookie-message-wrapper" id="cookie-message" style="display: block;">
+                <div class="cookie-message-wrapper hidden-xs" id="cookie-message" style="display: block;">
                     <div class="container">
                         <div class="row">
                             <div class="message-col col-xs-10 col-sm-9 col-md-10">

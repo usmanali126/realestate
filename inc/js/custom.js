@@ -6,7 +6,7 @@
 
 
 $(document).ready(function () {
-    
+
     var last_id='';
 //$('#scroll_up').css('display','none');
     $(window).scroll(function () {
@@ -59,7 +59,21 @@ $(document).ready(function () {
 				}
         }
     });
+
+    setInterval(flag_change, 2000);
     
+    function flag_change(){
+        var lang = $(".goog-te-menu-value span").html();
+//        console.log(lang);
+    if (lang == "Urdu") {
+        $(".goog-te-gadget-icon").attr("src", "images/pk.png");
+    } else if (lang == "English") {
+        $(".goog-te-gadget-icon").attr("src", "images/eng.png");
+    }else if(lang == "Select Language"){
+        //$(".goog-te-menu-value span").html("English");
+        $(".goog-te-gadget-icon").attr("src", "images/eng.png");
+    }
+    }
     
     function last_msg_funtion()
     {
@@ -69,20 +83,7 @@ $(document).ready(function () {
         var pricevalue=$(".lowPrice:last").html();
         var search=$("#search").html();
         var category=$(".category").attr("id");
-        
-//        if(price!=''){
-//          searchby['price']= price;  
-//        }else if(search_name!=''){
-//          searchby['search'] = search_name;  
-//        }else{
-//          searchby['category'] = category;  
-//        }
-        
-//        var parameters = {  "searchby": searchby};
-        
-//       if(ID != last_id){
-//           alert(searchby['search']);
-//           exit;
+
              $('div#last_msg_loader').html('<img src="images/200_s.gif">');
            $.post("index.php?action=get&last_msg_id=" +ID+"&category="+category+"&price="+price+"&pricevalue="+pricevalue+"&search="+search,
                 function (data) {
@@ -108,6 +109,7 @@ $(document).ready(function () {
         }else{
         total = new Array();
         }
+        
 $('body').on('click', '.bmark', function () {
     $(this).removeClass('bmark');
             $(this).addClass('cookie');

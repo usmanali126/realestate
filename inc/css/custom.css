@@ -67,6 +67,9 @@ a{
     top: 4px;
     width: 25px;
 }
+.language {
+    padding-top: 11px;
+}
 .sorting-ico  span.glyphicon{
     font-size: 20px;
 }

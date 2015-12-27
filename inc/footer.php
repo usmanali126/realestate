@@ -35,7 +35,7 @@
     <div class="row">
         <div class="col-xs-12">
             <br>
-            <p class="text-center">Developed By: www.reccatech.com</p>
+            <p class="text-center">Developed By: <a href="www.reccatech.com" target="_blank" >www.reccatech.com</a></p>
         </div>
     </div>
 </div>

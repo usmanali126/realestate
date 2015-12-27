@@ -61,7 +61,7 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>favourite | The Leading Properties of the Pakistan</title>
+        <title>Favourite | The Leading Properties of the Pakistan</title>
         <?php include 'inc/head.php'; ?>
     </head>
     <body>
