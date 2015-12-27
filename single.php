@@ -62,24 +62,28 @@ $param['post_id'] = $_GET['get_id'];
             break;
     }
 
-    
-//    print_r($sim1);
 }
 
 if (isset($_POST['submit'])) {
 
     foreach ($_POST as $key => $value) {
+        
         if (empty($_POST[$key])) {
-            $error = true;
+            $error = 'Please fill the empty fields first';
         }
+        
+        if (($_POST[$key]=='email')) {
+        if (!filter_var($value, FILTER_VALIDATE_EMAIL)) {
+            $error = "Invalid email format";
+        }   
+        }
+        
         $_data[$key] = $value;
     }
     if (!isset($error)) {
-        print_r($_data);
-        $to = 'abc@xyz.com';
+        $to = 'green.solar.pakistan@gmail.com';
         $subject = 'About property';
-        $message = '<h2>Hi Dear</h2><br>' . $_data['message'] . '<br> Property URL: ' . $_data['url'] . '<br> Property ID: ' . $_data['post_id'] . '<br><br> Redards:<br> ' . $_data['name'] . '<br> ' . $_data['email'] . '<br> ' . $_data['phone'];
-        //echo $message;
+        $message = '<h3>Hi Dear</h3><br>' . $_data['message'] . '<br> Property URL: http://textilagentur-pakistan.com' . $_data['url'] . '<br> Property ID: ' . $_data['post_id'] . '<br><br> Redards:<br> ' . $_data['name'] . '<br> ' . $_data['email'] . '<br> ' . $_data['phone'];
         $result = $obj->send_email($to, $subject, $message);
     }
 }
@@ -161,9 +165,6 @@ and open the template in the editor.
                             </div>
                             <!--<div itemref="cbc" itemprop="child" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" id="bbc"><a itemprop="url" href="" class="prevent"><span itemprop="title">Spain</span></a></div><div itemref="dbc" itemprop="child" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" id="cbc"><a itemprop="url" href="" class="prevent"><span itemprop="title">Costa Blanca</span></a></div><div itemprop="child" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" id="dbc"><a itemprop="url" href="#" class="prevent"><span itemprop="title">Guardamar del Segura</span></a></div><div class="object_sku">ES-82517</div>-->
                         </div>
-
-
-
                         <h1 itemprop="name" class="info-title"><?php echo $main_post['name'] ?></h1>
 
                         <div class="row single-object-row">
@@ -214,19 +215,21 @@ and open the template in the editor.
                                     <div class="icon-info"></div>
                                     <form method="post" data-remote="true" accept-charset="UTF-8" action="" class="new_request" id="object_download_form">
 
-
+                                        <?php if(isset($error) || isset($result)){?>
                                         <div id="short-form-validation">
-                                            <div class="form-message error-form-message email_message">
-                                                <div class="container"><p>Please check your e-mail it seems that there is an error</p><span class="icon icon-26 close-alert"></span></div>
+                                        <?php if(isset($error)){?>    
+                                            <div class="error-form-message email_message">
+                                                <span class="text-danger"><?php echo $error; ?></span>
                                             </div>
-                                            <div class="form-message error-form-message phone_message">
-                                                <div class="container"><p>Please check your telephone it seems that there is an error</p><span class="icon icon-26 close-alert"></span></div>
+                                        <?php }elseif(isset($result)){?>
+                                            <div class="success-form-message">
+                                                <div>
+                                                <span class="text-success">Thank you, request was received. We will send detailed information about the object, including plans, prices and review information soon.</span>
                                             </div>
-                                            <div class="form-message success-form-message">
-                                                <div class="container"><p>Thank you, request was received. We will send detailed information about the object, including plans, prices and review information soon.</p><span class="icon icon-26 close-alert"></span></div>
-                                            </div>
+                                                </div>
+                                            <?php } ?>
                                         </div>
-
+                                        <?php  } ?>
                                         <div class="object_download">
                                             <div class="od_carrot">
                                                 <div class="get_info_text">

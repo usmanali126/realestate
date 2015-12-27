@@ -112,12 +112,12 @@ if ($action <> "get") {
                                             <li class="category" id="<?php echo (isset($_GET['category'])) ? $_GET['category'] : ''; ?>"><a><?php echo (isset($_GET['category'])) ? $category : 'All'; ?></a></li>
 
                                         </ul>
-                                        <form class="navbar-form nav navbar-nav navbar-right " role="search" id="hsearch" action="index.php" method="GET">
+                                        <form class="navbar-form nav navbar-nav navbar-right " role="search" id="hsearch" action="record.php" method="POST">
                                             <div class="form-group">
 
                                                 <div id="custom-search-input">
                                                     <div class="input-group col-md-12">
-                                                        <input class="search-query form-control" placeholder="Search" name="search" type="text">
+                                                        <input class="search-query form-control" placeholder="Search" type="text">
                                                         <span id="search" class="hidden"><?php echo (isset($_GET['search'])) ? $_GET['search'] : ''; ?></span>
                                                         <span class="input-group-btn">
                                                             <button class="btn btn-danger" type="button">

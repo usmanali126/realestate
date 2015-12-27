@@ -37,6 +37,7 @@ class realestate {
 
     function connection() {
 //        $conn = mysqli_connect('localhost', 'reccatec_real', 'admin', 'reccatec_realestate');
+//        $conn = mysqli_connect('localhost', 'textilag_real', '9!9v90tv9!', 'textilag_realestate');
         $conn = mysqli_connect('localhost', 'root', '', 'realestate');
         if ($conn == TRUE) {
             return $conn;
@@ -46,13 +47,13 @@ class realestate {
     }
 
     function login($param) {
-        if ($param['user_name'] == 'admin' && $param['user_password'] == 'admin') {
-            $_SESSION['login'] = 'login';
-            $_SESSION['name'] = $data['name'];
-            $_SESSION['user_name'] = $data['user_name'];
-            $_SESSION['secour'] = NULL;
-            header("Location:../administrator");
-        } else {
+//        if ($param['user_name'] == 'admin' && $param['user_password'] == 'admin') {
+//            $_SESSION['login'] = 'login';
+//            $_SESSION['name'] = $data['name'];
+//            $_SESSION['user_name'] = $data['user_name'];
+//            $_SESSION['secour'] = NULL;
+//            header("Location:../administrator");
+//        } else {
             //      return 'Your password or User name is invalid';
             //}
 
@@ -64,8 +65,8 @@ class realestate {
                 $dbpassword = $data['user_pass'];
                 //echo password_hash($param['user_password'], PASSWORD_DEFAULT);
                 //echo $password=$param['user_password'];
-                /* if (password_verify($param['user_password'], $dbpassword)) { */
-                if ($param['user_password'] == $dbpassword) {
+                 if (password_verify($param['user_password'], $dbpassword)) { 
+//                if ($param['user_password'] == $dbpassword) {
                     $_SESSION['login'] = 'login';
                     $_SESSION['name'] = $data['name'];
                     $_SESSION['user_name'] = $data['user_name'];
@@ -78,12 +79,12 @@ class realestate {
             }
         }
         //exit();
-    }
+//    }
 
     function change_pass($param) {
         $link = $this->connection();
         $password = $param;
-        // $password = password_hash($password, PASSWORD_DEFAULT);
+         $password = password_hash($password, PASSWORD_DEFAULT);
         $query = "UPDATE `user` SET `user_pass`='$password' WHERE `user_name`='" . $_SESSION['user_name'] . "'";
         $result = mysqli_query($link, $query) or die(mysqli_error($link));
         return $result;
@@ -99,7 +100,7 @@ class realestate {
         $message = "Hello Dear </br> Your Password is <strong>" . $password . "</strong>";
         $send = $this->send_email($to, $subject, $message);
         if ($send == true) {
-            //$password = password_hash($password, PASSWORD_DEFAULT);
+            $password = password_hash($password, PASSWORD_DEFAULT);
             $query = "UPDATE `user` SET `user_pass`='$password' WHERE `user_email`='" . $param['user_email'] . "'";
             $result = mysqli_query($link, $query) or die(mysqli_error($link));
             return $result;
@@ -303,10 +304,12 @@ class realestate {
 //        $to = $param['email'];
 //        $subject = "Your Password";
 //        $txt = "Hello Dear </br> Your Password is <strong>" . $param['pass'] . "</strong>";
-//        $headers = "From: webmaster@example.com" . "\r\n" .
-//                "CC: somebodyelse@example.com";
+        $headers = "MIME-Version: 1.0" . "\r\n".
+                "Content-type:text/html;charset=UTF-8" . "\r\n".
+                "From: no-reply@textilag.com". "\r\n" .
+                'X-Mailer: PHP/' . phpversion();
 
-        if (mail($to, $subject, $message)) {
+        if (mail($to, $subject, $message, $headers)) {
             return $result = true;
         }
     }

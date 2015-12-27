@@ -6,6 +6,34 @@ include_once 'classes/realestate.php';
     while ($row = mysqli_fetch_array($get_data)) {
         $_DATA[$row['name']]=$row['value'];
     }
+    
+    
+    if (isset($_POST['submit'])) {
+        
+
+    foreach ($_POST as $key => $value) {
+        
+        if (empty($_POST[$key])) {
+            $error = 'style="display:block;"';
+//            exit('foreach');
+        }
+        $_data[$key] = $value;
+    }
+    
+    if (!isset($error)) {
+//        print_r($_data);
+        $to = 'green.solar.pakistan@gmail.com';
+        $subject = 'Infromation about investment ';
+        $message = '<h3>Hi Dear</h3><br>' . $_data['message'] . '<br><br> Redards:<br> ' . $_data['name'] . '<br> ' . $_data['email'] . '<br> ' . $_data['phone'];
+        //echo $message;
+        $result = $obj->send_email($to, $subject, $message);
+        if($result== TRUE){
+            $result='style="display:block;"';
+        }else{
+            $result_fail='style="display:block;"';
+        }
+    }
+}
 ?>
 <!DOCTYPE html>
 <!--
@@ -87,27 +115,26 @@ and open the template in the editor.
                             </p>
                         </div>
 
-                        <form method="post" data-remote="true" accept-charset="UTF-8" action="/contact-form" class="contact-form" id="contact-form"><input type="hidden" value="✓" name="utf8">
-                            <div class="form-message error-form-message"><p>We need your contact information to answer your question. Please, fill required fields.</p></div>
-                            <div class="form-message success-form-message"><p>Thank you, your request was received.</p></div>
+                        <form method="post" data-remote="true" accept-charset="UTF-8" action="about.php" class="contact-form" id="contact-form">
+                            <div class="form-message error-form-message" <?php echo isset($error)?$error:''; ?>><p>We need your contact information to answer your question. Please, fill all fields.</p></div>
+                            <div class="form-message error-form-message" <?php echo isset($result_fail)?$result_fail:''; ?>><p>Please Try again later</p></div>
+                            <div class="form-message success-form-message" <?php echo isset($result)?$result:''; ?>><p>Thank you, your request was received.</p></div>
                             <div class="form-row">
                                 <div class="form-group form-group-name">
-                                    <input type="text" id="request_name" name="request[name]" placeholder="Enter your name" class="get_info_name form-control">
+                                    <input type="text" id="request_name" name="name" placeholder="Enter your name" class="get_info_name form-control">
                                 </div>
                                 <div class="form-group form-group-email">
-                                    <input type="email" id="request_email" name="request[email]" placeholder="your email" class="get_info_email paired form-control">
+                                    <input type="email" id="request_email" name="email" placeholder="your email" class="get_info_email paired form-control">
                                 </div>
                                 <div class="form-group form-group-phone">
-                                    <input type="tel" id="request_phone" name="request[phone]" placeholder="or your phone" class="get_info_phone paired form-control">
+                                    <input type="text" id="request_phone" name="phone" placeholder="your phone" class="get_info_phone paired form-control">
                                 </div>
                                 <div class="form-group form-group-message">
-                                    <textarea id="request_message" name="request[message]" placeholder="your message" class="textarea form-control"></textarea>
+                                    <textarea id="request_message" name="message" placeholder="your message" class="textarea form-control"></textarea>
                                 </div>
-                                <input type="hidden" id="request_lang" name="request[lang]" value="en">
-                                <input type="hidden" id="request_prop_id" name="request[prop_id]" value="0">
                                 <div class="form-inner-row">
                                     <div class="form-group form-group-button">
-                                        <input type="submit" id="submit" class="submit" value="Send your request" name="commit">
+                                        <input type="submit" id="submit" class="submit" value="Send your request" name="submit">
                                     </div>
                                     <div class="form-group form-group-disclaimer">
                                         <div class="disclaimer-content-wrapper"><i class="glyphicon glyphicon-lock"></i>

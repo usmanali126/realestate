@@ -15,7 +15,7 @@
                 Reg No.
             </p>
             <div class="contact-info">
-                <span><a href="#">Sitemap</a></span>
+                <span><a href="sitemap.xml">Sitemap</a></span>
                 <span><a href="contact.php">Contact information</a></span>
                 <span><a href="privacy.php">Privacy Policy</a></span>
             </div>
@@ -32,7 +32,12 @@
             </div>
         </div>
     </div>
-    
+    <div class="row">
+        <div class="col-xs-12">
+            <br>
+            <p class="text-center">Developed By: www.reccatech.com</p>
+        </div>
+    </div>
 </div>
 <script src="inc/js/jquery-2.1.4.js" type="text/javascript"></script>
 <script src="inc/js/js.cookie.js" type="text/javascript"></script>

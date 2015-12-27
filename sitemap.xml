@@ -1,0 +1,54 @@
+
+<?php 
+header('Content-type: application/xml');
+include_once 'classes/realestate.php';
+$search['category'] = '';
+$rs_result = $obj->get_data($search);
+$total_records = mysqli_num_rows($rs_result);
+
+?>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>http://textilagentur-pakistan.com/</loc>
+  <changefreq>always</changefreq>
+</url>
+<url>
+  <loc>http://textilagentur-pakistan.com/privacy.php</loc>
+  <changefreq>always</changefreq>
+</url>
+<url>
+  <loc>http://textilagentur-pakistan.com/index.php</loc>
+  <changefreq>always</changefreq>
+</url>
+<url>
+  <loc>http://textilagentur-pakistan.com/add-property.php</loc>
+  <changefreq>always</changefreq>
+</url>
+<url>
+  <loc>http://textilagentur-pakistan.com/favorites.php</loc>
+  <changefreq>always</changefreq>
+</url>
+<url>
+  <loc>http://textilagentur-pakistan.com/contact.php</loc>
+  <changefreq>always</changefreq>
+</url>
+<url>
+  <loc>http://textilagentur-pakistan.com/about.php</loc>
+  <changefreq>always</changefreq>
+</url>
+<?php while ($row = mysqli_fetch_array($result)) {
+?>
+<url>
+  <loc>http://textilagentur-pakistan.com/single.php?get_id=<?php echo $row['post_id'] ?></loc>
+  <changefreq>always</changefreq>
+</url>
+<?php }?>
+
+</urlset>

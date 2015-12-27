@@ -15,7 +15,7 @@
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="add-property.php">Add property </a></li>
-        <li><a href="favourite.php">Favourite<sup class="fav"> <?php echo isset($fav) ? $fav : ''; ?></sup></a></li>
+        <li><a href="favorites.php">Favorites<sup class="fav"> <?php echo isset($fav) ? $fav : ''; ?></sup></a></li>
         <li><a href="contact.php">Contact information</a></li>
         <li><a href="about.php">About the company</a></li>
       </ul>
