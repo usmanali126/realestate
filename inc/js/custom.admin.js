@@ -51,15 +51,6 @@ $(document).ready(function () {
                     console.log(textStatus);
                     console.log(errorThrown);
 
-//                            for (key in jqxhr)
-//                                alert(key + ":" + jqxhr[key])                                                                 
-//                            for (key2 in textStatus)
-//                                alert(key + ":" + textStatus[key])
-//                            for (key3 in errorThrown)
-//                                alert(key + ":" + errorThrown[key])
-
-                    //<--- All those logs/alerts, don't say anything helpful, how can I understand what error is going on? ---->
-
                 }
             });
         }
